@@ -38,11 +38,11 @@ xhttp.onreadystatechange = function() {
 				}
 			}
 		};
-		xhttptrans.open("GET", "http://1.15.82.181:8080/api/userinfo?uid="+art.author, true);
+		xhttptrans.open("GET", "https://api.jcsuf.top/api/userinfo?uid="+art.author, true);
 		xhttptrans.send();
 	}
 };
-xhttp.open("GET", "http://1.15.82.181:8080/api/articleinfo"+location.href.substring(location.href.indexOf(".html")+5), true);
+xhttp.open("GET", "https://api.jcsuf.top/api/articleinfo"+location.href.substring(location.href.indexOf(".html")+5), true);
 xhttp.send();
 
 function comment(wfid) {
@@ -105,7 +105,7 @@ function post_comment() {
 			}
 		}
 	};
-	xhttp2.open("POST", "http://1.15.82.181:8080/api/postcomment", true);
+	xhttp2.open("POST", "https://api.jcsuf.top/api/postcomment", true);
 	xhttp2.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
 	xhttp2.send(location.href.substring(location.href.indexOf(".html")+6)+"&anonymous="+document.getElementById("i1").checked+"&content="+utf8Str+"&replyto="+fid);
 }
@@ -141,7 +141,7 @@ function processComment(comment) {
 			}
 		}
 	};
-	xhttpcom.open("GET", "http://1.15.82.181:8080/api/userinfo?uid="+comment.author, true);
+	xhttpcom.open("GET", "https://api.jcsuf.top/api/userinfo?uid="+comment.author, true);
 	xhttpcom.send();
 }
 
@@ -176,7 +176,7 @@ function like(floor){
 			}
 		}
 	};
-	xhttplike.open("GET", "http://1.15.82.181:8080/api/rating?type=like&"+location.href.substring(location.href.indexOf(".html")+6)+"&floor="+floor, true);
+	xhttplike.open("GET", "https://api.jcsuf.top/api/rating?type=like&"+location.href.substring(location.href.indexOf(".html")+6)+"&floor="+floor, true);
 	xhttplike.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
 	xhttplike.send();
 }
@@ -209,7 +209,7 @@ function dislike(floor){
 			}
 		}
 	};
-	xhttpdislike.open("GET", "http://1.15.82.181:8080/api/rating?type=dislike&"+location.href.substring(location.href.indexOf(".html")+6)+"&floor="+floor, true);
+	xhttpdislike.open("GET", "https://api.jcsuf.top/api/rating?type=dislike&"+location.href.substring(location.href.indexOf(".html")+6)+"&floor="+floor, true);
 	xhttpdislike.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
 	xhttpdislike.send();
 }
