@@ -6,6 +6,7 @@ xhttp2.onreadystatechange = function() {
 	}
 };
 xhttp2.open("GET", "https://api.jcsuf.top/api/notice", true);
+xhttp2.withCredentials = true;
 xhttp2.send();
 
 var xhttp4 = new XMLHttpRequest();
@@ -26,6 +27,7 @@ xhttp4.onreadystatechange = function() {
 	}
 };
 xhttp4.open("GET", "https://api.jcsuf.top/api/fetchnewarticle", true);
+xhttp4.withCredentials = true;
 xhttp4.send();
 
 if(window.screen.availWidth<=1080){
@@ -99,6 +101,7 @@ function del(aid) {
 		}
 	};
 	xhttpdel.open("GET", "https://api.jcsuf.top/api/deletearticle?aid="+aid, true);
+	xhttpdel.withCredentials = true;
 	xhttpdel.send();
 }
 
@@ -122,5 +125,6 @@ function reloadnew() {
 		}
 	};
 	xhttpreload.open("GET", "https://api.jcsuf.top/api/fetchnewarticle?pc="+document.getElementById("input-row-count").value, true);
+	xhttpreload.withCredentials = true;
 	xhttpreload.send();
 }
