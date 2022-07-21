@@ -17,7 +17,7 @@ function reg(){
 	if (this.readyState == 4 && this.status == 200) {
 		switch(JSON.parse(this.responseText).code){
 			case 0:
-			location.href = "https://jcsuf.top/regSuccess.html"
+			location.href = "https://www.jcsuf.top/regSuccess.html"
 			break;
 			case 1:
 			alert("该邮箱已被占用")
@@ -38,7 +38,7 @@ function signin(){
 	if (this.readyState == 4 && this.status == 200) {
 		switch(JSON.parse(this.responseText).code){
 			case 0:
-			location.href = "https://jcsuf.top/signinSuccess.html"
+			location.href = "https://www.jcsuf.top/signinSuccess.html"
 			break;
 			case 1:
 			alert("该邮箱不存在")
