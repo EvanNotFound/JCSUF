@@ -71,4 +71,11 @@ function post(){
 
 function invokevote(){
 	alert("您正在尝试测试功能，投票创建后暂时无法显示，预计将在7-22完成功能");
+	document.getElementById("bgmask").style.display = "block";
+	document.getElementById("create-vote-container").style.display = "block";
+}
+
+function minimize_pane(){
+	document.getElementById("bgmask").style.display = "none";
+	document.getElementById("create-vote-container").style.display = "none";
 }
