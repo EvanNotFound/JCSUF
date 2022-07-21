@@ -16,7 +16,7 @@ function switch_theme(){
 			}
 		}
 	};
-	xhttp2.open("GET", "http://1.15.82.181:8080/api/themechange?theme="+document.documentElement.getAttribute("theme"), true);
+	xhttp2.open("GET", "https://api.jcsuf.top/api/themechange?theme="+document.documentElement.getAttribute("theme"), true);
 	xhttp2.send();
 }
 
@@ -26,5 +26,5 @@ xhttp.onreadystatechange = function() {
 		document.documentElement.setAttribute("theme",JSON.parse(this.responseText).theme_preferrence)
 	}
 };
-xhttp.open("GET", "http://1.15.82.181:8080/api/loginstatus", true);
+xhttp.open("GET", "https://api.jcsuf.top/api/loginstatus", true);
 xhttp.send();
