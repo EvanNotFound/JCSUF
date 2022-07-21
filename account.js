@@ -17,7 +17,7 @@ function reg(){
 	if (this.readyState == 4 && this.status == 200) {
 		switch(JSON.parse(this.responseText).code){
 			case 0:
-			location.href = "http://1.15.82.181:8080/regSuccess.html"
+			location.href = "https://jcsuf.top/regSuccess.html"
 			break;
 			case 1:
 			alert("该邮箱已被占用")
@@ -27,7 +27,7 @@ function reg(){
 		}
 	}
 	};
-	xhttp.open("POST", "http://1.15.82.181:8080/api/register", true);
+	xhttp.open("POST", "https://api.jcsuf.top/api/register", true);
 	xhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded")//必须要设置，被坑了一天啊
 	xhttp.send("name="+utf8Str+"&password="+document.getElementById("i2").value+"&mail="+document.getElementById("i3").value);
 }
@@ -38,7 +38,7 @@ function signin(){
 	if (this.readyState == 4 && this.status == 200) {
 		switch(JSON.parse(this.responseText).code){
 			case 0:
-			location.href = "http://1.15.82.181:8080/signinSuccess.html"
+			location.href = "https://jcsuf.top/signinSuccess.html"
 			break;
 			case 1:
 			alert("该邮箱不存在")
@@ -48,7 +48,7 @@ function signin(){
 		}
 	}
 	};
-	xhttp.open("POST", "http://1.15.82.181:8080/api/signin", true);
+	xhttp.open("POST", "https://api.jcsuf.top/api/signin", true);
 	xhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded")//必须要设置，被坑了一天啊
 	xhttp.send("password="+document.getElementById("i2").value+"&mail="+document.getElementById("i1").value);
 }
