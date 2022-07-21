@@ -78,7 +78,7 @@ function transname(art) { //解析Id为用户名
 			}
 		}
 	};
-	xhttptrans.open("GET", "http://1.15.82.181:8080/api/userinfo?uid="+art.author, true);
+	xhttptrans.open("GET", "https://api.jcsuf.top/api/userinfo?uid="+art.author, true);
 	xhttptrans.send();
 }
 
@@ -98,7 +98,7 @@ function del(aid) {
 			}
 		}
 	};
-	xhttpdel.open("GET", "http://1.15.82.181:8080/api/deletearticle?aid="+aid, true);
+	xhttpdel.open("GET", "https://api.jcsuf.top/api/deletearticle?aid="+aid, true);
 	xhttpdel.send();
 }
 
@@ -121,6 +121,6 @@ function reloadnew() {
 			}
 		}
 	};
-	xhttpreload.open("GET", "http://1.15.82.181:8080/api/fetchnewarticle?pc="+document.getElementById("input-row-count").value, true);
+	xhttpreload.open("GET", "https://api.jcsuf.top/api/fetchnewarticle?pc="+document.getElementById("input-row-count").value, true);
 	xhttpreload.send();
 }
