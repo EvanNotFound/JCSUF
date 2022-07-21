@@ -67,9 +67,6 @@
 	transform: rotate(720deg);
 }
 
-.button-group {
-}
-
 .button-group span{
 	transition-duration: 0.4s;
 	font-size: 18px;
