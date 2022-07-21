@@ -16,7 +16,7 @@ xhttp.onreadystatechange = function() {
 		}
 	}
 };
-xhttp.open("GET", "http://1.15.82.181:8080/api/categorylist", true);
+xhttp.open("GET", "https://api.jcsuf.top/api/categorylist", true);
 xhttp.send();
 
 function post(){
@@ -49,7 +49,7 @@ function post(){
 		if (this.readyState == 4 && this.status == 200) {
 			switch(JSON.parse(this.responseText).code){
 				case 0:
-				location.href = "http://1.15.82.181:8080/sendSuccess.html"
+				location.href = "https://www.jcsuf.top/sendSuccess.html"
 				break;
 				case 1:
 				alert("发布失败，请检查登录状态等内容");
@@ -62,7 +62,7 @@ function post(){
 			}
 		}
 	};
-	xhttp2.open("POST", "http://1.15.82.181:8080/api/postarticle", true);
+	xhttp2.open("POST", "https://api.jcsuf.top/api/postarticle", true);
 	xhttp2.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
 	xhttp2.send("category="+document.getElementById("i3").selectedIndex+"&anonymous="+document.getElementById("i4").checked+"&content="+utf8Str.replaceAll("\n","<br>")+"&title="+utf8Str2.replaceAll("\n","<br>")+"&tag=0");
 }
