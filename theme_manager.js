@@ -17,6 +17,7 @@ function switch_theme(){
 		}
 	};
 	xhttp2.open("GET", "https://api.jcsuf.top/api/themechange?theme="+document.documentElement.getAttribute("theme"), true);
+	xhttp2.withCredentials = true;
 	xhttp2.send();
 }
 
@@ -27,4 +28,5 @@ xhttp.onreadystatechange = function() {
 	}
 };
 xhttp.open("GET", "https://api.jcsuf.top/api/loginstatus", true);
+xhttp.withCredentials = true;
 xhttp.send();
