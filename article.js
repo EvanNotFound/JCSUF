@@ -39,6 +39,7 @@ xhttp.onreadystatechange = function() {
 			}
 		};
 		xhttptrans.open("GET", "https://api.jcsuf.top/api/userinfo?uid="+art.author, true);
+		xhttptrans.withCredentials = true;
 		xhttptrans.send();
 	}
 };
@@ -106,6 +107,7 @@ function post_comment() {
 		}
 	};
 	xhttp2.open("POST", "https://api.jcsuf.top/api/postcomment", true);
+	xhttp2.withCredentials = true;
 	xhttp2.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
 	xhttp2.send(location.href.substring(location.href.indexOf(".html")+6)+"&anonymous="+document.getElementById("i1").checked+"&content="+utf8Str+"&replyto="+fid);
 }
@@ -142,6 +144,7 @@ function processComment(comment) {
 		}
 	};
 	xhttpcom.open("GET", "https://api.jcsuf.top/api/userinfo?uid="+comment.author, true);
+	xhttpcom.withCredentials = true;
 	xhttpcom.send();
 }
 
@@ -177,6 +180,7 @@ function like(floor){
 		}
 	};
 	xhttplike.open("GET", "https://api.jcsuf.top/api/rating?type=like&"+location.href.substring(location.href.indexOf(".html")+6)+"&floor="+floor, true);
+	xhttplike.withCredentials = true;
 	xhttplike.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
 	xhttplike.send();
 }
@@ -210,6 +214,7 @@ function dislike(floor){
 		}
 	};
 	xhttpdislike.open("GET", "https://api.jcsuf.top/api/rating?type=dislike&"+location.href.substring(location.href.indexOf(".html")+6)+"&floor="+floor, true);
+	xhttpdislike.withCredentials = true;
 	xhttpdislike.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
 	xhttpdislike.send();
 }
