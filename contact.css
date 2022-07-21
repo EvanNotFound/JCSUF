@@ -1,0 +1,153 @@
+:root[theme="white"] {
+	--brightness: 255;
+	--brightness-pop: 255;
+	--gradient-0: #df8385;
+	--gradient-1: #be9fa0;
+	--gradient-2: #8fb6bc;
+	--gradient-3: #1eccd8;
+}
+
+:root[theme="dark"] {
+	--brightness: 30;
+	--brightness-pop: 144;
+	--gradient-0: #747474;
+	--gradient-1: #707070;
+	--gradient-2: #5e5e5e;
+	--gradient-3: #4c4c4c;
+}
+
+body {
+	background-image: linear-gradient(25deg, var(--gradient-0), var(--gradient-1), var(--gradient-2), var(--gradient-3));
+	font-family: 'Josefin Sans', 'Noto Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+	margin-left: 18px;
+}
+
+#avatar {
+	background-color: rgb(var(--brightness-pop),var(--brightness-pop),var(--brightness-pop));
+	position: fixed;
+	right: 18px;
+	top: 18px;
+	width: 48px;
+	height: 48px;
+	border-radius: 16px;
+	box-shadow: 0px 0px 5px black;
+	z-index: 99;
+	transition-duration: 0.3s;
+}
+
+#ava-img {
+	border-radius: 24px;
+}
+
+/*右上角详细信息*/
+#more-namefield {
+	display: none;
+	text-align: center;
+	padding-top: 10px;
+	font-size: 20px;
+	transition-duration: 0.3s;
+}
+
+#nfield-bg {
+	display: none;
+	width: 0px;
+	height: 48px;
+	border-radius: 24px;
+	background-color: rgb(212, 212, 212);
+	position: fixed;
+	top: 18px;
+	z-index: 30;
+	text-align: center;
+	transition-duration: 0.3s;
+}
+
+#level-bg {
+	display: none;
+	background-color: rgb(var(--brightness),var(--brightness),var(--brightness));
+}
+
+.foot {
+	position: fixed;
+	left: 35%;
+	right: 35%;
+	bottom: 8px;
+	height: 56px;
+	text-align: center;
+	background-color: white;
+	border-radius: 28px;
+}
+
+.foot-container {
+	margin: 7px;
+}
+
+/*用户头像*/
+.nav-right {
+	position: fixed;
+	right: 72px;
+	top: 16px;
+	height: auto;
+	z-index: 100;
+	text-align: right;
+	border-radius: 16px;
+	padding: 4px 10px 5px 8px;
+	background-color: rgba(255,255,255,0.98);
+	width: auto;
+}
+
+.nav-right span{
+	z-index: 100;
+}
+
+/*顶部菜单*/
+ul {
+	list-style-type: none;
+	border: 1px solid rgba(255, 255, 255, 0.081);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    backdrop-filter:blur(16px) saturate(150%);
+	box-shadow: 5px 5px 20px rgba(29, 29, 29, 0.150);
+	position: absolute;
+	left:10px;
+    top: 10px;
+	right: 10px;
+    border-radius: 18px;
+	background-color: rgba(255, 255, 255, 0.5);
+	transition-duration: 0.3s;
+	margin: 0px 0px;
+}
+
+.contact-method {
+	position: fixed;
+	top: 90px;
+	left: 20px;
+	right: 20px;
+	bottom: 20px;
+	font-size: 26px;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+	background-color: rgba(255, 255, 255, 0);
+	border-radius: 18px;
+}
+
+li a:hover {
+    background-color: rgba(255, 255, 255, 0.549);
+	backdrop-filter: blur(16px) saturate(150%);
+}

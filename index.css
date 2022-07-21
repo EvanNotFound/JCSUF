@@ -1,0 +1,184 @@
+:root[theme="white"]{
+	--container-brightness: 255;
+}
+
+:root[theme="dark"]{
+	--container-brightness: 20;
+}
+
+:root[dtype="default"]{
+	--notice-display: block;
+	--right-width: calc(100% - 420px);
+	--right-margin: 360px;
+}
+
+:root[dtype="mobile"]{
+	--notice-display: none;
+	--right-width: calc(100% - 120px);
+	--right-margin: 60px;
+}
+
+.noticebar {
+	float: left;
+	font-size: 12px;
+}
+
+#notice-content {
+	font-size: 15px;
+}
+
+#notice-modify-time {
+	text-align: right;
+}
+
+/*左侧公告栏*/
+.notice-container {
+	position: fixed;
+    top: 90px;
+	border: 1px solid rgba(255, 255, 255, 0.081);
+	left: 20px;
+	padding: 20px;
+	border-radius: 22px;
+	width: 280px;
+	background-color: rgba(var(--container-brightness),var(--container-brightness),var(--container-brightness), 0.514);
+	float: left;
+	z-index: -1;
+	backdrop-filter: blur(16px) saturate(150%);
+	display: var(--notice-display);
+}
+
+/*右側文章栏*/
+.post-container {
+	position: absolute;
+	width: var(--right-width);
+    top: 90px;
+	right: 20px;
+	border: 1px solid rgba(255, 255, 255, 0.081);
+	padding: 20px;
+	border-radius: 22px;
+	background-color: rgba(var(--container-brightness),var(--container-brightness),var(--container-brightness), 0.514);
+	z-index: -1;
+	margin-left: var(--right-margin);
+}
+
+.foot-container {
+	margin: 7px;
+}
+
+/*用户头像*/
+.nav-right {
+	position: fixed;
+	right: 72px;
+	top: 16px;
+	height: auto;
+	z-index: 100;
+	text-align: right;
+	border-radius: 16px;
+	padding: 4px 10px 5px 8px;
+	background-color: rgba(255,255,255,0.98);
+	width: auto;
+}
+
+.nav-right span{
+	z-index: 100;
+}
+
+.jcss_space {
+	margin-left: 12px;
+}
+
+li a {
+    display: block;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+	background-color: rgba(255, 255, 255, 0);
+	border-radius: 18px;
+}
+
+li a:hover {
+    background-color: rgba(255, 255, 255, 0.549);
+	backdrop-filter: blur(16px) saturate(150%);
+}
+
+/* ########################################### */
+/*           Forums.html                       */
+/* ########################################### */
+
+h1{
+    font-size:16px;
+    font-weight: bolder;
+}
+
+h4{
+    font-size:16px;
+    font-weight: bolder;
+}
+
+.post_title {
+	font-size: 18px;
+	color: #000000;
+}
+
+.post_author {
+	font-size: 14px;
+	color: #000000;
+	font-weight: bolder;
+}
+
+.post_description {
+	font-size: 14px;
+	color: #3b3b3b;
+}
+
+.subforum-sort{
+	background-color: rgba(170, 170, 170, 0.533);
+    padding: 5px;
+    border-radius: 12px;
+    margin: 10px;
+	text-align: center;
+}
+
+.subforum-row{
+    display: grid;
+    grid-template-columns: 60% 10% 30%;
+
+}
+
+.subforum-column{
+    padding: 10px 5px 5px 5px;
+    margin:5px;
+    border-radius: 12px;
+	background-color: rgba(255,255,255, 0.514);
+
+}
+
+.subforum-description *{
+    margin-block: 0;
+    text-align: center;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subforum-icon i{
+    font-size: 45px;
+}
+
+.subforum-devider{
+    display: none;   
+}
+
+#input-row-count{
+	margin: 0 10px;
+	width: 40px;
+}
+
+p {
+	margin-block-start: 3px;
+	margin-block-end: 3px;
+}

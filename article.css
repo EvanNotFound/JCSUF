@@ -1,0 +1,159 @@
+:root[theme="white"]{
+	--container-brightness: 255;
+}
+
+:root[theme="dark"]{
+	--container-brightness: 20;
+}
+
+.floor-body {
+	display: grid;
+	grid-template-columns: 5% 15% 80%;
+}
+
+#title-container {
+	background-color: rgba(var(--container-brightness),var(--container-brightness),var(--container-brightness), 0.514);
+	padding: 16px;
+	margin: 5px;
+	border-radius: 12px;
+	text-align: center;
+	font-size: 24px;
+}
+
+.level {
+	background-color: rgba(var(--container-brightness),var(--container-brightness),var(--container-brightness), 0.514);
+	padding: 16px;
+	margin: 5px;
+	border-radius: 12px;
+}
+
+.userinfo {
+	background-color: rgba(var(--container-brightness),var(--container-brightness),var(--container-brightness), 0.514);
+	padding: 16px;
+	margin: 5px;
+	border-radius: 12px;
+	text-align: center;
+}
+
+.content-container {
+	background-color: rgba(var(--container-brightness),var(--container-brightness),var(--container-brightness), 0.514);
+	padding: 8px 16px 3px 16px;
+	margin: 5px;
+	border-radius: 12px;
+	text-align: right;
+}
+
+.content {
+	text-align: left;
+}
+
+.main-container {
+	position: absolute;
+	left: 20px;
+    top: 90px;
+	right: 20px;
+	padding: 20px;
+	border-radius: 22px;
+	z-index: -1;
+}
+
+.left-avatar {
+	background-color: white;
+	border-radius: 32px;
+	transition-duration: 0.8s;
+}
+
+.left-container :hover {
+	transform: rotate(720deg);
+}
+
+.button-group {
+}
+
+.button-group span{
+	transition-duration: 0.4s;
+	font-size: 18px;
+}
+
+.button-group span:hover{
+	color: rgb(64,180,255);
+	cursor: pointer;
+}
+
+.popout span{
+	transition-duration: 0.4s;
+	color: rgb(68,68,68);
+}
+
+#bgmask {
+	backdrop-filter: blur(8px);
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	z-index: 114513;
+	display: none;
+}
+
+.popout {
+	position: fixed;
+	/*vertical: 100vh-({60vh+80px}[content]+{2px}[padding])/2 = 20vh-41px*/
+	/*horizontal: 100vh-({480px}[content]+{16px}[padding])/2 = 50vh-248px*/
+	margin: calc(20vh - 41px) calc(50vw - 248px);
+	/*vertical padding is 14px less than horizontal due to ~20px (it's 0.83*1.5*16) heading margin*/
+	padding: 2px 16px;
+	width: 480px;
+	/*to adapt both 1366*768 and 1920*1080 screen*/
+	height: calc(60vh + 80px);
+	/*the bgmask element is 114513, it's 1 more*/
+	z-index: 114514;
+	background-color: rgba(255, 255, 255, 0.409);
+	border-radius: 12px;
+	/*use methods like comment(), reward().etc to display*/
+	display: none;
+	backdrop-filter: blur(20px);
+}
+
+#comment-text {
+	width: 460px;
+	/*always keep 160px to display other options*/
+	height: calc(60vh - 100px);
+	background-color: rgba(255, 255, 255, 0.409);
+	border: 0.5px solid rgba(255, 252, 252, 0.089); 
+	border-radius: 12px;
+	padding: 10px;
+	backdrop-filter: blur(20px);
+}
+
+p {
+	margin-block-start: 0.3em;
+	margin-block-end: 0.3em;
+}
+
+#close {
+	display: inline-block;
+	position: relative;
+	top: -7px;
+	width: 20px;
+	height: 4px;
+	background: #333;
+	transform: rotate(45deg);
+}
+
+#close::after {
+	content: '';
+	display: block;
+	width: 20px;
+	height: 4px;
+	background: #333;
+	transform: rotate(-90deg);
+}
+
+#close:hover {
+	background: rgb(114, 3, 3);
+}
+
+#close:hover::after {
+	background: rgb(114, 3, 3);
+}

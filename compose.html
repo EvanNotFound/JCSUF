@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="compose.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <title>发帖 - JCSUF</title>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Noto+Sans">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Josefin+Sans">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng">
+	<link rel="shortcut icon" href="https://jcsuf.evanluo.top/assets/favicon-djkuvjux.png">
+</head>
+
+<body>
+	<!-- 某位开发者说，鳖载着理发店 -->
+	<div class="nav-right">
+	<span id="namefield"><b><big>少女祈祷中...</big></b></span><br>
+	<span id="levelfield">Now Loading</span>
+	<!-- 可以通过在Console中输入display_more()展开视图-->
+	<!-- 可以通过在Console中输入animateLock=-1锁定视图-->
+	<!-- 可以通过在Console中输入animateLock= 0解锁视图-->
+	<div id="avatar" onmouseleave="display_less()">
+		<img onmouseover="display_more()" src="https://upload.thwiki.cc/thumb/0/0a/%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png/100px-%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png" height="48px" id="ava-img">
+		<div id="nfield-bg"><span id="more-namefield"><b>Next Dream...</b></span></div>
+		<div id="level-bg"></div>
+	</div>
+	</div>
+	
+	<ul class="navul">
+		<li class="navli"><a class="nava"href="index.html" title="首页" class="jcss_space">JCSS非官方自由论坛</a></li>
+		<li class="navli"><a class="nava" href="signin.html" title="登录" id="signin-compose">登录</a></li>
+		<li class="navli"><a class="nava" href="post.html" title="帖子专区">帖子专区</a></li>
+		<li class="navli"><a class="nava" href="contact.html"  title="联系管理员">联系管理员</a></li>
+		<li class="navli"><a class="nava" target="_self" title="切换主题" onclick="switch_theme()">切换主题</a></li>
+	</ul>
+
+	<div class="maintitle">
+		发帖
+	</div>
+	
+	<div class="left-container">	
+		<h4>标题</h4><input type="text" id="i1">
+		<h4>正文</h4><textarea type="text" id="i2"></textarea>
+	</div>
+	
+	<div class="right-container">
+		<div class="preview">
+			loading preview...
+		</div>
+		<div class="send">
+			<select id="i3">
+			</select>
+			<div class="anon">
+				<div class="anonwords">
+					是否匿名
+				</div>
+				<div class="anonornot">
+					<input type="checkbox" id="i4">
+					<label for='i4'></label>
+				</div>
+			</div>
+			<button id="button" onclick="invokevote()" class="button">β新建投票</button>
+			<button id="button" onclick="post()" class="button">发送</button>
+		</div>
+		<div id="bgmask">
+		</div>
+		<div class="popout" id="create-vote-container">
+			<h2>投票<span id="cfid"></span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span onclick="minimize_pane()" id="close"></span></h2>
+			<textarea id="v1" placeholder="请输入投票标题"></textarea>
+			不记名投票&nbsp;<input type="checkbox" id="v2">
+			<button onclick="enablevote()" class="button">创建</button>
+		</div>
+	</div>
+
+	<div class="foot">
+		<div class="foot-container">
+		本服务器由 <span id="server-os">念力</span> 强力驱动。<br>
+		已连续<del>稳定</del>运行 <span id="run-time">不知道多少</span> 分钟。
+		</div>
+	</div>
+	<script type="text/javascript" src="default.js"></script>
+	<script type="text/javascript" src="compose.js"></script>
+	<script type="text/javascript" src="theme_manager.js"></script>
+</body>
+</html>
