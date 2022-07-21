@@ -75,6 +75,7 @@ function post(){
 	if(votetitle!=undefined){
 		if(votetype==0){
 			reqparam += "&vote="+votetitle;
+			reqparam += "&votetype=0";
 			reqparam += "&voteend="+voteend;
 			reqparam += "&voteanonymous="+voteanon;
 		}
