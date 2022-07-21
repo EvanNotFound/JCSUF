@@ -7,6 +7,11 @@ setInterval(function(){
 	}
 },100)
 
+var votetitle = undefined;
+var voteend = -1;
+var votetype = 0;
+var voteanon = false;
+
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
 	if (this.readyState == 4 && this.status == 200) {
@@ -66,7 +71,15 @@ function post(){
 	xhttp2.open("POST", "https://api.jcsuf.top/api/postarticle", true);
 	xhttp2.withCredentials = true;
 	xhttp2.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
-	xhttp2.send("category="+document.getElementById("i3").selectedIndex+"&anonymous="+document.getElementById("i4").checked+"&content="+utf8Str.replaceAll("\n","<br>")+"&title="+utf8Str2.replaceAll("\n","<br>")+"&tag=0");
+	var reqparam = "category="+document.getElementById("i3").selectedIndex+"&anonymous="+document.getElementById("i4").checked+"&content="+utf8Str.replaceAll("\n","<br>")+"&title="+utf8Str2.replaceAll("\n","<br>")+"&tag=0";
+	if(votetitle!=undefined){
+		if(votetype==0){
+			reqparam += "&vote="+votetitle;
+			reqparam += "&voteend="+voteend;
+			reqparam += "&voteanonymous="+voteanon;
+		}
+	}
+	xhttp2.send(reqparam);
 }
 
 function invokevote(){
@@ -78,4 +91,9 @@ function invokevote(){
 function minimize_pane(){
 	document.getElementById("bgmask").style.display = "none";
 	document.getElementById("create-vote-container").style.display = "none";
+}
+
+function enablevote(){
+	votetitle = document.getElementById("v1").value;
+	voteanon = document.getElementById("v2").checked;
 }
