@@ -263,5 +263,42 @@ input[type=checkbox]:checked+label::after {
 	display: none;
 }
 
+#v1 {
+	width: 460px;
+	height: 30px;
+	background-color: rgba(255, 255, 255, 0.409);
+	border: 0.5px solid rgba(255, 252, 252, 0.089); 
+	border-radius: 12px;
+	padding: 10px;
+	backdrop-filter: blur(20px);
+}
+
+#close {
+	display: inline-block;
+	position: relative;
+	top: -7px;
+	width: 20px;
+	height: 4px;
+	background: #333;
+	transform: rotate(45deg);
+}
+
+#close::after {
+	content: '';
+	display: block;
+	width: 20px;
+	height: 4px;
+	background: #333;
+	transform: rotate(-90deg);
+}
+
+#close:hover {
+	background: rgb(114, 3, 3);
+}
+
+#close:hover::after {
+	background: rgb(114, 3, 3);
+}
+
 
   
