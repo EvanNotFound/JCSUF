@@ -33,7 +33,7 @@ xhttp.onreadystatechange = function() {
 		}
 	}
 };
-xhttp.open("GET", "http://1.15.82.181:8080/api/loginstatus", true);
+xhttp.open("GET", "https://api.jcsuf.top/api/loginstatus", true);
 xhttp.send();
 
 var xhttp3 = new XMLHttpRequest();
@@ -43,7 +43,7 @@ xhttp3.onreadystatechange = function() {
 		document.getElementById("run-time").innerHTML = Math.round(JSON.parse(this.responseText).ontime/60)/1000;
 	}
 };
-xhttp3.open("GET", "http://1.15.82.181:8080/api/osinfo", true);
+xhttp3.open("GET", "https://api.jcsuf.top/api/osinfo", true);
 xhttp3.send();
 
 //procceed with over-widthed images
@@ -194,7 +194,7 @@ function process_user() {
 			}
 		};
 		xhttptrans.fuckargument = i;
-		xhttptrans.open("GET", "http://1.15.82.181:8080/api/userinfo?uid="+uid, true);
+		xhttptrans.open("GET", "https://api.jcsuf.top/api/userinfo?uid="+uid, true);
 		xhttptrans.send();
 	}
 }
