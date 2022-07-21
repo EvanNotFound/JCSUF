@@ -34,6 +34,7 @@ xhttp.onreadystatechange = function() {
 	}
 };
 xhttp.open("GET", "https://api.jcsuf.top/api/loginstatus", true);
+xhttp.withCredentials = true;
 xhttp.send();
 
 var xhttp3 = new XMLHttpRequest();
@@ -44,6 +45,7 @@ xhttp3.onreadystatechange = function() {
 	}
 };
 xhttp3.open("GET", "https://api.jcsuf.top/api/osinfo", true);
+xhttp3.withCredentials = true;
 xhttp3.send();
 
 //procceed with over-widthed images
@@ -195,6 +197,7 @@ function process_user() {
 		};
 		xhttptrans.fuckargument = i;
 		xhttptrans.open("GET", "https://api.jcsuf.top/api/userinfo?uid="+uid, true);
+		xhttptrans.withCredentials = true;
 		xhttptrans.send();
 	}
 }
