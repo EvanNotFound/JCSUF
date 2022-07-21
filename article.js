@@ -36,6 +36,9 @@ xhttp.onreadystatechange = function() {
 						document.getElementById("author-name-0").innerHTML = JSON.parse(this.responseText).name;
 					}
 				}
+				if(JSON.parse(this.responseText).vote!=undefined){
+					document.getElementById("vote-title").innerHTML = JSON.parse(this.responseText).vote.title;
+				}
 			}
 		};
 		xhttptrans.open("GET", "https://api.jcsuf.top/api/userinfo?uid="+art.author, true);
