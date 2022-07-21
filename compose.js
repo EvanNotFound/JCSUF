@@ -17,6 +17,7 @@ xhttp.onreadystatechange = function() {
 	}
 };
 xhttp.open("GET", "https://api.jcsuf.top/api/categorylist", true);
+xhttp.withCredentials = true;
 xhttp.send();
 
 function post(){
@@ -63,6 +64,7 @@ function post(){
 		}
 	};
 	xhttp2.open("POST", "https://api.jcsuf.top/api/postarticle", true);
+	xhttp2.withCredentials = true;
 	xhttp2.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
 	xhttp2.send("category="+document.getElementById("i3").selectedIndex+"&anonymous="+document.getElementById("i4").checked+"&content="+utf8Str.replaceAll("\n","<br>")+"&title="+utf8Str2.replaceAll("\n","<br>")+"&tag=0");
 }
