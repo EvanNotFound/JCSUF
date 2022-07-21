@@ -50,5 +50,6 @@ function signin(){
 	};
 	xhttp.open("POST", "https://api.jcsuf.top/api/signin", true);
 	xhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded")//必须要设置，被坑了一天啊
+	xhttp.withCredentials = true;
 	xhttp.send("password="+document.getElementById("i2").value+"&mail="+document.getElementById("i1").value);
 }
