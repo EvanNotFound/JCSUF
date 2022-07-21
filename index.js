@@ -5,7 +5,7 @@ xhttp2.onreadystatechange = function() {
 		document.getElementById("notice-modify-time").innerHTML = "JCSUF Team, "+JSON.parse(this.responseText).modify;
 	}
 };
-xhttp2.open("GET", "http://1.15.82.181:8080/api/notice", true);
+xhttp2.open("GET", "https://api.jcsuf.top/api/notice", true);
 xhttp2.send();
 
 var xhttp4 = new XMLHttpRequest();
@@ -25,7 +25,7 @@ xhttp4.onreadystatechange = function() {
 		}
 	}
 };
-xhttp4.open("GET", "http://1.15.82.181:8080/api/fetchnewarticle", true);
+xhttp4.open("GET", "https://api.jcsuf.top/api/fetchnewarticle", true);
 xhttp4.send();
 
 if(window.screen.availWidth<=1080){
