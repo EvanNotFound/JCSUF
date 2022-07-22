@@ -250,4 +250,40 @@ function checked(oid){
 
 function submitvote(){
 	alert("在做了在做了别急");
+	xhsv = new XMLHttpRequest();
+	xhsv.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			switch(JSON.parse(this.responseText).code){
+				case 0:
+				alert("投票成功");
+				break;
+				case 1:
+				alert("该帖子没有投票");
+				break;
+				case 2:
+				alert("请先登录");
+				break;
+				case 3:
+				alert("选中的数量超过上限");
+				break;
+				case 999:
+				alert("管理员正在修正服务器数据，请稍等几秒并重试");
+			}
+		}
+	};
+	xhsv.open("POST", "https://api.jcsuf.top/api/submitvote", true);
+	xhsv.withCredentials = true;
+	xhsv.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
+	var formdata = location.href.substring(location.href.indexOf(".html")+6)+"&selected=";
+	var hasn = false;
+	for(var cbox = 0; cbox < document.getElementsByClassName("option-check").length; cbox++){
+		if(document.getElementsByClassName("option-check")[cbox].checked){
+			if(hasn){
+				formdata += "N"
+			}
+			formdata += str(cbox);
+			hasn = true;
+		}
+	}
+	xhsv.send(location.href.substring(location.href.indexOf(".html")+6)+"&selected=");
 }
