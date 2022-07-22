@@ -6,15 +6,15 @@ var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
 	if (this.readyState == 4 && this.status == 200) {
 		art = JSON.parse(this.responseText);
-		document.getElementById("artcontent").innerHTML = JSON.parse(this.responseText).html.replaceAll("\n","<br>")
-		document.getElementById("title-container").innerHTML = '<b>' + JSON.parse(this.responseText).title + '</b>'
-		authid = JSON.parse(this.responseText).author;
-		if(JSON.parse(this.responseText).vote!=undefined){
+		document.getElementById("artcontent").innerHTML = art.html.replaceAll("\n","<br>")
+		document.getElementById("title-container").innerHTML = '<b>' + art.title + '</b>'
+		authid = art.author;
+		if(art.vote!=undefined){
 			//投票处理逻辑
-			document.getElementById("vote-title").innerHTML = JSON.parse(this.responseText).vote.title;
+			document.getElementById("vote-title").innerHTML = art.vote.title;
 			document.getElementById("vote-container").className = "enabled-vote-pane";
-			Reflect.ownKeys(JSON.parse(this.responseText).vote.detail).forEach(function(key){
-				console.log(key,JSON.parse(this.responseText).vote.detail[key]);
+			Reflect.ownKeys(art.vote.detail).forEach(function(key){
+				console.log(key,art.vote.detail[key]);
 			});
 			if(JSON.parse(this.responseText).vote.anonymousVote){
 				document.getElementById("vote-anon-type").innerHTML = '不记名投票';
