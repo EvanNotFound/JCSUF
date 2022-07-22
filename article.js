@@ -18,14 +18,17 @@ xhttp.onreadystatechange = function() {
 				console.log(key,art.vote.detail[key]);
 				document.getElementById("vote-option-container").innerHTML += '<input type="checkbox" class="option-check" onclick="check-event(this)"><span class="vote-option-name">'+key+'</span>&emsp;<span class="vote-option-count">'+art.vote.detail[key].count+'票</span><br>';
 			});
+			for(var o = 0; o < art.vote.detail.length; o++){
+				document.getElementById("vote-option-container").innerHTML += '<input type="checkbox" class="option-check" onclick="check-event('+o+')"><span class="vote-option-name">'+art.vote.detail[o].option+'</span>&emsp;<span class="vote-option-count">'+art.vote.detail[o].count+'票</span><br>';
+			}
 			if(JSON.parse(this.responseText).vote.anonymousVote){
 				document.getElementById("vote-anon-type").innerHTML = '不记名投票';
 			} else {
 				document.getElementById("vote-anon-type").innerHTML = '记名投票';
 			}
 		}
-		for(var c = 0; c < JSON.parse(this.responseText).ccount; c++) {
-			processComment(JSON.parse(this.responseText).comments[c]);
+		for(var c = 0; c < art.ccount; c++) {
+			processComment(art.comments[c]);
 		}
 		var xhttptrans = new XMLHttpRequest();
 		xhttptrans.onreadystatechange = function() {
