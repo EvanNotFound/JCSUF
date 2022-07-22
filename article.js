@@ -249,7 +249,6 @@ function checked(oid){
 }
 
 function submitvote(){
-	alert("在做了在做了别急");
 	xhsv = new XMLHttpRequest();
 	xhsv.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
@@ -281,7 +280,7 @@ function submitvote(){
 			if(hasn){
 				formdata += "N"
 			}
-			formdata += str(cbox);
+			formdata += cbox;
 			hasn = true;
 		}
 	}
