@@ -8,6 +8,7 @@ xhttp.onreadystatechange = function() {
 		art = JSON.parse(this.responseText);
 		document.getElementById("artcontent").innerHTML = art.html.replaceAll("\n","<br>")
 		document.getElementById("title-container").innerHTML = '<b>' + art.title + '</b>'
+		document.title = art.title + " - JCSUF"
 		authid = art.author;
 		if(art.vote!=undefined){
 			//投票处理逻辑
