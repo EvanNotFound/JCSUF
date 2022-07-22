@@ -15,6 +15,7 @@ xhttp.onreadystatechange = function() {
 			document.getElementById("vote-container").className = "enabled-vote-pane";
 			Reflect.ownKeys(art.vote.detail).forEach(function(key){
 				console.log(key,art.vote.detail[key]);
+				document.getElementById("vote-option-container").innerHTML += '<span class="vote-option-name">'+key+'</span><span class="vote-option-count">'+art.vote.detail[key].count+'</span><br>';
 			});
 			if(JSON.parse(this.responseText).vote.anonymousVote){
 				document.getElementById("vote-anon-type").innerHTML = '不记名投票';
