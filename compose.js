@@ -74,7 +74,17 @@ function post(){
 	var reqparam = "category="+document.getElementById("i3").selectedIndex+"&anonymous="+document.getElementById("i4").checked+"&content="+utf8Str.replaceAll("\n","<br>")+"&title="+utf8Str2.replaceAll("\n","<br>")+"&tag=0";
 	if(votetitle!=undefined){
 		if(votetype==0){
-			reqparam += "&vote="+votetitle;
+			reqparam += "&vote=";
+			for (let i=0; i<votetitle.length;i++){
+				let t = votetitle[i]
+				let text = ''
+				if(t.charCodeAt(0)>=256){
+				  text = "uN1c0dE"+t.charCodeAt(0).toString(16).toLowerCase();
+				}else{
+				  text = encodeURIComponent(t)
+				}
+				reqparam += text
+			 }
 			reqparam += "&votetype=0";
 			reqparam += "&voteend="+voteend;
 			reqparam += "&voteanonymous="+voteanon;
@@ -84,7 +94,7 @@ function post(){
 }
 
 function invokevote(){
-	alert("您正在尝试测试功能，投票创建后暂时无法显示，预计将在7-22完成功能");
+	alert("您正在尝试测试功能，投票创建后暂时无法投票，预计将在今晚或明早完成功能");
 	document.getElementById("bgmask").style.display = "block";
 	document.getElementById("create-vote-container").style.display = "block";
 }

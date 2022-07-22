@@ -10,8 +10,17 @@ xhttp.onreadystatechange = function() {
 		document.getElementById("title-container").innerHTML = '<b>' + JSON.parse(this.responseText).title + '</b>'
 		authid = JSON.parse(this.responseText).author;
 		if(JSON.parse(this.responseText).vote!=undefined){
+			//投票处理逻辑
 			document.getElementById("vote-title").innerHTML = JSON.parse(this.responseText).vote.title;
 			document.getElementById("vote-container").className = "enabled-vote-pane";
+			Reflect.ownKeys(JSON.parse(this.responseText).vote.detail).forEach(function(key){
+				console.log(key,obj[key]);
+			});
+			if(JSON.parse(this.responseText).vote.anonymousVote){
+				document.getElementById("vote-anon-type").innerHTML = '不记名投票';
+			} else {
+				document.getElementById("vote-anon-type").innerHTML = '记名投票';
+			}
 		}
 		for(var c = 0; c < JSON.parse(this.responseText).ccount; c++) {
 			processComment(JSON.parse(this.responseText).comments[c]);

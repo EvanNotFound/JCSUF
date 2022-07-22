@@ -40,7 +40,6 @@
 	padding: 8px 16px 3px 16px;
 	margin: 5px;
 	border-radius: 12px;
-	text-align: right;
 }
 
 .content {
@@ -160,5 +159,18 @@ p {
 	padding: 8px;
 	border-radius: 6px;
 	left: 20px;
-	right: 20px;
+	width: calc(300px + 20vw)
+}
+
+.button-group {
+	text-align: right;
+}
+
+#vote-title {
+	margin-block-start: 0.2em;
+	margin-block-end: 0.2em;
+}
+
+.confirm-vote {
+	float: right;
 }
