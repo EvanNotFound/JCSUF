@@ -165,7 +165,7 @@ p {
 	left: 20px;
 	width: calc(300px + 20vw);
 	margin: 30px 0;
-	display: block;
+	display: block !important;
 }
 
 .button-group {
