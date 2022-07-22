@@ -154,3 +154,11 @@ p {
 #close:hover::after {
 	background: rgb(114, 3, 3);
 }
+
+.enabled-vote-pane {
+	background: white;
+	padding: 8px;
+	border-radius: 6px;
+	left: 20px;
+	right: 20px;
+}

@@ -9,6 +9,10 @@ xhttp.onreadystatechange = function() {
 		document.getElementById("artcontent").innerHTML = JSON.parse(this.responseText).html.replaceAll("\n","<br>")
 		document.getElementById("title-container").innerHTML = '<b>' + JSON.parse(this.responseText).title + '</b>'
 		authid = JSON.parse(this.responseText).author;
+		if(JSON.parse(this.responseText).vote!=undefined){
+			document.getElementById("vote-title").innerHTML = JSON.parse(this.responseText).vote.title;
+			document.getElementById("vote-container").className = "enabled-vote-pane";
+		}
 		for(var c = 0; c < JSON.parse(this.responseText).ccount; c++) {
 			processComment(JSON.parse(this.responseText).comments[c]);
 		}
@@ -35,9 +39,6 @@ xhttp.onreadystatechange = function() {
 						document.getElementById("author-avatar-0").src = JSON.parse(this.responseText).avatar;
 						document.getElementById("author-name-0").innerHTML = JSON.parse(this.responseText).name;
 					}
-				}
-				if(JSON.parse(this.responseText).vote!=undefined){
-					document.getElementById("vote-title").innerHTML = JSON.parse(this.responseText).vote.title;
 				}
 			}
 		};
