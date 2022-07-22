@@ -261,7 +261,7 @@ function submitvote(){
 				alert("该帖子没有投票");
 				break;
 				case 2:
-				alert("请先登录");
+				alert("未登录或已投票");
 				break;
 				case 3:
 				alert("选中的数量超过上限");
