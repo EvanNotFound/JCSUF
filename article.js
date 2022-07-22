@@ -1,6 +1,7 @@
 var fid = 0;
 var authid = -1;
 var art = {};
+var checkmax = 0;
 
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
@@ -15,8 +16,9 @@ xhttp.onreadystatechange = function() {
 			document.getElementById("vote-title").innerHTML = art.vote.title;
 			document.getElementById("vote-container").className = "enabled-vote-pane";
 			for(var o = 0; o < art.vote.detail.length; o++){
-				document.getElementById("vote-option-container").innerHTML += '<input type="checkbox" class="option-check" onclick="check-event('+o+')"><span class="vote-option-name">'+art.vote.detail[o].option+'</span>&emsp;<span class="vote-option-count">'+art.vote.detail[o].count+'票</span><br>';
+				document.getElementById("vote-option-container").innerHTML += '<input type="checkbox" class="option-check" onclick="checked('+o+')" id="option-'+o+'"><span class="vote-option-name">'+art.vote.detail[o].option+'</span>&emsp;<span class="vote-option-count">'+art.vote.detail[o].count+'票</span><br>';
 			}
+			checkmax = art.vote.maximum;
 			if(JSON.parse(this.responseText).vote.anonymousVote){
 				document.getElementById("vote-anon-type").innerHTML = '不记名投票';
 			} else {
@@ -231,4 +233,21 @@ function dislike(floor){
 	xhttpdislike.withCredentials = true;
 	xhttpdislike.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
 	xhttpdislike.send();
+}
+
+function checked(oid){
+	var totalcheck = 0;
+	for(var cbox = 0; cbox < document.getElementsByClassName("option-check").length; cbox++){
+		if(document.getElementsByClassName("option-check")[cbox].checked){
+			totalcheck ++;
+		}
+	}
+	if(totalcheck>maximum){
+		alert("选中内容超过数量上限，请先取消一个");
+		document.getElementById("option-"+oid).checked = false;
+	}
+}
+
+function submitvote(){
+	alert("在做了在做了别急");
 }
