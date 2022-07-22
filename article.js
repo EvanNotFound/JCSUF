@@ -284,5 +284,5 @@ function submitvote(){
 			hasn = true;
 		}
 	}
-	xhsv.send(location.href.substring(location.href.indexOf(".html")+6)+"&selected=");
+	xhsv.send(formdata);
 }
