@@ -14,10 +14,6 @@ xhttp.onreadystatechange = function() {
 			//投票处理逻辑
 			document.getElementById("vote-title").innerHTML = art.vote.title;
 			document.getElementById("vote-container").className = "enabled-vote-pane";
-			Reflect.ownKeys(art.vote.detail).forEach(function(key){
-				console.log(key,art.vote.detail[key]);
-				document.getElementById("vote-option-container").innerHTML += '<input type="checkbox" class="option-check" onclick="check-event(this)"><span class="vote-option-name">'+key+'</span>&emsp;<span class="vote-option-count">'+art.vote.detail[key].count+'票</span><br>';
-			});
 			for(var o = 0; o < art.vote.detail.length; o++){
 				document.getElementById("vote-option-container").innerHTML += '<input type="checkbox" class="option-check" onclick="check-event('+o+')"><span class="vote-option-name">'+art.vote.detail[o].option+'</span>&emsp;<span class="vote-option-count">'+art.vote.detail[o].count+'票</span><br>';
 			}
