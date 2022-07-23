@@ -60,6 +60,7 @@ xhttp.onreadystatechange = function() {
 	}
 };
 xhttp.open("GET", "https://api.jcsuf.top/api/articleinfo"+location.href.substring(location.href.indexOf(".html")+5), true);
+xhttp.withCredentials = true;
 xhttp.send();
 
 function comment(wfid) {
