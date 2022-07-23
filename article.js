@@ -11,6 +11,20 @@ xhttp.onreadystatechange = function() {
 		document.getElementById("title-container").innerHTML = '<b>' + art.title + '</b>'
 		document.title = art.title + " - JCSUF"
 		authid = art.author;
+		if(art.popverify){
+			//如果需要年龄验证
+			document.getElementById("bgmask").style.display = "block";
+			document.getElementById("verify-container").style.display = "block";
+			var xhttpve = new XMLHttpRequest();
+			xhttpve.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					document.getElementById("verify-title").innerHTML = JSON.parse(this.responseText).desc;
+				}
+			};
+			xhttpve.open("GET", "https://api.jcsuf.top/api/getproblem?diff="+art.nsfw_lvl, true);
+			xhttpve.withCredentials = true;
+			xhttpve.send();
+		}
 		if(art.vote!=undefined){
 			//投票处理逻辑
 			document.getElementById("vote-title").innerHTML = art.vote.title;
@@ -27,6 +41,8 @@ xhttp.onreadystatechange = function() {
 		}
 		for(var c = 0; c < art.ccount; c++) {
 			processComment(art.comments[c]);
+			document.getElementById("bgmask").style.display = "block";
+
 		}
 		var xhttptrans = new XMLHttpRequest();
 		xhttptrans.onreadystatechange = function() {
