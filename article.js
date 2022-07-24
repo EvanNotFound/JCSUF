@@ -308,3 +308,7 @@ function submitvote(){
 function access(id,pin){
 	location.href += "&access-id="+id+"&access-pin="+pin;
 }
+
+function back(){
+	location.href = "https://www.jcsuf.top/index.html";
+}
