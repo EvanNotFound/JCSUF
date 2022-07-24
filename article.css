@@ -176,3 +176,7 @@ p {
 	margin-block-start: 0.2em;
 	margin-block-end: 0.2em;
 }
+
+.formula {
+	margin: 0px;
+}

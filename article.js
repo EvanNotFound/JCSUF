@@ -41,8 +41,6 @@ xhttp.onreadystatechange = function() {
 		}
 		for(var c = 0; c < art.ccount; c++) {
 			processComment(art.comments[c]);
-			document.getElementById("bgmask").style.display = "block";
-
 		}
 		var xhttptrans = new XMLHttpRequest();
 		xhttptrans.onreadystatechange = function() {
