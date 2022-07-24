@@ -19,6 +19,9 @@ xhttp.onreadystatechange = function() {
 			xhttpve.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200) {
 					document.getElementById("verify-title").innerHTML = JSON.parse(this.responseText).desc;
+					for(var i in JSON.parse(this.responseText).choices){
+						document.getElementById("verify-answer-container").innerHTML += '<button onclick="access('+JSON.parse(this.responseText).accid+','+JSON.parse(this.responseText).choices[i]+')" class="verify-answer">选这个</button>&emsp;'+i+"<br>";
+					}
 				}
 			};
 			xhttpve.open("GET", "https://api.jcsuf.top/api/getproblem?diff="+art.nsfw_lvl, true);
@@ -300,4 +303,8 @@ function submitvote(){
 		}
 	}
 	xhsv.send(formdata);
+}
+
+function access(id,pin){
+	location.href += "&access-id="+id+"&access-pin="+pin;
 }
