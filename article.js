@@ -149,7 +149,7 @@ function post_comment() {
 function processComment(comment) {
 	document.getElementById("main-content").innerHTML += '<div class="floor-body" id="floor-'+comment.floor+'"></div>'
 	document.getElementById("floor-"+comment.floor).innerHTML += '<div class="level">#'+comment.floor+'</div>'
-	document.getElementById("floor-"+comment.floor).innerHTML += '<div class="userinfo" id="author-comment'+comment.floor+'"><img src="https://upload.thwiki.cc/thumb/0/0a/%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png/100px-%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png" height="64px" class="left-avatar" id="author-avatar-'+comment.floor+'" style="margin: 0 auto;"><br><b><span id="author-name-'+comment.floor+'">作者</span></b></div>'
+	document.getElementById("floor-"+comment.floor).innerHTML += '<div class="userinfo" id="author-comment'+comment.floor+'"><img src="https://upload.thwiki.cc/thumb/0/0a/%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png/100px-%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png" height="64px" class="left-avatar" id="author-avatar-'+comment.floor+'" style="margin: 0 auto;"><br><b><span id="author-name-'+comment.floor+'">作者</span></b><br><span id="author-level-'+comment.floor+'">LvXX</span></div>'
 	document.getElementById("floor-"+comment.floor).innerHTML += '<div class="content-container"><div class="content" id="content-'+comment.floor+'"><font style="color:rgb(68,68,100);font-size:10px">Reply to #'+comment.quote+'</font>'+comment.html+'</div><div class="button-group"><span onclick="comment('+comment.floor+')">评论</span> <span onclick="like('+comment.floor+')">点赞</span> <span onclick="reward('+comment.floor+')">奖励</span> <span onclick="dislike('+comment.floor+')">点踩</span> <span onclick="report('+comment.floor+')">举报</span></div></div>'
 	var xhttpcom = new XMLHttpRequest();
 	xhttpcom.onreadystatechange = function() {
@@ -159,10 +159,12 @@ function processComment(comment) {
 					//匿名作者是本人
 					document.getElementById("author-avatar-"+comment.floor).src = JSON.parse(this.responseText).avatar;
 					document.getElementById("author-name-"+comment.floor).innerHTML = JSON.parse(this.responseText).name+"<font color='#a0a0a0'>（已匿名）</font>";
+					process_author_level(JSON.parse(this.responseText).exp);
 				} else {
 					//本人发布且非匿名
 					document.getElementById("author-avatar-"+comment.floor).src = JSON.parse(this.responseText).avatar;
 					document.getElementById("author-name-"+comment.floor).innerHTML = JSON.parse(this.responseText).name+"<font color='#a0a0a0'>（你）</font>";
+					process_author_level(JSON.parse(this.responseText).exp);
 				}
 			} else {
 				//不是本人
@@ -173,6 +175,7 @@ function processComment(comment) {
 					//非匿名者
 					document.getElementById("author-avatar-"+comment.floor).src = JSON.parse(this.responseText).avatar;
 					document.getElementById("author-name-"+comment.floor).innerHTML = JSON.parse(this.responseText).name;
+					process_author_level(JSON.parse(this.responseText).exp);
 				}
 			}
 		}
