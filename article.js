@@ -53,10 +53,12 @@ xhttp.onreadystatechange = function() {
 						//匿名作者是本人
 						document.getElementById("author-avatar-0").src = JSON.parse(this.responseText).avatar;
 						document.getElementById("author-name-0").innerHTML = JSON.parse(this.responseText).name+"<font color='#a0a0a0'>（已匿名）</font>";
+						process_author_level(JSON.parse(this.responseText).exp, 0);
 					} else {
 						//本人发布且非匿名
 						document.getElementById("author-avatar-0").src = JSON.parse(this.responseText).avatar;
 						document.getElementById("author-name-0").innerHTML = JSON.parse(this.responseText).name+"<font color='#a0a0a0'>（你）</font>";
+						process_author_level(JSON.parse(this.responseText).exp, 0);
 					}
 				} else {
 					//不是本人
@@ -67,6 +69,7 @@ xhttp.onreadystatechange = function() {
 						//非匿名者
 						document.getElementById("author-avatar-0").src = JSON.parse(this.responseText).avatar;
 						document.getElementById("author-name-0").innerHTML = JSON.parse(this.responseText).name;
+						process_author_level(JSON.parse(this.responseText).exp, 0);
 					}
 				}
 			}
@@ -159,12 +162,12 @@ function processComment(comment) {
 					//匿名作者是本人
 					document.getElementById("author-avatar-"+comment.floor).src = JSON.parse(this.responseText).avatar;
 					document.getElementById("author-name-"+comment.floor).innerHTML = JSON.parse(this.responseText).name+"<font color='#a0a0a0'>（已匿名）</font>";
-					process_author_level(JSON.parse(this.responseText).exp);
+					process_author_level(JSON.parse(this.responseText).exp, comment.floor);
 				} else {
 					//本人发布且非匿名
 					document.getElementById("author-avatar-"+comment.floor).src = JSON.parse(this.responseText).avatar;
 					document.getElementById("author-name-"+comment.floor).innerHTML = JSON.parse(this.responseText).name+"<font color='#a0a0a0'>（你）</font>";
-					process_author_level(JSON.parse(this.responseText).exp);
+					process_author_level(JSON.parse(this.responseText).exp, comment.floor);
 				}
 			} else {
 				//不是本人
@@ -175,7 +178,7 @@ function processComment(comment) {
 					//非匿名者
 					document.getElementById("author-avatar-"+comment.floor).src = JSON.parse(this.responseText).avatar;
 					document.getElementById("author-name-"+comment.floor).innerHTML = JSON.parse(this.responseText).name;
-					process_author_level(JSON.parse(this.responseText).exp);
+					process_author_level(JSON.parse(this.responseText).exp, comment.floor);
 				}
 			}
 		}
