@@ -28,6 +28,10 @@ xhttp.onreadystatechange = function() {
 			xhttpve.withCredentials = true;
 			xhttpve.send();
 		}
+		if(art.political){
+			document.getElementById("bgmask").style.display = "block";
+			document.getElementById("report-container").style.display = "block";
+		}
 		if(art.vote!=undefined){
 			//投票处理逻辑
 			document.getElementById("vote-title").innerHTML = art.vote.title;
@@ -109,6 +113,7 @@ function minimize_pane() {
 	document.getElementById("comment-container").style.display = "none";
 	document.getElementById("reward-container").style.display = "none";
 	document.getElementById("report-container").style.display = "none";
+	document.getElementById("political-container").style.display = "none";
 }
 
 function post_comment() {
