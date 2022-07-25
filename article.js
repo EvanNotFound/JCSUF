@@ -30,7 +30,7 @@ xhttp.onreadystatechange = function() {
 		}
 		if(art.political){
 			document.getElementById("bgmask").style.display = "block";
-			document.getElementById("report-container").style.display = "block";
+			document.getElementById("political-container").style.display = "block";
 		}
 		if(art.vote!=undefined){
 			//投票处理逻辑
