@@ -41,7 +41,7 @@ h4{
 	border-radius: 18px;
 	position: absolute;
 	padding: 20px;
-	width: 60vw;
+	width: calc(60vw - 100px);
 	top: 60px;
 	font-size: 26px;
 	margin-left: 20px;
@@ -98,7 +98,7 @@ h4{
 }
 
 .right-container {
-	width: 40vw;
+	width: calc(40vw - 20px);
 	position:absolute;
 	top: 180px;
 	margin-left: 10px;
