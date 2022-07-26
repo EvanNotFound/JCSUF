@@ -41,7 +41,7 @@ h4{
 	border-radius: 18px;
 	position: absolute;
 	padding: 20px;
-	width: 680px;
+	width: 60wv;
 	top: 60px;
 	font-size: 26px;
 	margin-left: 20px;
@@ -98,7 +98,7 @@ h4{
 }
 
 .right-container {
-	width: calc(100% - 800px);
+	width: 40vw;
 	position:absolute;
 	top: 180px;
 	margin-left: 10px;
@@ -298,6 +298,14 @@ input[type=checkbox]:checked+label::after {
 
 #close:hover::after {
 	background: rgb(114, 3, 3);
+}
+
+.preview {
+	font-size: 14px;
+}
+
+.preview ul {
+	list-style-type: disc;
 }
 
 
