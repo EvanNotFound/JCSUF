@@ -68,6 +68,7 @@ xhttp.onreadystatechange = function() {
 					//不是本人
 					if(art.fromAnonymous){
 						//匿名者
+						document.getElementById("author-avatar-0").style.backgroundColor = str_pad(this.fuckargument.toString(16));
 						document.getElementById("author-name-0").innerHTML = "<font color='#a0a0a0'>匿名</font>";
 					} else {
 						//非匿名者
@@ -80,6 +81,7 @@ xhttp.onreadystatechange = function() {
 		};
 		xhttptrans.open("GET", "https://api.jcsuf.top/api/userinfo?uid="+art.author, true);
 		xhttptrans.withCredentials = true;
+		xhttptrans.fuckargument = art.author;
 		xhttptrans.send();
 	}
 };
@@ -178,6 +180,7 @@ function processComment(comment) {
 				//不是本人
 				if(comment.fromAnonymous){
 					//匿名者
+					document.getElementById("author-avatar-"+comment.floor).style.backgroundColor = str_pad(this.fuckargument.toString(16));
 					document.getElementById("author-name-"+comment.floor).innerHTML = "<font color='#a0a0a0'>匿名</font>";
 				} else {
 					//非匿名者
@@ -189,6 +192,7 @@ function processComment(comment) {
 		}
 	};
 	xhttpcom.open("GET", "https://api.jcsuf.top/api/userinfo?uid="+comment.author, true);
+	xhttpcom.fuckargument = comment.author;
 	xhttpcom.withCredentials = true;
 	xhttpcom.send();
 }
@@ -322,4 +326,10 @@ function access(id,pin){
 
 function back(){
 	location.href = "https://www.jcsuf.top/index.html";
+}
+
+function str_pad(oldstr){
+	var zero = '#000';
+	var tmp = 4-oldstr.length;
+	return zero.substring(0,tmp) + oldstr;
 }
