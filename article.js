@@ -52,6 +52,7 @@ xhttp.onreadystatechange = function() {
 		for(var c = 0; c < art.ccount; c++) {
 			processComment(art.comments[c]);
 		}
+		document.getElementById("rating-0").innerHTML = "↑ "+art.like+" ↓ "+art.dislike;
 		var xhttptrans = new XMLHttpRequest();
 		xhttptrans.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
