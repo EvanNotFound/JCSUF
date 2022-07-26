@@ -31,6 +31,9 @@ xhttp.onreadystatechange = function() {
 			document.getElementById("signin-compose").innerHTML = "发帖";
 			document.getElementById("signin-compose").href = "compose.html";
 		}
+		if(document.getElementById("message-count")!=undefined){
+			document.getElementById("message-count").innerHTML = JSON.parse(this.responseText).unreadmsgcount;
+		}
 	}
 };
 xhttp.open("GET", "https://api.jcsuf.top/api/loginstatus", true);
