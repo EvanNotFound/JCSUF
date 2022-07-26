@@ -2,6 +2,8 @@ var fid = 0;
 var authid = -1;
 var art = {};
 var checkmax = 0;
+var finishcount = 0;
+var targetcount = 0;
 
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
@@ -11,6 +13,7 @@ xhttp.onreadystatechange = function() {
 		document.getElementById("title-container").innerHTML = '<b>' + art.title + '</b>'
 		document.title = art.title + " - JCSUF"
 		authid = art.author;
+		targetcount = art.ccount;
 		if(art.popverify){
 			//如果需要年龄验证
 			document.getElementById("bgmask").style.display = "block";
@@ -188,6 +191,15 @@ function processComment(comment) {
 					document.getElementById("author-name-"+comment.floor).innerHTML = JSON.parse(this.responseText).name;
 					process_author_level(JSON.parse(this.responseText).exp, comment.floor);
 				}
+			}
+			finishcount ++;
+			if(finishcount==targetcount && location.href.indexOf("&skiptofloor")!=-1){
+				setTimeout(function(){
+					var skipcont = location.href.substring(location.href.indexOf("&skiptofloor=")+13)
+					if(skipcont.indexOf("&")!=-1) skipcont = skipcont.substring(0,skipcont.indexOf("&"))
+					document.getElementById("floor-"+skipcont).scrollIntoView();
+					scrollTo({top:scrollY-100})
+				}, 500)
 			}
 		}
 	};
