@@ -28,11 +28,8 @@ body {
 }
  
 
-.navul a {
+a {
     text-decoration: none;
-    color: white;
-    font-size: 24px;
-	margin-left: 18px;
 }
 
 /*头像*/
@@ -152,6 +149,8 @@ body {
 	border-radius: 18px;
 	transition-duration: 50ms;
 	transition-timing-function: ease-out;
+    font-size: 24px;
+	margin-left: 18px;
 }
 
 .navul li a:hover {
