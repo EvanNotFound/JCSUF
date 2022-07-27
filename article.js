@@ -161,10 +161,10 @@ function post_comment() {
 }
 
 function processComment(comment) {
-	document.getElementById("main-content").innerHTML += '<div class="floor-body" id="floor-'+comment.floor+'"></div>'
+	document.getElementById("main-content").innerHTML += '<div class="floor-body" highlight="no" id="floor-'+comment.floor+'"></div>'
 	document.getElementById("floor-"+comment.floor).innerHTML += '<div class="level">#'+comment.floor+'</div>'
 	document.getElementById("floor-"+comment.floor).innerHTML += '<div class="userinfo" id="author-comment'+comment.floor+'"><img src="https://upload.thwiki.cc/thumb/0/0a/%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png/100px-%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png" height="64px" class="left-avatar" id="author-avatar-'+comment.floor+'" style="margin: 0 auto;"><br><b><span id="author-name-'+comment.floor+'">作者</span></b><br><span id="author-level-'+comment.floor+'">LvXX</span></div>'
-	document.getElementById("floor-"+comment.floor).innerHTML += '<div class="content-container"><div class="content" id="content-'+comment.floor+'"><font style="color:rgb(68,68,100);font-size:10px">Reply to #'+comment.quote+'</font>'+comment.html+'</div><div class="button-group"><p class="rating-info" id="rating-'+comment.floor+'">'+(comment.likedbyyou?'<font color="#3cf">↑ ':'↑ ')+comment.like+(comment.likedbyyou?'</font> ':' ')+(comment.dislikedbyyou?'<font color="#f31">↓ ':'↓ ')+comment.dislike+(comment.dislikedbyyou?'</font>':'')+'</p><span onclick="comment('+comment.floor+')">评论</span> <span onclick="like('+comment.floor+')">点赞</span> <span onclick="reward('+comment.floor+')">奖励</span> <span onclick="dislike('+comment.floor+')">点踩</span> <span onclick="report('+comment.floor+')">举报</span></div></div>'
+	document.getElementById("floor-"+comment.floor).innerHTML += '<div class="content-container"><div class="content" id="content-'+comment.floor+'"><font style="color:rgb(68,68,100);font-size:10px">Reply to <span onclick="skipflr('+comment.quote+') style="color:rgb(84,84,120)">"#'+comment.quote+'</span></font>'+comment.html+'</div><div class="button-group"><p class="rating-info" id="rating-'+comment.floor+'">'+(comment.likedbyyou?'<font color="#3cf">↑ ':'↑ ')+comment.like+(comment.likedbyyou?'</font> ':' ')+(comment.dislikedbyyou?'<font color="#f31">↓ ':'↓ ')+comment.dislike+(comment.dislikedbyyou?'</font>':'')+'</p><span onclick="comment('+comment.floor+')">评论</span> <span onclick="like('+comment.floor+')">点赞</span> <span onclick="reward('+comment.floor+')">奖励</span> <span onclick="dislike('+comment.floor+')">点踩</span> <span onclick="report('+comment.floor+')">举报</span></div></div>'
 	var xhttpcom = new XMLHttpRequest();
 	xhttpcom.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
@@ -198,8 +198,7 @@ function processComment(comment) {
 				setTimeout(function(){
 					var skipcont = location.href.substring(location.href.indexOf("&skiptofloor=")+13)
 					if(skipcont.indexOf("&")!=-1) skipcont = skipcont.substring(0,skipcont.indexOf("&"))
-					document.getElementById("floor-"+skipcont).scrollIntoView();
-					scrollTo({top:scrollY-100})
+					skipflr(skipcont)
 				}, 500)
 			}
 		}
@@ -345,4 +344,11 @@ function str_pad(oldstr){
 	var zero = '#000';
 	var tmp = 4-oldstr.length;
 	return zero.substring(0,tmp) + oldstr;
+}
+
+function skipflr(floor){
+	document.getElementById("floor-"+floor).scrollIntoView();
+	scrollTo({top:scrollY-100})
+	document.getElementById("floor-"+floor).setAttribute("highlight","yes")
+	setTimeout(document.getElementById("floor-"+floor).setAttribute("highlight","no"),500)
 }
