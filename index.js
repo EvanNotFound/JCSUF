@@ -129,4 +129,9 @@ function reloadnew() {
 	xhttpreload.open("GET", "https://api.jcsuf.top/api/fetchnewarticle?pc="+document.getElementById("input-row-count").value, true);
 	xhttpreload.withCredentials = true;
 	xhttpreload.send();
+
+	function minimize_pane(){
+		document.getElementById("bgmask").style.display = "none";
+		document.getElementById("important-notice-container").style.display = "none";
+	}
 }

@@ -183,3 +183,31 @@ p {
 	margin-block-start: 3px;
 	margin-block-end: 3px;
 }
+
+#bgmask {
+	backdrop-filter: blur(8px);
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	z-index: 114513;
+}
+
+.popout {
+	position: fixed;
+	/*vertical: 100vh-({60vh+80px}[content]+{2px}[padding])/2 = 20vh-41px*/
+	/*horizontal: 100vh-({480px}[content]+{16px}[padding])/2 = 50vh-248px*/
+	margin: calc(20vh - 41px) calc(50vw - 248px);
+	/*vertical padding is 14px less than horizontal due to ~20px (it's 0.83*1.5*16) heading margin*/
+	padding: 2px 16px;
+	width: 480px;
+	/*to adapt both 1366*768 and 1920*1080 screen*/
+	height: calc(60vh + 80px);
+	/*the bgmask element is 114513, it's 1 more*/
+	z-index: 114514;
+	background-color: rgba(255, 255, 255, 0.409);
+	border-radius: 12px;
+	/*use methods like comment(), reward().etc to display*/
+	backdrop-filter: blur(20px);
+}
