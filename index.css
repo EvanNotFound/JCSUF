@@ -192,6 +192,7 @@ p {
 	right: 0px;
 	bottom: 0px;
 	z-index: 114513;
+	display: none;
 }
 
 .popout {
@@ -210,6 +211,7 @@ p {
 	border-radius: 12px;
 	/*use methods like comment(), reward().etc to display*/
 	backdrop-filter: blur(20px);
+	display: none;
 }
 
 #close {

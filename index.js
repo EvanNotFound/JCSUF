@@ -135,3 +135,8 @@ function minimize_pane(){
 	document.getElementById("bgmask").style.display = "none";
 	document.getElementById("important-notice-container").style.display = "none";
 }
+
+function display_notice(){
+	document.getElementById("bgmask").style.display = "block";
+	document.getElementById("important-notice-container").style.display = "block";
+}

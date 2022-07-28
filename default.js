@@ -33,8 +33,8 @@ xhttp.onreadystatechange = function() {
 		}
 		if(document.getElementById("message-count")!=undefined){
 			document.getElementById("message-count").innerHTML = JSON.parse(this.responseText).unreadmsgcount;
-			if(JSON.parse(this.responseText).last_seen>1659016607){
-				minimize_pane()
+			if(JSON.parse(this.responseText).last_seen<1659016607){
+				display_notice()
 			}
 		}
 	}
