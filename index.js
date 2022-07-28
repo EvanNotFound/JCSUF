@@ -22,7 +22,7 @@ xhttp4.onreadystatechange = function() {
 			document.getElementById("article-stat-"+rarts[i].id).innerHTML += '<p>+'+rarts[i].like+'</p>'
 			document.getElementById("article-stat-"+rarts[i].id).innerHTML += '<p>-'+rarts[i].dislike+'</p>'
 			document.getElementById("article-"+rarts[i].id).innerHTML += '<div class="subforum-info subforum-column"><p id="article-info-'+rarts[i].id+'"></p></div>'
-			document.getElementById("article-info-"+art.id).innerHTML = '<a href="user.html?uid='+art.author+'" class="post_author"><font color="#333333" style="background-color:#aaa">		</font></a> 发布于 '+formatDateTime(rarts[i].ctime)+'<br><span style="margin-left:18px">'+rarts[i].ccount+' 评论</span><br><span style="margin-left:18px">'+rarts[i].view+' 阅读</span>'
+			document.getElementById("article-info-"+art.id).innerHTML = '<a href="user.html?uid='+rarts[i].author+'" class="post_author"><font color="#333333" style="background-color:#aaa;">&emsp;&emsp;&emsp;&emsp;&emsp;</font></a> 发布于 '+formatDateTime(rarts[i].ctime)+'<br><span style="margin-left:18px">'+rarts[i].ccount+' 评论</span><br><span style="margin-left:18px">'+rarts[i].view+' 阅读</span>'
 			transname(rarts[i])
 		}
 	}
