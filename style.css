@@ -73,11 +73,6 @@ a {
 	transition-duration: 0.3s;
 }
 
-#level-bg {
-	display: none;
-	background-color: rgb(var(--brightness),var(--brightness),var(--brightness));
-}
-
 .foot {
 	position: fixed;
 	left: 35%;
@@ -176,5 +171,13 @@ a {
 	-moz-box-shadow: #ccc 0px 10px 10px;
 	box-shadow: 5px 5px 20px rgba(29, 29, 29, 0.208);
 	background-color: rgba(var(--container-brightness), var(--container-brightness), var(--container-brightness), 0.3);
+}
+
+#level-bg {
+    display: none;
+    height: 6px;
+    background-color: gray;
+    border-radius: 3px;
+    margin: 0px 4px;
 }
 
