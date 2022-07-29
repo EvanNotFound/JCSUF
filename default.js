@@ -156,12 +156,12 @@ function process_author_level(exp, floor){
 function display_more() {
 	if(animateLock==0){
 		animateLock=1
-		document.getElementById("avatar").style.width = "240px"
+		document.getElementById("avatar").style.width = "480px"
 		setTimeout(function(){document.getElementById("avatar").style.height = "360px"},80)
 		setTimeout(function(){
 			document.getElementById("more-namefield").style.display = "block"
 			document.getElementById("nfield-bg").style.display = "block"
-			document.getElementById("nfield-bg").style.width = "192px"
+			document.getElementById("nfield-bg").style.width = "432px"
 		},80)
 		setTimeout(function(){animateLock=0},390)
 	} else if(registerLock==0){
