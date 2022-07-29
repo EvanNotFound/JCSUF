@@ -17,7 +17,7 @@ xhttp.onreadystatechange = function() {
 	if (this.readyState == 4 && this.status == 200) {
 		var rbody = JSON.parse(this.responseText)
 		for(let i = 0; i < rbody.length; i++){
-			document.getElementById("i3").innerHTML += '<option value="'+rbody[i].id+'">'+rbody[i].name+'</option>';
+			if(rbody[i].id<1000) document.getElementById("i3").innerHTML += '<option value="'+rbody[i].id+'">'+rbody[i].name+'</option>';
 		}
 	}
 };
