@@ -52,7 +52,15 @@
 			loading preview...
 		</div>
 		<div class="send">
+			<select onchange="loadbranch(this.value)">
+				<option value="-1">
+					--未选择--
+				</option>
+			</select>
 			<select id="i3">
+				<option value="-1">
+					--未选择--
+				</option>
 			</select>
 			<div class="anon">
 				<div class="anonwords">
@@ -79,6 +87,15 @@
 				<div class="anonornot">
 					<input type="checkbox" id="i6">
 					<label for='i6'></label>
+				</div>
+			</div>
+			<div class="anon">
+				<div class="anonwords">
+					是否涉及政治
+				</div>
+				<div class="anonornot">
+					<input type="checkbox" id="i7">
+					<label for='i7'></label>
 				</div>
 			</div>
 			<button id="button" onclick="invokevote()" class="button">β新建投票</button>
