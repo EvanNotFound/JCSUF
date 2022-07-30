@@ -10,7 +10,7 @@ xhttp.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
 				var rbody = JSON.parse(this.responseText)
 				for(let i = 0; i < rbody.length; i++){
-					document.getElementById("parent-banner-"+rbody[i].parent)[0].innerHTML += '<div id="category-banner-'+rbody[i].id+'"><h1>'+rbody[i].name+'</h1></div>';
+					document.getElementById("parent-banner-"+rbody[i].parent).innerHTML += '<div id="category-banner-'+rbody[i].id+'"><h1>'+rbody[i].name+'</h1></div>';
 				}
 			}
 		};
