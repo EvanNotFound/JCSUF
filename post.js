@@ -17,7 +17,7 @@ xhttp.onreadystatechange = function() {
 					document.getElementById("category-"+rbody[i].id).innerHTML += '<div class="subforum-stats subforum-column center" id="category-stat-'+rbody[i].id+'"></div>'
 					document.getElementById("category-stat-"+rbody[i].id).innerHTML += '<p>'+rbody[i].count+'</p>'
 					document.getElementById("category-"+rbody[i].id).innerHTML += '<div class="subforum-info subforum-column"><p id="category-info-'+rbody[i].id+'"></p></div>'
-					document.getElementById("category-info-"+rbody[i].id).innerHTML = '最后一篇文章 由 <a href="user.html?uid='+(-1)+'" class="post_author"><font color="#333333" style="background-color:#aaa;">&emsp;&emsp;&emsp;&emsp;&emsp;</font></a> 发布于 '+formatDateTime(0)
+					document.getElementById("category-info-"+rbody[i].id).innerHTML = '<a href="article.html?aid='+rbody[i].last_article.aid+'">最后一篇文章</a> 由 <a href="user.html?uid='+rbody[i].last_article.author+'" class="post_author"><font color="#333333" style="background-color:#aaa;">&emsp;&emsp;&emsp;&emsp;&emsp;</font></a> 发布于 '+formatDateTime(rbody[i].last_article.post_time)
 				}
 			}
 		};
