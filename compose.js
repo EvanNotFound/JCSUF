@@ -63,6 +63,9 @@ function post(){
 				case 2:
 				alert("您已被封禁");
 				break;
+				case 3:
+				alert("未选择分区");
+				break;
 				case 999:
 				alert("管理员正在修正服务器数据，请稍等几秒并重试");
 			}
