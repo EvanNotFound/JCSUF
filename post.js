@@ -40,15 +40,15 @@ function transname2(cate){
 		if (this.readyState == 4 && this.status == 200) {
 			if(currentid==cate.last_article.author){
 				if(cate.last_article.anonymous){
-					document.getElementById("last-author-"+cate.id).innerHTML = '1'
+					document.getElementById("last-author-"+cate.id).innerHTML = '<font color="#6699aa">'+JSON.parse(this.responseText).name+' (you, 匿名)</font>'
 				} else {
-					document.getElementById("last-author-"+cate.id).innerHTML = '2'
+					document.getElementById("last-author-"+cate.id).innerHTML = '<font color="#3399aa">'+JSON.parse(this.responseText).name+' (you)</font>'
 				}
 			} else {
 				if(cate.last_article.anonymous){
-					document.getElementById("last-author-"+cate.id).innerHTML = '3'
+					document.getElementById("last-author-"+cate.id).innerHTML = '<font color="#AAAA00">匿名</font>'
 				} else {
-					document.getElementById("last-author-"+cate.id).innerHTML = '4'
+					document.getElementById("last-author-"+cate.id).innerHTML = JSON.parse(this.responseText).name
 				}
 			}
 		}
