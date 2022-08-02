@@ -12,7 +12,7 @@ xhttp.onreadystatechange = function() {
 				for(let i = 0; i < rbody.length; i++){
 					document.getElementById("parent-section-"+rbody[i].parent).innerHTML += '<div class="subforum-row" id="category-'+rbody[i].id+'"></div>'
 					document.getElementById("category-"+rbody[i].id).innerHTML += '<div class="subforum-description subforum-column" id="category-desc-'+rbody[i].id+'"></div>'
-					document.getElementById("category-desc-"+rbody[i].id).innerHTML += '<h4><a href="category.html?cid='+rbody[i].id+'" class="post_title center">'+rbody[i].name+'</a></h4>'
+					document.getElementById("category-desc-"+rbody[i].id).innerHTML += '<h4><a href="category.html?cate='+rbody[i].id+'" class="post_title center">'+rbody[i].name+'</a></h4>'
 					document.getElementById("category-desc-"+rbody[i].id).innerHTML += '<p class="post_description">'+'未实装捏'+'</p>'
 					document.getElementById("category-"+rbody[i].id).innerHTML += '<div class="subforum-stats subforum-column center" id="category-stat-'+rbody[i].id+'"></div>'
 					document.getElementById("category-stat-"+rbody[i].id).innerHTML += '<p>'+rbody[i].count+'</p>'
