@@ -102,6 +102,39 @@ li a:hover {
     background-color: rgba(255, 255, 255, 0.549);
 }
 
+.inline-button {
+	display: inline-block;
+	border-radius: 6px;
+	padding: 4px 10px;
+	background-color: rgba(255, 255, 255, 0.3);
+	border: 1px solid rgba(255, 255, 255, 0.081);
+	color: rgb(0, 0, 0);
+	text-align: center;
+	text-decoration: none;
+	transition-duration: 0.3s;
+	cursor: pointer;
+}
+
+.inline-button:hover{
+	-webkit-box-shadow: #ccc 0px 10px 10px;
+	-moz-box-shadow: #ccc 0px 10px 10px;
+	box-shadow: 5px 5px 20px rgba(29, 29, 29, 0.208);
+	background-color: rgba(255,255,255, 0.3);
+}
+
+.num-select {
+	display: inline-block;
+	border-radius: 6px;
+	margin:auto;
+	padding: 3px 0px;
+	background-color: rgba(255, 255, 255, 0.3);
+	border: 1px solid rgba(255, 255, 255, 0.081);
+	color: rgb(0, 0, 0);
+	text-align: center;
+	text-decoration: none;
+	transition-duration: 0.3s;
+}
+
 /* ########################################### */
 /*           Forums.html                       */
 /* ########################################### */
