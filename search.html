@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" beta="yes">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="category.css">
+	<link rel="stylesheet" type="text/css" href="search.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
     <title>JCSS非官方自由论坛 - JCSUF</title>
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Noto+Sans">
@@ -42,40 +42,24 @@
 		<li><a target="_self" title="切换主题" onclick="switch_theme()">切换主题</a></li>
 	</div>
 
-	<div class="maintitle" id="category-displayer">
-		<span id="category-title">什么专区 —— 什么分类</span>
-		<p id="category-desc">你问我我也不知道</p>
+
+	<div class="notice-container">	
+		<div class="noticebar">
+			<div id="notice-content"></div>
+			<div id="notice-modify-time"></div>
+		</div>
 	</div>
 
 	<div class="post-container">
-		<div class="subforum-sort">
-			<h1>置顶内容</h1>
+		<div class="subforum-message-count">
+			您的信箱有 <span id="message-count">0</span> 条消息（查看功能没在写）
 		</div>
-		<div class="subforum-row">
-
-			<div class="subforum-description subforum-column">
-				<h4><a href="aaa" class="post_title center">NotFound 404</a></h4>
-				<p class="post_description">论坛规则</p>
-			</div>
-			<div class="subforum-stats subforum-column center">
-				<span>必看</span>
-			</div>
-			<div class="subforum-info subforum-column">
-				<p>
-				<a href="" class="post_author">Last post</a> by <a href="" class="post_author">香港记者</a>
-				<br>on <small>1990/6/3</small>
-			</p>
-			</div>
-		</div>
-
 		<!--这又是一部分-->
 		<div class="subforum-sort">
-			<h1>帖子列表</h1>
-			<div class="row-count-control">在页面上显示<input type="number" value="10" id="input-row-count" min="5" max="50">篇文章&emsp;第<input type="number" value="1" id="input-row-page" min="1">页&emsp;<button onclick="reloadnew()">重新加载</button></div>
+			<h1>搜索结果</h1>
 		</div> 
 		<div id="articles"></div>
 	</div>
-
 	<div class="foot">
 		<div class="foot-container">
 		本服务器由 <span id="server-os">念力</span> 强力驱动<br>
@@ -84,6 +68,6 @@
 	</div>
 	<script type="text/javascript" src="default.js"></script>
 	<script type="text/javascript" src="theme_manager.js"></script>
-	<script type="text/javascript" src="category.js"></script>
+	<script type="text/javascript" src="search.js"></script>
 </body>
 </html>

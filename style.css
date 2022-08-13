@@ -22,6 +22,10 @@ img {
 	--input-color: #0000003c;
 }
 
+:root[beta="no"] {
+	--beta: none;
+}
+
 body {
 	background-image: linear-gradient(25deg, var(--gradient-0), var(--gradient-1), var(--gradient-2), var(--gradient-3));
 	font-family: 'Josefin Sans', 'Noto Sans', sans-serif;
@@ -179,5 +183,9 @@ a {
     background-color: gray;
     border-radius: 3px;
     margin: 0px 4px;
+}
+
+.beta {
+	display: var(--beta);
 }
 
