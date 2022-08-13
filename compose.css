@@ -18,12 +18,11 @@ h4{
 }
 
 .nava:hover {
-    background-color: rgba(255, 255, 255, 0.549);
-	backdrop-filter: blur(16px) saturate(150%);
+    background-color: rgb(218, 52, 52, 0.3);
 }
 
 .maintitle{
-	background-color: rgba(255, 255, 255, 0.549);
+	background-color: rgb(218, 52, 52, 0.6);
 	border-radius: 18px;
 	font-size: 36px;
 	position: absolute;
@@ -37,7 +36,8 @@ h4{
 }
 
 .left-container {
-	background-color: rgba(255, 255, 255, 0.409);
+	background-color: rgb(218, 52, 52, 0.3);
+	border: 3px solid rgb(167, 31, 31, 0.8);
 	border-radius: 18px;
 	position: absolute;
 	padding: 20px;
@@ -98,7 +98,7 @@ h4{
 }
 
 .right-container {
-	width: calc(40vw - 20px);
+	width: calc(40vw - 25px);
 	position:absolute;
 	top: 180px;
 	margin-left: 10px;
@@ -112,12 +112,13 @@ h4{
 }
 
 .preview {
-	background-color: rgba(255, 255, 255, 0.409);
+	background-color: rgb(218, 52, 52, 0.3);
+	
 	padding: 15px;
 	padding-bottom: 80px;
 	border-radius: 22px;
 	transition-duration: 0.3s;
-	border: 1px solid rgba(255, 255, 255, 0.081);
+	border: 3px solid rgb(167, 31, 31, 0.8);
 }
 
 .preview:hover{
@@ -125,8 +126,8 @@ h4{
 }
 
 .send {
-	background-color: rgba(255,255,255, 0.409);
-	border: 1px solid rgba(255, 255, 255, 0.081);
+	background-color: rgb(218, 52, 52, 0.3);
+	border: 3px solid rgb(167, 31, 31, 0.8);
 	width: calc(100% - 32px);
 	margin-top: 15px;
 	padding:15px;
@@ -229,11 +230,12 @@ input[type=checkbox]:checked+label::after {
 	height: calc(60vh + 80px);
 	/*the bgmask element is 114513, it's 1 more*/
 	z-index: 114514;
-	background-color: rgba(255, 255, 255, 0.409);
-	border-radius: 12px;
+	background-color: rgba(251, 165, 165, 0.676);
+	border: 3px solid rgb(157, 29, 29);
+	border-radius: 18px;
 	/*use methods like comment(), reward().etc to display*/
 	display: none;
-	backdrop-filter: blur(20px);
+	backdrop-filter: blur(80px);
 }
 
 #comment-text {
@@ -253,7 +255,7 @@ input[type=checkbox]:checked+label::after {
 }
 
 #bgmask {
-	backdrop-filter: blur(8px);
+	backdrop-filter: blur(10px);
 	position: fixed;
 	left: 0px;
 	top: 0px;
