@@ -134,7 +134,7 @@ h4{
 }
 
 .subforum-sort{
-	background-color: rgb(218, 52, 52, 0.5);
+	background-color: rgb(218, 52, 52, 0.3);
     padding: 5px;
     border-radius: 12px;
     margin: 10px;
@@ -151,7 +151,7 @@ h4{
     padding: 10px 5px 5px 5px;
     margin:5px;
     border-radius: 12px;
-	background-color: rgba(218, 52, 52, 0.2);
+	background-color: rgba(218, 52, 52, 0.14);
 
 }
 
