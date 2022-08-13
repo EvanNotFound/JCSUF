@@ -1,5 +1,5 @@
 .maintitle{
-	background-color: rgba(255, 255, 255, 0.549);
+	background-color: rgba(218, 52, 52, 0.6);
 	border-radius: 18px;
 	font-size: 36px;
 	position: absolute;
@@ -13,7 +13,7 @@
 }
 
 .left-container {
-	background-color: rgba(255, 255, 255, 0.409);
+	background-color: rgba(218, 52, 52, 0.23);
 	border-radius: 18px;
 	position: absolute;
 	padding: 20px;
@@ -29,7 +29,7 @@
 
 .right-container {
 	width: calc(75vw - 136px);
-	background-color: rgba(255, 255, 255, 0.409);
+	background-color: rgba(218, 52, 52, 0.23);
 	border-radius: 18px;
 	box-shadow: 5px 5px 20px rgba(29, 29, 29, 0.1);
 	position:absolute;
@@ -64,7 +64,7 @@
 }
 
 .subforum-sort{
-	background-color: rgba(170, 170, 170, 0.533);
+	background-color: rgb(218, 52, 52, 0.5);
     padding: 5px;
     border-radius: 12px;
     margin: 10px;
@@ -90,7 +90,7 @@ h1{
     padding: 10px 5px 5px 5px;
     margin:5px;
     border-radius: 12px;
-	background-color: rgba(255,255,255, 0.514);
+	background-color: rgba(218, 52, 52, 0.2);
 
 }
 
