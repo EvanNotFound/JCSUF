@@ -22,15 +22,15 @@
 
 .post-container {
 	position: absolute;
-	width: calc(100% - 120px);
     top: 200px;
+	left: 20px;
 	right: 20px;
 	border: 1px solid rgba(255, 255, 255, 0.081);
 	padding: 20px;
 	border-radius: 22px;
 	background-color: rgba(var(--container-brightness),var(--container-brightness),var(--container-brightness), 0.514);
 	z-index: -1;
-	margin-left: 60px;
+	margin: 0 auto;
 }
 
 #category-desc {

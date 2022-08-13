@@ -14,8 +14,9 @@
 
 :root[dtype="mobile"]{
 	--notice-display: none;
-	--right-width: calc(100% - 120px);
-	--right-margin: 60px;
+	--right-width: auto;
+	--right-margin: auto;
+	--left: 20px;
 }
 
 .noticebar {
@@ -59,6 +60,7 @@
 	background-color: rgba(var(--container-brightness),var(--container-brightness),var(--container-brightness), 0.514);
 	z-index: -1;
 	margin-left: var(--right-margin);
+	left: var(--left);
 }
 
 .foot-container {
