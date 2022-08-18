@@ -7,7 +7,7 @@
 }
 
 .maintitle{
-	background-color: rgba(255, 255, 255, 0.549);
+	background-color: rgba(218, 52, 52, 0.6);
 	border-radius: 18px;
 	font-size: 36px;
 	position: absolute;
@@ -21,16 +21,17 @@
 }
 
 .post-container {
-	position: absolute;
     top: 200px;
 	left: 20px;
 	right: 20px;
-	border: 1px solid rgba(255, 255, 255, 0.081);
 	padding: 20px;
-	border-radius: 22px;
-	background-color: rgba(var(--container-brightness),var(--container-brightness),var(--container-brightness), 0.514);
 	z-index: -1;
 	margin: 0 auto;
+	background-color: rgba(218, 52, 52, 0.23);
+	border-radius: 18px;
+	box-shadow: 5px 5px 20px rgba(29, 29, 29, 0.1);
+	position:absolute;
+	border: 3px solid rgb(167, 31, 31, 0.8);
 }
 
 #category-desc {
