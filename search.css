@@ -14,8 +14,7 @@
 	top: 90px;
 	left: 50px;
 	right: 50px;
-	padding: 10px;
-	padding-left: 22px;
+	padding: 10px 22px;
 	box-shadow: 5px 5px 20px rgba(29, 29, 29, 0.028);
 	z-index: -1;
 }
@@ -104,4 +103,14 @@ h4{
 
 .subforum-devider{
     display: none;   
+}
+
+#search-content{
+	width: 90%;
+	height: 36px;
+	border-radius: 18px;
+	border: 0px solid;
+	padding-left: 18px;
+	font-size: 20px;
+	margin-bottom: 10px;
 }
