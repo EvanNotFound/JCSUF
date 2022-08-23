@@ -87,11 +87,11 @@
 .left-avatar {
 	background-color: white;
 	border-radius: 32px;
-	transition-duration: 0.8s;
+	transition-duration: 1.2s;
 }
 
-.left-container :hover {
-	transform: rotate(720deg);
+.left-avatar:hover {
+	transform: rotate(360deg);
 }
 
 .button-group span{

@@ -106,11 +106,35 @@ h4{
 }
 
 #search-content{
-	width: 90%;
+	width: calc(100% - 78px);
 	height: 36px;
 	border-radius: 18px;
 	border: 0px solid;
 	padding-left: 18px;
 	font-size: 20px;
 	margin-bottom: 10px;
+	margin-right: 22px;
+}
+
+.post-container {
+    top: 200px;
+	left: 20px;
+	right: 20px;
+	padding: 20px;
+	z-index: -1;
+	margin: 0 auto;
+	background-color: rgba(218, 52, 52, 0.23);
+	border-radius: 18px;
+	box-shadow: 5px 5px 20px rgba(29, 29, 29, 0.1);
+	position:absolute;
+	border: 3px solid rgb(167, 31, 31, 0.8);
+}
+
+.search-button {
+	position: relative;
+	top: 6px;
+}
+
+.search-button:hover {
+	text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
 }
