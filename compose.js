@@ -38,7 +38,7 @@ function post(){
           text = encodeURIComponent(t)
         }
         utf8Str += text
-     }
+    }
 	var str2 = document.getElementById("i1").value;
 	let utf8Str2=''
     for (let i=0; i<str2.length;i++){
