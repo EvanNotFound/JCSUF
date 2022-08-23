@@ -3,7 +3,7 @@ function search() {
     xhttp4.onreadystatechange = function() {
     	if (this.readyState == 4 && this.status == 200) {
     		var rarts = JSON.parse(this.responseText).results;
-            document.getElementById("articles").innerHTML = ''
+            document.getElementById("articles").innerHTML = '搜索到 '+JSON.parse(this.responseText).matches+' 条结果';
 	    	for(let i=0;i<rarts.length;i++){
 	    		document.getElementById("articles").innerHTML += '<div class="subforum-row" id="article-'+rarts[i].entity.id+'"></div>'
 	    		document.getElementById("article-"+rarts[i].entity.id).innerHTML += '<div class="subforum-description subforum-column" id="article-desc-'+rarts[i].entity.id+'"></div>'
@@ -13,7 +13,7 @@ function search() {
 	    		document.getElementById("article-stat-"+rarts[i].entity.id).innerHTML += '<p>+'+rarts[i].entity.like+'</p>'
 	    		document.getElementById("article-stat-"+rarts[i].entity.id).innerHTML += '<p>-'+rarts[i].entity.dislike+'</p>'
 		    	document.getElementById("article-"+rarts[i].entity.id).innerHTML += '<div class="subforum-info subforum-column"><p id="article-info-'+rarts[i].entity.id+'"></p></div>'
-		    	document.getElementById("article-info-"+rarts[i].entity.id).innerHTML = '<a href="user.html?uid='+rarts[i].entity.author+'" class="post_author"><font color="#333333" style="background-color:#aaa;">&emsp;&emsp;&emsp;&emsp;&emsp;</font></a> 发布于 '+formatDateTime(rarts[i].entity.ctime)+'<br><span style="margin-left:18px">'+rarts[i].entity.ccount+' 评论</span><br><span style="margin-left:18px">'+rarts[i].entity.view+' 阅读</span>'
+		    	document.getElementById("article-info-"+rarts[i].entity.id).innerHTML = '<a href="user.html?uid='+rarts[i].entity.author+'" class="post_author"><font color="#333333" style="background-color:#aaa;">&emsp;&emsp;&emsp;&emsp;&emsp;</font></a> 发布于 '+formatDateTime(rarts[i].entity.ctime)+'<br><span style="margin-left:18px">'+rarts[i].entity.ccount+' 评论</span><br><span style="margin-left:18px">'+rarts[i].entity.view+' 阅读</span><br><span style="margin-left:18px">相关性 '+rarts[i].relativity+'</span>'
 	    		transname(rarts[i].entity)
 	    	}
 	    }
