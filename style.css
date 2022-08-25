@@ -27,7 +27,7 @@ img {
 }
 
 :root[beta="yes"] {
-	--beta: block;
+	--beta: initial;
 }
 
 body {
@@ -183,5 +183,9 @@ a {
 
 .beta {
 	display: var(--beta) !important;
+}
+
+.fa-square-caret-down {
+	font-size: 24px;
 }
 
