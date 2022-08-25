@@ -1,3 +1,9 @@
+.bgp{
+	background-image: url("https://api.oneneko.com/v1/bing_today");
+	background-attachment: fixed;
+	background-size: 100%;
+}
+
 img {
 	margin: 20px 0px;
 }

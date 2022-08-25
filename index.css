@@ -1,3 +1,9 @@
+.bgp{
+	background-image: url("https://api.oneneko.com/v1/bing_today");
+	background-attachment: fixed;
+	background-size: 100%;
+}
+
 :root[theme="white"]{
 	--container-brightness: 255;
 }
@@ -34,14 +40,14 @@
 
 /*左侧公告栏*/
 .notice-container {
-	border: 3px solid rgb(167, 31, 31, 0.8);
+	border: 3px solid rgb(167, 31, 31, 0.98);
 	position: fixed;
     top: 90px;
 	left: 20px;
 	padding: 20px;
 	border-radius: 22px;
 	width: 280px;
-	background-color: rgba(218, 52, 52, 0.23);
+	background-color: rgba(255, 255, 255, 0.64);
 	float: left;
 	z-index: -1;
 	display: var(--notice-display);
@@ -49,7 +55,7 @@
 
 /*右側文章栏*/
 .post-container {
-	border: 3px solid rgb(167, 31, 31, 0.8);
+	border: 3px solid rgb(167, 31, 31, 0.98);
 	position: absolute;
 	width: var(--right-width);
     top: 90px;
@@ -119,7 +125,7 @@ li a:hover {
 	-webkit-box-shadow: #ccc 0px 10px 10px;
 	-moz-box-shadow: #ccc 0px 10px 10px;
 	box-shadow: 5px 5px 20px rgba(29, 29, 29, 0.208);
-	background-color: rgba(255,255,255, 0.3);
+	background-color: rgba(255,255,255, 0.6);
 }
 
 .num-select {
@@ -184,7 +190,7 @@ h4{
     padding: 10px 5px 5px 5px;
     margin:5px;
     border-radius: 12px;
-	background-color: rgba(255, 255, 255, 0.4);
+	background-color: rgba(255, 255, 255, 0.64);
 
 }
 

@@ -12,7 +12,7 @@
 }
 
 #title-container {
-	background-color: rgb(218, 52, 52, 0.6);
+	background-color: rgb(255, 255, 255, 0.64);
 	padding: 16px;
 	margin: 5px;
 	border-radius: 12px;
@@ -29,7 +29,7 @@
 }
 
 .floor-body[highlight="no"] .level {
-	background-color: rgb(218, 52, 52, 0.3);
+	background-color: rgb(255, 255, 255, 0.64);
 	box-shadow: 3px 3px 10px rgba(29, 29, 29, 0.150);
 }
 
@@ -46,7 +46,7 @@
 }
 
 .floor-body[highlight="no"] .userinfo {
-	background-color: rgb(218, 52, 52, 0.3);
+	background-color: rgb(255, 255, 255, 0.64);
 	box-shadow: 3px 3px 10px rgba(29, 29, 29, 0.150);
 }
 
@@ -62,7 +62,7 @@
 }
 
 .floor-body[highlight="no"] .content-container {
-	background-color: rgb(218, 52, 52, 0.3);
+	background-color: rgb(255, 255, 255, 0.64);
 	box-shadow: 3px 3px 10px rgba(29, 29, 29, 0.150);
 }
 
