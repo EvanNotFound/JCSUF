@@ -22,7 +22,7 @@ h4{
 }
 
 .maintitle{
-	background-color: rgb(218, 52, 52, 0.6);
+	background-color: rgb(236, 146, 149, 1);
 	border-radius: 18px;
 	font-size: 36px;
 	position: absolute;
@@ -36,7 +36,7 @@ h4{
 }
 
 .left-container {
-	background-color: rgb(218, 52, 52, 0.3);
+	background-color: rgba(255, 255, 255, 0.64);
 	border: 3px solid rgb(167, 31, 31, 0.8);
 	border-radius: 18px;
 	position: absolute;
@@ -65,7 +65,7 @@ h4{
 }
 
 .left-container input:hover{
-	box-shadow: 5px 5px 20px rgba(29, 29, 29, 0.2);
+	box-shadow: 5px 5px 20px rgba(29, 29, 29, 0.6);
 }
 
 .left-container textarea {
@@ -82,7 +82,7 @@ h4{
 }
 
 .left-container textarea:hover{
-	box-shadow: 5px 5px 20px rgba(29, 29, 29, 0.2);
+	box-shadow: 5px 5px 20px rgba(29, 29, 29, 0.4);
 }
 
 #i2 {
@@ -112,7 +112,7 @@ h4{
 }
 
 .preview {
-	background-color: rgb(218, 52, 52, 0.3);
+	background-color: rgb(255, 255, 255, 0.64);
 	
 	padding: 15px;
 	padding-bottom: 80px;
@@ -126,7 +126,7 @@ h4{
 }
 
 .send {
-	background-color: rgb(218, 52, 52, 0.3);
+	background-color: rgb(255, 255, 255, 0.64);
 	border: 3px solid rgb(167, 31, 31, 0.8);
 	width: calc(100% - 32px);
 	margin-top: 15px;
