@@ -151,6 +151,7 @@ a {
 
 #pin {
 	font-size: 48px;
+	margin-block-start: 4px;
 }
 
 .fa-circle-check {
