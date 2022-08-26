@@ -148,3 +148,21 @@ a {
 	height: 40px;
 	margin-top: 20px;
 }
+
+#pin {
+	font-size: 48px;
+}
+
+.fa-circle-check {
+	color: chartreuse;
+	font-size: 24px;
+	position: relative;
+	top: 3px;
+}
+
+.fa-circle-xmark {
+	color: red;
+	font-size: 24px;
+	position: relative;
+	top: 3px;
+}
