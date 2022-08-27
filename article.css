@@ -12,7 +12,7 @@
 }
 
 #title-container {
-	background-color: rgb(218, 52, 52, 0.6);
+	background-color: var(--maintitle-bg);
 	padding: 16px;
 	margin: 5px;
 	border-radius: 12px;

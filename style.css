@@ -5,21 +5,25 @@ img {
 :root[theme="white"] {
 	--brightness: 255;
 	--brightness-pop: 255;
-	--gradient-0: #df8385;
-	--gradient-1: #be9fa0;
-	--gradient-2: #8fb6bc;
-	--gradient-3: #1eccd8;
 	--input-color: #ffffff70;
+	--containers-border-opacity: 0.8;
+	--maintitle-bg: rgba(218, 52, 52, 0.6);
 }
 
 :root[theme="dark"] {
 	--brightness: 30;
 	--brightness-pop: 144;
-	--gradient-0: #747474;
-	--gradient-1: #707070;
-	--gradient-2: #5e5e5e;
-	--gradient-3: #4c4c4c;
 	--input-color: #0000003c;
+	--containers-border-opacity: 0.8;
+	--maintitle-bg: rgba(65, 54, 47, 1);
+}
+
+:root[theme="bing"] {
+	--brightness: 255;
+	--brightness-pop: 255;
+	--input-color: #ffffff70;
+	--containers-border-opacity: 0.98;
+	--maintitle-bg: rgba(236, 146, 149, 1);
 }
 
 :root[beta="no"] {
@@ -32,6 +36,12 @@ img {
 
 body {
 	font-family: 'Josefin Sans', 'Noto Sans', sans-serif;
+}
+
+:root[theme="bing"] body {
+	background-image: url("https://api.oneneko.com/v1/bing_today");
+	background-attachment: fixed;
+	background-size: 100%;
 }
  
 

@@ -22,7 +22,7 @@ h4{
 }
 
 .maintitle{
-	background-color: rgb(218, 52, 52, 0.6);
+	background-color: var(--maintitle-bg);
 	border-radius: 18px;
 	font-size: 36px;
 	position: absolute;
@@ -37,7 +37,7 @@ h4{
 
 .left-container {
 	background-color: rgb(218, 52, 52, 0.3);
-	border: 3px solid rgb(167, 31, 31, 0.8);
+	border: 3px solid var(--containers-border-opacity);
 	border-radius: 18px;
 	position: absolute;
 	padding: 20px;
@@ -113,12 +113,11 @@ h4{
 
 .preview {
 	background-color: rgb(218, 52, 52, 0.3);
-	
 	padding: 15px;
 	padding-bottom: 80px;
 	border-radius: 22px;
 	transition-duration: 0.3s;
-	border: 3px solid rgb(167, 31, 31, 0.8);
+	border: 3px solid var(--containers-border-opacity);
 }
 
 .preview:hover{
@@ -127,7 +126,7 @@ h4{
 
 .send {
 	background-color: rgb(218, 52, 52, 0.3);
-	border: 3px solid rgb(167, 31, 31, 0.8);
+	border: 3px solid var(--containers-border-opacity);
 	width: calc(100% - 32px);
 	margin-top: 15px;
 	padding:15px;

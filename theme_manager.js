@@ -1,6 +1,8 @@
 function switch_theme(){
-	if(document.documentElement.getAttribute("theme")=="white"){
+	if(document.documentElement.getAttribute("theme")=="white") {
 		document.documentElement.setAttribute("theme","dark")
+	} else if(document.documentElement.getAttribute("theme")=="dark") {
+		document.documentElement.setAttribute("theme","bing")
 	} else {
 		document.documentElement.setAttribute("theme","white")
 	}
