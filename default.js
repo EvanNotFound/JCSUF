@@ -54,19 +54,6 @@ xhttp3.open("GET", "https://api.jcsuf.top/api/osinfo", true);
 xhttp3.withCredentials = true;
 xhttp3.send();
 
-//procceed with over-widthed images
-document.onreadystatechange = function(){setTimeout(function(){
-    if(document.readyState == 'complete'){
-        for(var imgelemid = 0; imgelemid < document.getElementsByTagName("img").length; imgelemid++) {
-		var procimg = document.getElementsByTagName("img")[imgelemid];
-		if(procimg.width > 480){
-			procimg.width = 480;
-		}
-	}
-    }
-	process_user();
-},2000)}
-
 function process_level(exp){
 	if(exp==0){
 		document.getElementById("avatar").style.boxShadow = "0px 0px 5px black"
