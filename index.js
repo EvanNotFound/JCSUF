@@ -17,7 +17,7 @@ xhttp4.onreadystatechange = function() {
 			document.getElementById("articles").innerHTML += '<div class="subforum-row" id="article-'+rarts[i].id+'"></div>'
 			document.getElementById("article-"+rarts[i].id).innerHTML += '<div class="subforum-description subforum-column" id="article-desc-'+rarts[i].id+'"></div>'
 			document.getElementById("article-desc-"+rarts[i].id).innerHTML += '<h4><a href="article.html?aid='+rarts[i].id+'" class="post_title center">'+rarts[i].title+'</a></h4>'
-			document.getElementById("article-desc-"+rarts[i].id).innerHTML += '<p class="post_description">'+snapshot(rarts[i].html)+'</p>'
+			document.getElementById("article-desc-"+rarts[i].id).innerHTML += '<p class="post_description">'+rarts[i].snapshot+'</p>'
 			document.getElementById("article-"+rarts[i].id).innerHTML += '<div class="subforum-stats subforum-column center" id="article-stat-'+rarts[i].id+'"></div>'
 			document.getElementById("article-stat-"+rarts[i].id).innerHTML += '<p>+'+rarts[i].like+'</p>'
 			document.getElementById("article-stat-"+rarts[i].id).innerHTML += '<p>-'+rarts[i].dislike+'</p>'
@@ -33,11 +33,6 @@ xhttp4.send();
 
 if(window.screen.availWidth<=1080){
 	document.getElementsByClassName("notice-container")[0].style.display = "none";
-}
-
-function snapshot(content) {
-	let unformat =  content.replace(/<\/?[^>]*>/g, '');
-	return unformat.substring(0,64);
 }
 
 function transname(art) { //解析Id为用户名
@@ -97,7 +92,7 @@ function reloadnew() {
 				document.getElementById("articles").innerHTML += '<div class="subforum-row" id="article-'+rarts[i].id+'"></div>'
 				document.getElementById("article-"+rarts[i].id).innerHTML += '<div class="subforum-description subforum-column" id="article-desc-'+rarts[i].id+'"></div>'
 				document.getElementById("article-desc-"+rarts[i].id).innerHTML += '<h4><a href="article.html?aid='+rarts[i].id+'" class="post_title center">'+rarts[i].title+'</a></h4>'
-				document.getElementById("article-desc-"+rarts[i].id).innerHTML += '<p class="post_description">'+snapshot(rarts[i].html)+'</p>'
+				document.getElementById("article-desc-"+rarts[i].id).innerHTML += '<p class="post_description">'+rarts[i].snapshot+'</p>'
 				document.getElementById("article-"+rarts[i].id).innerHTML += '<div class="subforum-stats subforum-column center" id="article-stat-'+rarts[i].id+'"></div>'
 				document.getElementById("article-stat-"+rarts[i].id).innerHTML += '<p>+'+rarts[i].like+'</p>'
 				document.getElementById("article-stat-"+rarts[i].id).innerHTML += '<p>-'+rarts[i].dislike+'</p>'

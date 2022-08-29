@@ -3,7 +3,8 @@
     flex-direction: column;
     align-items: center;
     color: #000;
-    font-size: 24px;
+    font-size: 48px;
+    margin-top: 100px;
 }
 
 .article-container {
@@ -11,31 +12,34 @@
     flex-direction: column;
     align-items: center;
     background-color: #ddd;
-    width: calc(100vw - 40px);
     padding: 10px;
-    border-radius: 6px;
+    border-radius: 12px;
     margin-top: 10px;
+    padding-bottom: 20px;
 }
 
 .newest-banner {
     text-align: center;
-    font-size: 20px;
+    font-size: 32px;
+    margin-block-start: 10px;
+    margin-block-end: 10px;
 }
 
 .articles {
-    width: 100%;
+    width: calc(100% - 16px);
 }
 
 .article-block {
     background-color: white;
-    border-radius: 4px;
-    padding: 4px;
+    border-radius: 8px;
+    padding: 8px;
     margin-top: 10px;
 }
 
 .article-title {
-    font-size: 20px;
+    font-size: 36px;
     font-weight: bold;
+    margin-bottom: 4px;
 }
 
 .article-desc {

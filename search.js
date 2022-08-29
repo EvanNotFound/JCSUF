@@ -8,7 +8,7 @@ function search() {
 	    		document.getElementById("articles").innerHTML += '<div class="subforum-row" id="article-'+rarts[i].entity.id+'"></div>'
 	    		document.getElementById("article-"+rarts[i].entity.id).innerHTML += '<div class="subforum-description subforum-column" id="article-desc-'+rarts[i].entity.id+'"></div>'
 	    		document.getElementById("article-desc-"+rarts[i].entity.id).innerHTML += '<h4><a href="article.html?aid='+rarts[i].entity.id+'" class="post_title center">'+rarts[i].entity.title+'</a></h4>'
-	    		document.getElementById("article-desc-"+rarts[i].entity.id).innerHTML += '<p class="post_description">'+snapshot(rarts[i].entity.html)+'</p>'
+	    		document.getElementById("article-desc-"+rarts[i].entity.id).innerHTML += '<p class="post_description">'+rarts[i].entity.snapshot+'</p>'
 	    		document.getElementById("article-"+rarts[i].entity.id).innerHTML += '<div class="subforum-stats subforum-column center" id="article-stat-'+rarts[i].entity.id+'"></div>'
 	    		document.getElementById("article-stat-"+rarts[i].entity.id).innerHTML += '<p>+'+rarts[i].entity.like+'</p>'
 	    		document.getElementById("article-stat-"+rarts[i].entity.id).innerHTML += '<p>-'+rarts[i].entity.dislike+'</p>'
@@ -33,11 +33,6 @@ function search() {
     xhttp4.open("GET", "https://api.jcsuf.top/api/searcharticle?qs="+utf8Str+"&vw=0&cw=0", true);
     xhttp4.withCredentials = true;
     xhttp4.send();
-}
-
-function snapshot(content) {
-	let unformat =  content.replace(/<\/?[^>]*>/g, '');
-	return unformat.substring(0,64);
 }
 
 function transname(art,rel) { //解析Id为用户名

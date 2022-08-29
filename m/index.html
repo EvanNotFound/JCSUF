@@ -4,6 +4,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="index.css">
     <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
 <head>
 
 </head>
@@ -16,14 +17,14 @@
     <div class="article-container">
         <div class="newest-banner">最新帖子</div>
         <div class="articles" id="articles">
-            <div class="article-block" v-for="art in articles">
+            <div class="article-block" v-for="art in getArticle()">
                 <span class="article-title">{{art.title}}</span>
                 <div class="article-desc">
                     <div class="snapshot">
-                        {{art.snapshot}}
+                        {{art.html}}
                     </div>
                     <div class="stat">
-                        {{art.read}} 阅读
+                        {{art.read}} 阅读<br/>{{art.ccount}} 评论
                     </div>
                 </div>
             </div>
