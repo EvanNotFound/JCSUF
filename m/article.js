@@ -14,6 +14,7 @@ var vm = new Vue({
                 vm.entity = res.body;
                 this.$http.get('https://api.jcsuf.top/api/userinfo?uid=' + vm.entity.author).then(function (res) {
                     vm.$set(vm.entity,"author_name",res.body.name)
+                    vm.$set(vm.entity,"author_avatar",res.body.avatar)
                 }, function () {
                     console.log('请求失败处理');
                 });
