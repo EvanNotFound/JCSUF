@@ -17,14 +17,14 @@
     <div class="article-container">
         <div class="newest-banner">最新帖子</div>
         <div class="articles" id="articles">
-            <div class="article-block" v-for="art in getArticle()">
-                <span class="article-title">{{art.title}}</span>
+            <div class="article-block" v-for="article in articles">
+                <span class="article-title">{{article.title}}</span>
                 <div class="article-desc">
                     <div class="snapshot">
-                        {{art.html}}
+                        {{article.snapshot}}
                     </div>
                     <div class="stat">
-                        {{art.read}} 阅读<br/>{{art.ccount}} 评论
+                        {{article.view}} 阅读<br/>{{article.ccount}} 评论
                     </div>
                 </div>
             </div>
