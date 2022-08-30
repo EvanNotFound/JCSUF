@@ -20,7 +20,7 @@
 
 .newest-banner {
     text-align: center;
-    font-size: 32px;
+    font-size: 24px;
     margin-block-start: 10px;
     margin-block-end: 10px;
 }
@@ -37,7 +37,7 @@
 }
 
 .article-title {
-    font-size: 36px;
+    font-size: 30px;
     font-weight: bold;
     margin-bottom: 4px;
 }
@@ -49,6 +49,7 @@
 
 .snapshot {
     color: gray;
+    font-size: 12px;
 }
 
 .stat {
@@ -56,6 +57,6 @@
 }
 
 .site-url {
-    font-size: 12px;
+    font-size: 10px;
     text-align: center;
 }
