@@ -15,7 +15,6 @@ var vm = new Vue({
             },function(){
                 console.log('请求失败处理');
             });
-            return this.articles;
         },
     },
     mounted(){

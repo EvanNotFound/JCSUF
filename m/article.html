@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="article.css">
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
+</head>
+
+<body>
+    <div class="vue-enable">
+        <div class="title">
+            <span class="title-text">{{entity.title}}</span>
+            <span class="site-url">www.jcsuf.top</span>
+        </div>
+        <div class="article-body">
+            <div class="article-content">
+                <div class="avatar-bar">
+                    <img v-bind:src="entity.author_avatar">
+                    <span>{{entity.author_level}}</span>
+                </div>
+                <div class="content-bar">
+                    <p class="author-name">{{entity.author_name}}</p>
+                    <p v-html="entity.html"></p>
+                </div>
+            </div>
+            <div class="article-comment">
+
+            </div>
+        </div>
+    </div>
+    <script src="article.js"></script>
+</body>
+
+</html>
