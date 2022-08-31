@@ -18,7 +18,7 @@
         <div class="article-body">
             <div class="article-content">
                 <div class="avatar-bar">
-                    <img v-bind:src="entity.author_avatar">
+                    <img v-bind:src="entity.author_avatar" v-bind:style="entity.author_style" class="avatar">
                     <span>{{entity.author_level}}</span>
                 </div>
                 <div class="content-bar">
