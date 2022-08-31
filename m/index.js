@@ -8,7 +8,7 @@ var vm = new Vue({
         getArticles:function() {
             //发送get请求
             console.log("www")
-            this.$http.get('https://api.jcsuf.top/api/fetchnewarticle?pc=50').then(function(res){
+            this.$http.get('https://api.jcsuf.top/api/fetchnewarticle?pc=50',{Credentials:true}).then(function(res){
                 console.log(res.body);
                 console.log(res.body.articles);
                 vm.articles = res.body.articles;
