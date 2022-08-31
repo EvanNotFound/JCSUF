@@ -32,6 +32,15 @@
     margin-top: 10px;
 }
 
+.article-comment {
+    display: grid;
+    grid-template-columns: 15% 85%;
+    background-color: white;
+    border-radius: 8px;
+    padding: 8px;
+    margin-top: 4px;
+}
+
 .avatar-bar {
     text-align: center;
 }

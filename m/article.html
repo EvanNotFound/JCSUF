@@ -19,15 +19,23 @@
             <div class="article-content">
                 <div class="avatar-bar">
                     <img v-bind:src="entity.author_avatar" v-bind:style="entity.author_style" class="avatar">
-                    <span>{{entity.author_level}}</span>
+                    <p>{{entity.author_level}}</p>
                 </div>
                 <div class="content-bar">
                     <p class="author-name">{{entity.author_name}}</p>
                     <p v-html="entity.html"></p>
                 </div>
             </div>
-            <div class="article-comment">
-
+            <div class="article-comment" v-for="(comm, index) in entity.comments">
+                <div class="avatar-bar">
+                    <img v-bind:src="comm.author_avatar" v-bind:style="comm.author_style" class="avatar">
+                    <p>{{comm.author_level}}</p>
+                    <p>#{{comm.floor}}</p>
+                </div>
+                <div class="content-bar">
+                    <p class="author-name">{{comm.author_name}}<span v-if="comm.quote!=0" style="color:gray">&nbsp;回复 {{entity.comments[comm.quote-1].author_name}} (#{{comm.quote}})</span></p>
+                    <p v-html="comm.html"></p>
+                </div>
             </div>
         </div>
     </div>
