@@ -9,10 +9,10 @@ var vm = new Vue({
         getArticles: function () {
             //发送get请求
             console.log("www")
-            this.$http.get('https://api.jcsuf.top/api/articleinfo' + location.href.substring(location.href.indexOf("?"))).then(function (res) {
+            this.$http.get('https://api.jcsuf.top/api/articleinfo' + location.href.substring(location.href.indexOf("?")),{credentials:true}).then(function (res) {
                 console.log(res.body);
                 vm.entity = res.body;
-                this.$http.get('https://api.jcsuf.top/api/userinfo?uid=' + vm.entity.author).then(function (res) {
+                this.$http.get('https://api.jcsuf.top/api/userinfo?uid=' + vm.entity.author,{credentials:true}).then(function (res) {
                     vm.$set(vm.entity,"author_name",res.body.name)
                     vm.$set(vm.entity,"author_avatar",res.body.avatar)
                     vm.$set(vm.entity,"author_level",this.process_level(res.body.exp))
