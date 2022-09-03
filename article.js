@@ -204,7 +204,7 @@ function processComment(comment) {
 			}
 			if(comment.quote!=0){
 				Array.from(document.getElementsByClassName("subreply-thread-"+comment.quote)).forEach(elem => {
-					elem.innerHTML += '<span onclick="skipflr('+comment.floor+')">'+JSON.parse(this.responseText).name+':<font color="gray">'+comment.html+'</font></span><div class="subreply subreply-thread-'+comment.quote+'"></div>'
+					elem.innerHTML += '<span onclick="skipflr('+comment.floor+')">'+JSON.parse(this.responseText).name+':<font color="gray">'+comment.html+'</font></span><div class="subreply subreply-thread-'+comment.floor+'"></div>'
 					elem.style.backgroundColor = "white"
 				});
 			}
