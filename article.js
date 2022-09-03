@@ -165,6 +165,7 @@ function processComment(comment) {
 	document.getElementById("floor-"+comment.floor).innerHTML += '<div class="level">#'+comment.floor+'</div>'
 	document.getElementById("floor-"+comment.floor).innerHTML += '<div class="userinfo" id="author-comment'+comment.floor+'"><img src="https://upload.thwiki.cc/thumb/0/0a/%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png/100px-%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png" height="64px" class="left-avatar" id="author-avatar-'+comment.floor+'" style="margin: 0 auto;"><br><b><span id="author-name-'+comment.floor+'">作者</span></b><br><span id="author-level-'+comment.floor+'">LvXX</span></div>'
 	document.getElementById("floor-"+comment.floor).innerHTML += '<div class="content-container"><div class="content" id="content-'+comment.floor+'"><font style="color:rgb(68,68,100);font-size:10px">Reply to <span onclick="skipflr('+comment.quote+')" style="color:rgb(84,84,120);cursor:pointer">#'+comment.quote+'</span></font>'+comment.html+'</div><div class="button-group"><p class="rating-info" id="rating-'+comment.floor+'">'+(comment.likedbyyou?'<font color="#3cf">↑ ':'↑ ')+comment.like+(comment.likedbyyou?'</font> ':' ')+(comment.dislikedbyyou?'<font color="#f31">↓ ':'↓ ')+comment.dislike+(comment.dislikedbyyou?'</font>':'')+'</p><span onclick="comment('+comment.floor+')"><i class="fa-regular fa-comment"></i></span>&emsp;<span onclick="like('+comment.floor+')"><i class="fa-regular fa-thumbs-up"></i></span>&emsp;<span onclick="dislike('+comment.floor+')"><i class="fa-regular fa-thumbs-down"></i></span>&emsp;<span onclick="reward('+comment.floor+')"><i class="fa-regular fa-star"></i></span>&emsp;<span onclick="report('+comment.floor+')"><i class="fa-regular fa-flag"></i></span></div></div>'
+	document.getElementById("content-"+comment.floor).innerHTML += '<div class="subreply subreply-thread-'+comment.floor+'"></div>'
 	var xhttpcom = new XMLHttpRequest();
 	xhttpcom.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
@@ -200,6 +201,12 @@ function processComment(comment) {
 					if(skipcont.indexOf("&")!=-1) skipcont = skipcont.substring(0,skipcont.indexOf("&"))
 					skipflr(skipcont)
 				}, 500)
+			}
+			if(comment.quote!=0){
+				Array.from(document.getElementsByClassName("subreply-thread-"+comment.quote)).forEach(elem => {
+					elem.innerHTML += '<span onclick="skipflr('+comment.floor+')">'+JSON.parse(this.responseText).name+':<font color="gray">'+comment.html+'</font></span><div class="subreply subreply-thread-'+comment.quote+'"></div>'
+					elem.style.backgroundColor = "white"
+				});
 			}
 		}
 	};

@@ -208,3 +208,9 @@ p {
 .formula {
 	margin: 0px;
 }
+
+.subreply {
+	margin: 10px 0px;
+	padding: 8px;
+	border-radius: 6px;
+}

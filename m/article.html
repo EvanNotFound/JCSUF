@@ -24,6 +24,7 @@
                 <div class="content-bar">
                     <p class="author-name">{{entity.author_name}}</p>
                     <p v-html="entity.html"></p>
+                    <p onclick="vm.comment(0)">评论</p>
                 </div>
             </div>
             <div class="article-comment" v-for="(comm, index) in entity.comments">
@@ -36,6 +37,8 @@
                     <p class="author-name">{{comm.author_name}}<span v-if="comm.quote!=0" style="color:gray">&nbsp;回复 {{entity.comments[comm.quote-1].author_name}} (#{{comm.quote}})</span></p>
                     <p v-html="comm.html"></p>
                 </div>
+                <p></p>
+                <p style="margin-right: 10px; text-align: right;" v-bind:onclick="'vm.comment('+(index+1)+')'">评论</p>
             </div>
         </div>
     </div>
