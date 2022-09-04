@@ -177,7 +177,7 @@ h4{
 .subforum-row{
     display: grid;
     grid-template-columns: 60% 10% 30%;
-
+	transition-duration: 1s;
 }
 
 .subforum-column{
