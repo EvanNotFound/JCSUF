@@ -205,18 +205,22 @@ function processComment(comment) {
 					skipflr(skipcont)
 				}, 500)
 			}
-			if(comment.quote!=0){
-				Array.from(document.getElementsByClassName("subreply-thread-"+comment.quote)).forEach(elem => {
-					elem.innerHTML += '<span onclick="skipflr('+comment.floor+')">'+JSON.parse(this.responseText).name+':<font color="gray">'+comment.html+'</font></span><div class="subreply subreply-thread-'+comment.floor+'"></div>'
-					elem.style.backgroundColor = "white"
-				});
-			}
+			Array.from(document.getElementsByClassName("flauthor-"+comment.floor)).forEach(elem => {
+				elem.innerHTML = JSON.parse(this.responseText).name+':<font color="gray">'+comment.html+'</font>'
+				elem.style.backgroundColor = "white"
+			});
 		}
 	};
 	xhttpcom.open("GET", "https://api.jcsuf.top/api/userinfo?uid="+comment.author, true);
 	xhttpcom.fuckargument = comment.author;
 	xhttpcom.withCredentials = true;
 	xhttpcom.send();
+	if(comment.quote!=0){
+		Array.from(document.getElementsByClassName("subreply-thread-"+comment.quote)).forEach(elem => {
+			elem.innerHTML += '<span class="flauthor-'+comment.floor+'" onclick="skipflr('+comment.floor+')"><font color="gray">'+comment.html+'</font></span><div class="subreply subreply-thread-'+comment.floor+'"></div>'
+			elem.style.backgroundColor = "white"
+		});
+	}
 }
 
 function like(floor){
