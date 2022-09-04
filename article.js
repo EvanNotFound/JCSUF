@@ -142,6 +142,9 @@ function post_comment() {
 				case 0:
 				alert("发布成功");
 				minimize_pane();
+				if(JSON.parse(this.responseText).data!=undefined){
+					processComment(JSON.parse(this.responseText).data);
+				}
 				break;
 				case 1:
 				alert("发布失败，您是否已经登录？目标帖子是否已被删除？");
