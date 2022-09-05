@@ -52,32 +52,11 @@ function transname(art,rel) { //解析Id为用户名
 					document.getElementById("article-info-"+art.id).innerHTML = '<a href="user.html?uid='+art.author+'" class="post_author">'+JSON.parse(this.responseText).name+'</a> 发布于 '+formatDateTime(art.ctime)+'<br><span style="margin-left:18px">'+art.ccount+' 评论</span><br><span style="margin-left:18px">'+art.view+' 阅读</span><br><span style="margin-left:18px">相关性 '+rel+'</span>'
 				}
 				if(admin>0){
-					document.getElementById("article-info-"+art.id).innerHTML += '<br><font onclick="del('+art.id+')" color="red" style="margin-left: 18px"><small>删除</small></font><br><span style="margin-left:18px">相关性 '+rel+'</span>'
+					document.getElementById("article-info-"+art.id).innerHTML += '<br><font onclick="del('+art.id+')" color="red" style="margin-left: 18px"><small>删除</small></font>'
 				}
 			}
 		}
 	};
 	xhttptrans.open("GET", "https://api.jcsuf.top/api/userinfo?uid="+art.author, true);
 	xhttptrans.send();
-}
-
-function del(aid) {
-	var xhttpdel = new XMLHttpRequest();
-	xhttpdel.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			switch(JSON.parse(this.responseText).code){
-				case 0:
-				alert("成功删除，请刷新。")
-				break
-				case 1:
-				alert("指向的帖子不存在！")
-				break
-				case 2:
-				alert("权限不足！")
-			}
-		}
-	};
-	xhttpdel.open("GET", "https://api.jcsuf.top/api/deletearticle?aid="+aid, true);
-	xhttpdel.withCredentials = true;
-	xhttpdel.send();
 }

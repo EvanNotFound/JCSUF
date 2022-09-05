@@ -82,12 +82,6 @@ h1{
 	margin-left: 12px;
 }
 
-.subforum-row{
-    display: grid;
-    grid-template-columns: 60% 10% 30%;
-
-}
-
 .subforum-column{
     padding: 10px 5px 5px 5px;
     margin:5px;

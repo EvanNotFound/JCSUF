@@ -174,12 +174,6 @@ h4{
 	text-align: center;
 }
 
-.subforum-row{
-    display: grid;
-    grid-template-columns: 60% 10% 30%;
-	transition-duration: 1s;
-}
-
 .subforum-column{
     padding: 10px 5px 5px 5px;
     margin:5px;
