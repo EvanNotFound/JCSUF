@@ -68,6 +68,7 @@ function post(){
 				break;
 				case 4:
 				alert("你什么身份，我什么地位？");
+				break;
 				case 999:
 				alert("管理员正在修正服务器数据，请稍等几秒并重试");
 			}
