@@ -66,6 +66,8 @@ function post(){
 				case 3:
 				alert("未选择分区");
 				break;
+				case 4:
+				alert("你什么身份，我什么地位？");
 				case 999:
 				alert("管理员正在修正服务器数据，请稍等几秒并重试");
 			}
