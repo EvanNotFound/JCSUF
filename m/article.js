@@ -13,7 +13,7 @@ var vm = new Vue({
                 console.log(res.body);
                 vm.entity = res.body;
                 this.$http.get('https://api.jcsuf.top/api/userinfo?uid=' + vm.entity.author, { credentials: true }).then(function (res) {
-                    vm.$set(vm.entity, "author_name", res.body.name)
+                    vm.$set(vm.entity, "author_name", res.body.name.replace(/<.*?>/g, ""))
                     vm.$set(vm.entity, "author_avatar", res.body.avatar)
                     vm.$set(vm.entity, "author_level", this.process_level(res.body.exp))
                 }, function () {
@@ -22,7 +22,7 @@ var vm = new Vue({
                 for (this.roll = 0; this.roll < vm.entity.comments.length; this.roll++) {
                     this.$http.get('https://api.jcsuf.top/api/userinfo?uid=' + vm.entity.comments[this.roll].author + "&help=" + this.roll, { credentials: true }).then(function (res) {
                         console.log(res);
-                        vm.$set(vm.entity.comments[res.body.mob_helper], "author_name", res.body.name)
+                        vm.$set(vm.entity.comments[res.body.mob_helper], "author_name", res.body.name.replace(/<.*?>/g, ""))
                         vm.$set(vm.entity.comments[res.body.mob_helper], "author_avatar", res.body.avatar)
                         vm.$set(vm.entity.comments[res.body.mob_helper], "author_level", this.process_level(res.body.exp))
                     }, function () {
@@ -74,6 +74,15 @@ var vm = new Vue({
                 vm.$set(vm.entity, "author_style", "0px 0px 15px red")
                 return "Lv12"
             }
+        },
+        comment: function (level) {
+            this.$http.post('https://api.jcsuf.top/api/postcomment', { aid: vm.entity.aid} , { credentials: true }).then(function (res) {
+                vm.$set(vm.entity, "author_name", res.body.name.replace(/<.*?>/g, ""))
+                vm.$set(vm.entity, "author_avatar", res.body.avatar)
+                vm.$set(vm.entity, "author_level", this.process_level(res.body.exp))
+            }, function () {
+                console.log('请求失败处理');
+            });
         }
     },
     mounted() {

@@ -30,8 +30,8 @@
             <div class="article-comment" v-for="(comm, index) in entity.comments">
                 <div class="avatar-bar">
                     <img v-bind:src="comm.author_avatar" v-bind:style="comm.author_style" class="avatar">
-                    <p>{{comm.author_level}}</p>
-                    <p>#{{comm.floor}}</p>
+                    <span>{{comm.author_level}}</span><br>
+                    <span>#{{comm.floor}}</span>
                 </div>
                 <div class="content-bar">
                     <p class="author-name">{{comm.author_name}}<span v-if="comm.quote!=0" style="color:gray">&nbsp;回复 {{entity.comments[comm.quote-1].author_name}} (#{{comm.quote}})</span></p>

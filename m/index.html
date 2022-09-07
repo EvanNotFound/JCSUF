@@ -24,7 +24,7 @@
                         {{article.snapshot}}
                     </div>
                     <div class="stat">
-                        {{article.author_name}}<br/>{{article.view}} 阅读<br/>{{article.ccount}} 评论
+                        {{article.author_name.replace(/<.*?>/g,"")}}<br/>{{article.view}} 阅读<br/>{{article.ccount}} 评论
                     </div>
                 </div>
             </div>
