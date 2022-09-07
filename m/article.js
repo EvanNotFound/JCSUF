@@ -3,7 +3,8 @@ var vm = new Vue({
     data: {
         entity: {
         },
-        roll: 0
+        roll: 0,
+        comment_start: false
     },
     methods: {
         getArticles: function () {
@@ -76,13 +77,16 @@ var vm = new Vue({
             }
         },
         comment: function (level) {
-            this.$http.post('https://api.jcsuf.top/api/postcomment', { aid: vm.entity.aid} , { credentials: true }).then(function (res) {
+            this.$http.post('https://api.jcsuf.top/api/postcomment', { id: vm.entity.aid } , { credentials: true, emulateJSON: true }).then(function (res) {
                 vm.$set(vm.entity, "author_name", res.body.name.replace(/<.*?>/g, ""))
                 vm.$set(vm.entity, "author_avatar", res.body.avatar)
                 vm.$set(vm.entity, "author_level", this.process_level(res.body.exp))
             }, function () {
                 console.log('请求失败处理');
             });
+        },
+        callcomment: function (level) {
+            vm.comment_start = true;
         }
     },
     mounted() {
