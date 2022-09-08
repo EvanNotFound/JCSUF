@@ -77,7 +77,7 @@ var vm = new Vue({
                 return "Lv12"
             }
         },
-        comment: function (level) {
+        comment: function () {
             this.$http.post('https://api.jcsuf.top/api/postcomment', { id: vm.entity.aid } , { credentials: true, emulateJSON: true }).then(function (res) {
                 vm.$set(vm.entity, "author_name", res.body.name.replace(/<.*?>/g, ""))
                 vm.$set(vm.entity, "author_avatar", res.body.avatar)

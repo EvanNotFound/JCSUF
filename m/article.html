@@ -24,8 +24,9 @@
                 <div class="content-bar">
                     <p class="author-name">{{entity.author_name}}</p>
                     <p v-html="entity.html"></p>
-                    <p onclick="vm.comment(0)">评论</p>
                 </div>
+                <p></p>
+                <p style="margin-right: 10px; text-align: right;" v-bind:onclick="'vm.callcomment(0)'">评论</p>
             </div>
             <div class="article-comment" v-for="(comm, index) in entity.comments">
                 <div class="avatar-bar">
@@ -42,7 +43,7 @@
             </div>
             <div v-if="comment_start" class="comment-pane">
                 <div class="hide-comment" onclick="vm.comment_start=false">隐藏</div>
-                <div class="comment-body"><textarea class="comment-text" placeholder="支持 Markdown 不支持 HTML"></textarea></div>
+                <div class="comment-body"><textarea class="comment-text" placeholder="支持 Markdown 不支持 HTML"></textarea><div style="float: right;">正在评论 #{{target_floor}}&emsp;&emsp;匿名<input type="checkbox"></div>&emsp;&emsp;<button onclick="comment()">发送</button></div>
             </div>
         </div>
     </div>
