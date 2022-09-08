@@ -80,7 +80,6 @@ var vm = new Vue({
         comment: function () {
             this.$http.post('https://api.jcsuf.top/api/postcomment', { aid: vm.entity.id, anonymous: document.getElementById("anon").checked, replyto: vm.target_floor, content: document.getElementById("comment").value } , { credentials: true, emulateJSON: true }).then(function (res) {
                 vm.comment_start = false;
-                vm.entity.comments += res.body.entity;
             }, function () {
                 console.log('请求失败处理');
             });
