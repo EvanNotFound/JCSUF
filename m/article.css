@@ -53,3 +53,38 @@
     width: 80%;
     border-radius: 50%;
 }
+
+.comment-pane {
+    position: fixed;
+    bottom: 0px;
+    height: 20%;
+    left: 0px;
+    width: 100%;
+}
+
+.hide-comment {
+    left: 0px;
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: lightgray;
+    text-align: center;
+}
+
+.comment-body {
+    position: relative;
+    background-color: lightgray;
+    top: -20px;
+    height: calc(100% - 60px);
+    left: 0px;
+    right: 0px;
+    padding: 20px 10px;
+}
+
+.comment-text {
+    background-color: white;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    border-radius: 8px;
+    padding: 4px;
+}

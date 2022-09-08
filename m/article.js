@@ -4,7 +4,8 @@ var vm = new Vue({
         entity: {
         },
         roll: 0,
-        comment_start: false
+        comment_start: false,
+        target_floor: 0
     },
     methods: {
         getArticles: function () {
@@ -87,6 +88,7 @@ var vm = new Vue({
         },
         callcomment: function (level) {
             vm.comment_start = true;
+            vm.target_floor = level;
         }
     },
     mounted() {

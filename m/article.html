@@ -40,6 +40,10 @@
                 <p></p>
                 <p style="margin-right: 10px; text-align: right;" v-bind:onclick="'vm.callcomment('+(index+1)+')'">评论</p>
             </div>
+            <div v-if="comment_start" class="comment-pane">
+                <div class="hide-comment" onclick="vm.comment_start=false">隐藏</div>
+                <div class="comment-body"><textarea class="comment-text" placeholder="支持 Markdown 不支持 HTML"></textarea></div>
+            </div>
         </div>
     </div>
     <script src="article.js"></script>
