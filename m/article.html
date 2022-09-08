@@ -43,7 +43,7 @@
             </div>
             <div v-if="comment_start" class="comment-pane">
                 <div class="hide-comment" onclick="vm.comment_start=false">隐藏</div>
-                <div class="comment-body"><textarea class="comment-text" placeholder="支持 Markdown 不支持 HTML"></textarea><div style="float: right;">正在评论 #{{target_floor}}&emsp;&emsp;匿名<input type="checkbox"></div>&emsp;&emsp;<button onclick="comment()">发送</button></div>
+                <div class="comment-body"><textarea class="comment-text" placeholder="支持 Markdown 不支持 HTML" id="comment"></textarea><div style="float: right;">正在评论 #{{target_floor}}&emsp;&emsp;匿名<input id="anon" type="checkbox"></div>&emsp;&emsp;<button onclick="vm.comment()">发送</button></div>
             </div>
         </div>
     </div>
