@@ -17,7 +17,7 @@ function reg(){
 	if (this.readyState == 4 && this.status == 200) {
 		switch(JSON.parse(this.responseText).code){
 			case 0:
-			location.href = "https://www.jcsuf.top/regSuccess.html"
+			location.href = "https://www.jcsuf.top/regSuccess.html"+location.href.substring(location.href.indexOf("?"));
 			break;
 			case 1:
 			alert("该邮箱已被占用")
@@ -39,7 +39,7 @@ function signin(){
 	if (this.readyState == 4 && this.status == 200) {
 		switch(JSON.parse(this.responseText).code){
 			case 0:
-			location.href = "https://www.jcsuf.top/signinSuccess.html"
+			location.href = "https://www.jcsuf.top/signinSuccess.html"+location.href.substring(location.href.indexOf("?"));
 			break;
 			case 1:
 			alert("该邮箱不存在")
@@ -53,4 +53,12 @@ function signin(){
 	xhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded")//必须要设置，被坑了一天啊
 	xhttp.withCredentials = true;
 	xhttp.send("password="+document.getElementById("i2").value+"&mail="+document.getElementById("i1").value);
+}
+
+if(document.getElementById("clickreg")!=undefined){
+	document.getElementById("clickreg").href = location.href.replace("signin.html","register.html")
+}
+
+if(document.getElementById("clicksi")!=undefined){
+	document.getElementById("clicksi").href = location.href.replace("register.html","signin.html")
 }

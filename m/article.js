@@ -79,7 +79,22 @@ var vm = new Vue({
         },
         comment: function () {
             this.$http.post('https://api.jcsuf.top/api/postcomment', { aid: vm.entity.id, anonymous: document.getElementById("anon").checked, replyto: vm.target_floor, content: document.getElementById("comment").value } , { credentials: true, emulateJSON: true }).then(function (res) {
-                vm.comment_start = false;
+                switch(res.body.code){
+                    case 0:
+                    alert("发布成功");
+                    vm.comment_start = false;
+                    vm.getArticles();
+                    break;
+                    case 1:
+                    alert("发布失败，您是否已经登录？目标帖子是否已被删除？");
+                    location.href = "https://www.jcsuf.top/signin.html?redir=article.html%3Faid%3D"+vm.entity.id
+                    break;
+                    case 2:
+                    alert("您已被封禁");
+                    break;
+                    case 999:
+                    alert("管理员正在修正服务器数据，请稍等几秒并重试");
+                }
             }, function () {
                 console.log('请求失败处理');
             });
