@@ -17,7 +17,7 @@ function reg(){
 	if (this.readyState == 4 && this.status == 200) {
 		switch(JSON.parse(this.responseText).code){
 			case 0:
-			location.href = "https://www.jcsuf.top/regSuccess.html"+location.href.substring(location.href.indexOf("?"));
+			location.href = location.href.replace("register.html","regSuccess.html");
 			break;
 			case 1:
 			alert("该邮箱已被占用")
@@ -39,7 +39,7 @@ function signin(){
 	if (this.readyState == 4 && this.status == 200) {
 		switch(JSON.parse(this.responseText).code){
 			case 0:
-			location.href = "https://www.jcsuf.top/signinSuccess.html"+location.href.substring(location.href.indexOf("?"));
+			location.href = location.href.replace("signin.html","signinSuccess.html")
 			break;
 			case 1:
 			alert("该邮箱不存在")
