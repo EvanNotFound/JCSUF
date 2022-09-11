@@ -2,19 +2,19 @@
 <html lang="en" beta="yes">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="index.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
-    <title>JCSS非官方自由论坛 - JCSUF</title>
+	<title>JCSS非官方自由论坛 - JCSUF</title>
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Noto+Sans">
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Josefin+Sans">
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng">
 	<link rel="shortcut icon" href="https://jcsuf.evanluo.top/assets/favicon-djkuvjux.png">
 	<script src="https://kit.fontawesome.com/cad71fe1f6.js" crossorigin="anonymous"></script>
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1743182420249575"
-     crossorigin="anonymous"></script>
+		crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -24,16 +24,18 @@
 	<!-- 某位开发者说，差不多得了，Dark模式不就是你在做吗，要改自己改啊 -->
 	<!-- 已经有一位开发者寄了，RIP-->
 	<div class="nav-right">
-	<span id="namefield"><b><big>少女祈祷中...</big></b></span><br>
-	<span id="levelfield">Now Loading</span>
-	<!-- 可以通过在Console中输入display_more()展开视图-->
-	<!-- 可以通过在Console中输入animateLock=-1锁定视图-->
-	<!-- 可以通过在Console中输入animateLock= 0解锁视图-->
-	<div id="avatar" onmouseleave="display_less()">
-		<img onmouseover="display_more()" src="https://upload.thwiki.cc/thumb/0/0a/%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png/100px-%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png" height="48px" id="ava-img">
-		<div id="nfield-bg"><span id="more-namefield"><b>Next Dream...</b></span></div>
-		<div id="level-bg"></div>
-	</div>
+		<span id="namefield"><b><big>少女祈祷中...</big></b></span><br>
+		<span id="levelfield">Now Loading</span>
+		<!-- 可以通过在Console中输入display_more()展开视图-->
+		<!-- 可以通过在Console中输入animateLock=-1锁定视图-->
+		<!-- 可以通过在Console中输入animateLock= 0解锁视图-->
+		<div id="avatar" onmouseleave="display_less()">
+			<img onmouseover="display_more()"
+				src="https://upload.thwiki.cc/thumb/0/0a/%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png/100px-%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+				height="48px" id="ava-img">
+			<div id="nfield-bg"><span id="more-namefield"><b>Next Dream...</b></span></div>
+			<div id="level-bg"></div>
+		</div>
 	</div>
 
 	<div class="navul">
@@ -42,12 +44,12 @@
 		<li><a href="signin.html" title="登录" id="signin-compose">登录</a></li>
 		<li><a href="post.html" title="帖子专区">帖子专区</a></li>
 		<li><a href="search.html" title="搜索帖子">搜索帖子</a></li>
-		<li><a href="contact.html"  title="联系管理员">联系管理员</a></li>
+		<li><a href="contact.html" title="联系管理员">联系管理员</a></li>
 		<li><a target="_self" title="切换主题" onclick="switch_theme()">切换主题</a></li>
 	</div>
 
 
-	<div class="notice-container">	
+	<div class="notice-container">
 		<div class="noticebar">
 			<div id="notice-content"></div>
 			<div id="notice-modify-time"></div>
@@ -61,38 +63,42 @@
 		<div class="subforum-sort">
 			<h1>置顶内容</h1>
 		</div>
-		<div class="subforum-row">
 
-			<div class="subforum-description subforum-column">
-				<h4><a href="aaa" class="post_title center">NotFound 404</a></h4>
-				<p class="post_description">论坛规则</p>
+			<div class="subforum-row">
+				<div class="subforum-description subforum-column">
+					<h4><a href="bugreport.html" class="post_title center">漏洞上报页</a></h4>
+					<p class="post_description">如果您在使用JCSUF论坛的过程中遇到了任何问题（如出现漏洞、无法进行登录等操作，或是对论坛运作机制有疑问），都可以在下面的“上</p>
+				</div>
+				<div class="subforum-stats subforum-column center">
+					<p>++</p>
+					<p>--</p>
+				</div>
+				<div class="subforum-info subforum-column">
+					<p><a href="user.html?uid=806604291" class="post_author">JCSUF Admin</a> 发布于
+						2022-07-10 11:25:06<br><span style="margin-left:18px">- 评论</span><br>
+						<span style="margin-left:18px">- 阅读</span></p>
+				</div>
 			</div>
-			<div class="subforum-stats subforum-column center">
-				<span>必看</span>
-			</div>
-			<div class="subforum-info subforum-column">
-				<p>
-				<a href="" class="post_author">Last post</a> by <a href="" class="post_author">香港记者</a>
-				<br>on <small>1990/6/3</small>
-			</p>
-			</div>
-		</div>
 
 		<!--这又是一部分-->
 		<div class="subforum-sort">
 			<h1>最新帖子</h1>
-			<div class="row-count-control">在页面上显示<input type="number" value="10" id="input-row-count" min="5" max="200" class="num-select">篇文章&emsp;<button onclick="reloadnew()" class="inline-button">重新加载</button></div>
-		</div> 
+			<div class="row-count-control">在页面上显示<input type="number" value="10" id="input-row-count" min="5" max="200"
+					class="num-select">篇文章&emsp;<button onclick="reloadnew()" class="inline-button">重新加载</button></div>
+		</div>
 		<div id="articles"></div>
 		<span>Webpage build ver. 178</span>
 	</div>
 	<!--普通的遮罩-->
 	<div id="bgmask"></div>
 	<div class="popout" id="important-notice-container">
-		<h2>重要公告&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span onclick="minimize_pane()" id="close"></span></h2>
+		<h2>重要公告&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span
+				onclick="minimize_pane()" id="close"></span></h2>
 		<h1 style="width:100%; text-align: center">JCSUF管理员支持所有人的抗议</h1>
-		<p>在本次对陈校长的反对与声讨中，有一大部分人选择来到本论坛发帖，以此倾诉自己的心里话，并追求对现状进行改变。本站的注册用户数也从45名达到了52名，收录帖子数量也从218篇达到了227篇，我们在此表示强烈支持与热烈欢迎。</p>
-		<p>纵观发布的倡议书以及檄文，有反对形式主义的，有呼吁校长倾听学生想法的，有想要重办以前活动、组织的，有希望夺回体育课练习体育项目权利的，在此不一一赘述。但无论是谁写的，都是为了学校的前途所着想，体现了本论坛的思想与精神。</p>
+		<p>在本次对陈校长的反对与声讨中，有一大部分人选择来到本论坛发帖，以此倾诉自己的心里话，并追求对现状进行改变。本站的注册用户数也从45名达到了52名，收录帖子数量也从218篇达到了227篇，我们在此表示强烈支持与热烈欢迎。
+		</p>
+		<p>纵观发布的倡议书以及檄文，有反对形式主义的，有呼吁校长倾听学生想法的，有想要重办以前活动、组织的，有希望夺回体育课练习体育项目权利的，在此不一一赘述。但无论是谁写的，都是为了学校的前途所着想，体现了本论坛的思想与精神。
+		</p>
 		<p>为此，本论坛特意开启<a href="https://www.jcsuf.top/category.html?cate=19">校园-檄文建议</a>专区，以方便大家倾诉想法。</p>
 		<p>本论坛的目标将始终不变，力图<b>不惧权威，立场新颖，以下克上</b>。</p>
 		<p>最后，感谢大家对本论坛一如既往的支持！</p>
@@ -100,12 +106,13 @@
 	</div>
 	<div class="foot">
 		<div class="foot-container">
-		本服务器由 <span id="server-os">念力</span> 强力驱动<br>
-		已连续<del>稳定</del>运行 <span id="run-time">不知道多少</span> 分钟。<br>
+			本服务器由 <span id="server-os">念力</span> 强力驱动<br>
+			已连续<del>稳定</del>运行 <span id="run-time">不知道多少</span> 分钟。<br>
 		</div>
 	</div>
 	<script type="text/javascript" src="default.js"></script>
 	<script type="text/javascript" src="theme_manager.js"></script>
 	<script type="text/javascript" src="index.js"></script>
 </body>
+
 </html>
