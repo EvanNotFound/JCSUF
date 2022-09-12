@@ -15,14 +15,14 @@ function post_report() {
 }
 
 function post_report_checked(pick){
-	console.log("hahaha")
-	xhsv = new XMLHttpRequest();
-	xhsv.onreadystatechange = function() {
+	xhss = new XMLHttpRequest();
+	xhss.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
+			console.log("hahaha")
 		}
 	};
-	xhsv.open("POST", "https://api.jcsuf.top/api/report", true);
-	xhsv.withCredentials = true;
-	xhsv.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
-	xhsv.send();
+	xhss.open("POST", "https://api.jcsuf.top/api/report", true);
+	xhss.withCredentials = true;
+	xhss.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
+	xhss.send("aid=7");
 }
