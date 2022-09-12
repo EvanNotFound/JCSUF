@@ -19,10 +19,6 @@ function post_report_checked(pick){
 	xhsv = new XMLHttpRequest();
 	xhsv.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			switch(JSON.parse(this.responseText).code){
-				case 0:
-				alert("成功");
-			}
 		}
 	};
 	xhsv.open("POST", "https://api.jcsuf.top/api/report", true);
