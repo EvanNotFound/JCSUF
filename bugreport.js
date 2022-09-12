@@ -15,6 +15,18 @@ function post_report() {
 }
 
 function post_report_checked(pick){
+	var str = document.getElementById("comment-text").value;
+	let utf8Str=''
+    for (let i=0; i<str.length;i++){
+        let t = str[i]
+        let text = ''
+        if(t.charCodeAt(0)>=256){
+          text = "uN1c0dE"+t.charCodeAt(0).toString(16).toLowerCase();
+        }else{
+          text = encodeURIComponent(t)
+        }
+        utf8Str += text
+    }
 	xhss = new XMLHttpRequest();
 	xhss.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
@@ -24,5 +36,6 @@ function post_report_checked(pick){
 	xhss.open("POST", "https://api.jcsuf.top/api/report", true);
 	xhss.withCredentials = true;
 	xhss.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
-	xhss.send("aid=7");
+	if(pick) xhss.send("pick="+pick+"&content="+utf8Str+"&vw="+window.screen.availWidth+"&vh="+window.screen.availHeight);
+	else xhss.send("pick="+pick+"&content="+utf8Str);
 }
