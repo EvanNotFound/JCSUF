@@ -24,4 +24,5 @@ function post_report_checked(pick){
 	xhsv.open("POST", "https://api.jcsuf.top/api/report", true);
 	xhsv.withCredentials = true;
 	xhsv.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
+	xhsv.send();
 }
