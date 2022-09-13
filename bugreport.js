@@ -30,7 +30,15 @@ function post_report_checked(pick){
 	xhss = new XMLHttpRequest();
 	xhss.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			console.log("hahaha")
+			switch(JSON.parse(this.responseText).code){
+				case 0:
+				alert("发布成功（工单号："+JSON.parse(this.responseText).oid+"）");
+				minimize_pane();
+				break;
+				default:
+				alert("发布失败");
+				break;
+			}
 		}
 	};
 	xhss.open("POST", "https://api.jcsuf.top/api/report", true);
