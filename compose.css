@@ -309,5 +309,14 @@ input[type=checkbox]:checked+label::after {
 	list-style-type: disc;
 }
 
+#more-option {
+	padding-left: 15px;
+	display: none;
+}
+
+#i10 {
+	width: 300px;
+}
+
 
   

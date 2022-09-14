@@ -89,8 +89,27 @@
 					是否仅登录可见
 				</div>
 				<div class="anonornot">
-					<input type="checkbox" id="i6">
+					<input type="checkbox" id="i6" oninput="display_user_option(this.checked)">
 					<label for='i6'></label>
+				</div>
+			</div>
+			<div id="more-option">
+				<div class="anon">
+					<div class="anonwords">
+						此帖发布后注册者不可见
+					</div>
+					<div class="anonornot">
+						<input type="checkbox" id="i9">
+						<label for='i9'></label>
+					</div>
+				</div>
+				<div class="anon">
+					<div class="anonwords">
+						等级低于 <span id="lower-level">1</span> 级者不可见
+					</div>
+				</div>
+				<div style="display: block;">					
+					<input type="range" min="1" max="12" value="1" id="i10" oninput="document.getElementById('lower-level').innerText=this.value">
 				</div>
 			</div>
 			<div class="anon">

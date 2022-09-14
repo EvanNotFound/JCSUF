@@ -132,3 +132,8 @@ function loadbranch(val){
 		xhttp.send();
 	}
 }
+
+function display_user_option(checked){
+	if(checked) document.getElementById("more-option").style.display = "block";
+	else document.getElementById("more-option").style.display = "none";
+}
