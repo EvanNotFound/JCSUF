@@ -77,7 +77,7 @@ function post(){
 	xhttp2.open("POST", "https://api.jcsuf.top/api/postarticle", true);
 	xhttp2.withCredentials = true;
 	xhttp2.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
-	var reqparam = "category="+document.getElementById("i3").value+"&anonymous="+document.getElementById("i4").checked+"&content="+utf8Str.replaceAll("\n","<br>")+"&title="+utf8Str2.replaceAll("\n","<br>")+"&tag=0&nsfw="+document.getElementById("i5").checked+"&lonly="+document.getElementById("i6").checked+"&political="+document.getElementById("i7").checked+"&unsearch="+document.getElementById("i8").checked;
+	var reqparam = "category="+document.getElementById("i3").value+"&anonymous="+document.getElementById("i4").checked+"&content="+utf8Str.replaceAll("\n","<br>")+"&title="+utf8Str2.replaceAll("\n","<br>")+"&tag=0&nsfw="+document.getElementById("i5").checked+"&lonly="+document.getElementById("i6").checked+"&political="+document.getElementById("i7").checked+"&unsearch="+document.getElementById("i8").checked+"&restrictreg="+document.getElementById("i9").checked+"&levellimit="+document.getElementById("i10").value;
 	if(votetitle!=undefined){
 		if(votetype==0){
 			reqparam += "&vote=";
