@@ -4,6 +4,7 @@ xhttp2.onreadystatechange = function() {
         var rbody = JSON.parse(this.responseText)
         document.getElementById("category-title").innerHTML = rbody.title;
         document.getElementById("category-desc").innerHTML = rbody.category.desc;
+		document.title = rbody.title.split(" ")[2] + " - JCSUF"
     }
 };
 xhttp2.open("GET", "https://api.jcsuf.top/api/categoryinfo?"+location.href.substring(location.href.indexOf(".html")+6), true);
