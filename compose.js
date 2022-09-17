@@ -32,9 +32,11 @@ function post(){
     for (let i=0; i<str.length;i++){
         let t = str[i]
         let text = ''
-        if(t.charCodeAt(0)>=256){
+        if(t.charCodeAt(0)>=4096){
           text = "uN1c0dE"+t.charCodeAt(0).toString(16).toLowerCase();
-        }else{
+        }else if(t.charCodeAt(0)>=256){
+			text = "uN1c0dE0"+t.charCodeAt(0).toString(16).toLowerCase();
+		}else{
           text = encodeURIComponent(t)
         }
         utf8Str += text
@@ -84,9 +86,11 @@ function post(){
 			for (let i=0; i<votetitle.length;i++){
 				let t = votetitle[i]
 				let text = ''
-				if(t.charCodeAt(0)>=256){
+				if(t.charCodeAt(0)>=4096){
 				  text = "uN1c0dE"+t.charCodeAt(0).toString(16).toLowerCase();
-				}else{
+				}else if(t.charCodeAt(0)>=256){
+					text = "uN1c0dE0"+t.charCodeAt(0).toString(16).toLowerCase();
+				} else {
 				  text = encodeURIComponent(t)
 				}
 				reqparam += text
