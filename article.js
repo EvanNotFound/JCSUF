@@ -380,4 +380,5 @@ document.onreadystatechange = function(){setInterval(function(){
 	}
     }
 	process_user();
-},200)}
+	process_pixiv();
+},1000)}
