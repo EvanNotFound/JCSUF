@@ -203,7 +203,7 @@ function process_pixiv() {
 	for (var i = 0; i < pixivlist.length; i++) {
 		if (!(pixivlist[i].getAttribute("after") == "yes")) {
 			var pid = pixivlist[i].getAttribute("pid");
-			pixivlist[i].innerHTML = "<img src='https://pximg.rainchan.win/img?img_id=" + pid + "' width='90%'/>";
+			pixivlist[i].innerHTML = "<a href='https://www.pixiv.net/artworks/" + pid + "' target='_blank'><img src='https://pximg.rainchan.win/img?img_id=" + pid + "' width='90%'/></a>";
 			pixivlist[i].setAttribute("after","yes");
 		}
 	}
