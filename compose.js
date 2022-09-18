@@ -1,4 +1,4 @@
-//每100毫秒检测更新刷新预览
+//每500毫秒检测更新刷新预览
 var lastVar = "";
 setInterval(function(){
 	if(lastVar!=document.getElementById("i2").value.replaceAll('\n','<br>')){
@@ -6,7 +6,7 @@ setInterval(function(){
 		document.getElementsByClassName("preview")[0].innerHTML = lastVar
 		repaintdef()
 	}
-},100)
+},500)
 
 var votetitle = undefined;
 var voteend = -1;

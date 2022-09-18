@@ -201,7 +201,7 @@ function process_user() {
 function process_pixiv() {
 	var pixivlist = document.getElementsByTagName("pixiv");
 	for (var i = 0; i < pixivlist.length; i++) {
-		if (!(pixivlist[i].getAttribute("after") == "yes")) {
+		if (!(pixivlist[i].getAttribute("after") == "yes") && !(pixivlist[i].getAttribute("pid") == null)) {
 			var pid = pixivlist[i].getAttribute("pid");
 			pixivlist[i].innerHTML = "<a href='https://www.pixiv.net/artworks/" + pid + "' target='_blank'><img src='https://pximg.rainchan.win/img?img_id=" + pid + "' width='90%' alt='PID" + pid + "'/></a>";
 			pixivlist[i].setAttribute("after","yes");
@@ -212,9 +212,9 @@ function process_pixiv() {
 function process_wyy() {
 	var wyylist = document.getElementsByTagName("wyy");
 	for (var i = 0; i < wyylist.length; i++) {
-		if (!(wyylist[i].getAttribute("after") == "yes")) {
+		if (!(wyylist[i].getAttribute("after") == "yes") && !(wyylist[i].getAttribute("mid") == null)) {
 			var mid = wyylist[i].getAttribute("mid");
-			wyylist[i].innerHTML = '<iframe frameborder="0" border="1" marginwidth="0" marginheight="0" width="250" height="62" src="//music.163.com/outchain/player?type=2&id='+mid+'&auto=1&height=60"></iframe>';
+			wyylist[i].innerHTML = '<iframe frameborder="0" border="1" marginwidth="0" marginheight="0" width="250" height="62" src="https://music.163.com/outchain/player?type=2&id='+mid+'&auto=1&height=60"></iframe>';
 			wyylist[i].setAttribute("after","yes");
 		}
 	}
