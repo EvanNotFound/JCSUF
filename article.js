@@ -370,15 +370,4 @@ function skipflr(floor){
 }
 
 //procceed with over-widthed images
-document.onreadystatechange = function(){setInterval(function(){
-    if(document.readyState == 'complete'){
-        for(var imgelemid = 0; imgelemid < document.getElementsByTagName("img").length; imgelemid++) {
-		var procimg = document.getElementsByTagName("img")[imgelemid];
-		if(procimg.style.width > 480){
-			procimg.style.width = "90%";
-		}
-	}
-    }
-	process_user();
-	process_pixiv();
-},2000)}
+document.onreadystatechange = repaintdef()

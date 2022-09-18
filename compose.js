@@ -4,6 +4,7 @@ setInterval(function(){
 	if(lastVar!=document.getElementById("i2").value.replaceAll('\n','<br>')){
 		lastVar = document.getElementById("i2").value.replaceAll('\n','<br>')
 		document.getElementsByClassName("preview")[0].innerHTML = lastVar
+		repaintdef()
 	}
 },100)
 

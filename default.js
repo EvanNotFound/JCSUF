@@ -181,7 +181,7 @@ function display_less() {
 function process_user() {
 	var userlist = document.getElementsByClassName("username-content");
 	for (var i = 0; i < userlist.length; i++) {
-		if (!(userlist[i].getAttribute("after") == "yes")) {
+		if (!(userlist[i].getAttribute("after") == "yes") && !(userlist[i].getAttribute("uid") == null)) {
 			var uid = userlist[i].getAttribute("uid");
 			var xhttptrans = new XMLHttpRequest();
 			xhttptrans.onreadystatechange = function () {
@@ -203,8 +203,19 @@ function process_pixiv() {
 	for (var i = 0; i < pixivlist.length; i++) {
 		if (!(pixivlist[i].getAttribute("after") == "yes")) {
 			var pid = pixivlist[i].getAttribute("pid");
-			pixivlist[i].innerHTML = "<a href='https://www.pixiv.net/artworks/" + pid + "' target='_blank'><img src='https://pximg.rainchan.win/img?img_id=" + pid + "' width='90%'/></a>";
+			pixivlist[i].innerHTML = "<a href='https://www.pixiv.net/artworks/" + pid + "' target='_blank'><img src='https://pximg.rainchan.win/img?img_id=" + pid + "' width='90%' alt='PID" + pid + "'/></a>";
 			pixivlist[i].setAttribute("after","yes");
+		}
+	}
+}
+
+function process_wyy() {
+	var wyylist = document.getElementsByTagName("wyy");
+	for (var i = 0; i < wyylist.length; i++) {
+		if (!(wyylist[i].getAttribute("after") == "yes")) {
+			var mid = wyylist[i].getAttribute("mid");
+			wyylist[i].innerHTML = '<iframe frameborder="0" border="1" marginwidth="0" marginheight="0" width="250" height="62" src="//music.163.com/outchain/player?type=2&id='+mid+'&auto=1&height=60"></iframe>';
+			wyylist[i].setAttribute("after","yes");
 		}
 	}
 }
@@ -249,4 +260,20 @@ function del(aid) {
 	xhttpdel.open("GET", "https://api.jcsuf.top/api/deletearticle?aid=" + aid, true);
 	xhttpdel.withCredentials = true;
 	xhttpdel.send();
+}
+
+function repaintdef() {
+	setInterval(function(){
+		if(document.readyState == 'complete'){
+			for(var imgelemid = 0; imgelemid < document.getElementsByTagName("img").length; imgelemid++) {
+			var procimg = document.getElementsByTagName("img")[imgelemid];
+			if(procimg.style.width > 480){
+				procimg.style.width = "90%";
+			}
+		}
+		}
+		process_user();
+		process_pixiv();
+		process_wyy();
+	},2000)
 }
