@@ -33,9 +33,9 @@ xhttp.onreadystatechange = function () {
 		}
 		if (document.getElementById("message-count") != undefined) {
 			document.getElementById("message-count").innerHTML = JSON.parse(this.responseText).unreadmsgcount;
-			if (JSON.parse(this.responseText).last_seen < 1662816492984) {
-				display_notice()
-			}
+			//if (JSON.parse(this.responseText).last_seen < 1662816492984) {
+			//	display_notice()
+			//}
 		}
 	}
 };
