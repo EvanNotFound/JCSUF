@@ -181,7 +181,7 @@ function display_less() {
 function process_user() {
 	var userlist = document.getElementsByClassName("username-content");
 	for (var i = 0; i < userlist.length; i++) {
-		if (!userlist[i].getAttribute("after") === "yes") {
+		if (!(userlist[i].getAttribute("after") == "yes")) {
 			var uid = userlist[i].getAttribute("uid");
 			var xhttptrans = new XMLHttpRequest();
 			xhttptrans.onreadystatechange = function () {
@@ -201,8 +201,11 @@ function process_user() {
 function process_pixiv() {
 	var pixivlist = document.getElementsByTagName("pixiv");
 	for (var i = 0; i < pixivlist.length; i++) {
-		var pid = pixivlist[i].getAttribute("pid");
-		pixivlist[i].innerHTML = "<img src='https://pximg.rainchan.win/img?img_id=" + pid + "' width='400px'/>";
+		if (!(pixivlist[i].getAttribute("after") == "yes")) {
+			var pid = pixivlist[i].getAttribute("pid");
+			pixivlist[i].innerHTML = "<img src='https://pximg.rainchan.win/img?img_id=" + pid + "' width='90%'/>";
+			pixivlist[i].setAttribute("after","yes");
+		}
 	}
 }
 
