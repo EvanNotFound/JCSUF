@@ -185,7 +185,7 @@ function process_user() {
 			var uid = userlist[i].getAttribute("uid");
 			var xhttptrans = new XMLHttpRequest();
 			xhttptrans.onreadystatechange = function () {
-				if (this.readyState == 4 && this.status == 200) {
+				if (this.readyState == 4 && this.status == 200 && JSON.parse(this.responseText).uid!=-1) {
 					document.getElementsByClassName("username-content")[this.fuckargument].innerHTML = JSON.parse(this.responseText).name;
 					document.getElementsByClassName("username-content")[this.fuckargument].setAttribute("after", "yes");
 				}
