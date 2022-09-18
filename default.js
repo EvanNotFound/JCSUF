@@ -214,7 +214,7 @@ function process_wyy() {
 	for (var i = 0; i < wyylist.length; i++) {
 		if (!(wyylist[i].getAttribute("after") == "yes") && !(wyylist[i].getAttribute("mid") == null)) {
 			var mid = wyylist[i].getAttribute("mid");
-			wyylist[i].innerHTML = '<iframe frameborder="0" border="1" marginwidth="0" marginheight="0" width="250" height="62" src="https://music.163.com/outchain/player?type=2&id='+mid+'&auto=1&height=60"></iframe>';
+			wyylist[i].innerHTML = '<iframe frameborder="0" border="1" marginwidth="0" marginheight="0" width="90%" src="https://music.163.com/outchain/player?type=2&id='+mid+'&auto=1&height=60"></iframe>';
 			wyylist[i].setAttribute("after","yes");
 		}
 	}
