@@ -6,3 +6,31 @@
     margin-top: 10px;
     padding-bottom: 20px;
 }
+
+.content-body .arttitle {
+    width: calc(100% - 16px);
+    background-color: white;
+    border-radius: 8px;
+    padding: 8px;
+    margin-top: 10px;
+    height: 1em;
+    font-size: 1.5em;
+    border: 0px;
+}
+
+.content-body .artcontent {
+    width: calc(100% - 16px);
+    background-color: white;
+    border-radius: 8px;
+    padding: 8px;
+    margin-top: 4px;
+    height: 20em;
+    border: 0px;
+}
+
+details div {
+    margin: 1em;
+    background-color: white;
+    border-radius: 8px;
+    padding: 8px;
+}

@@ -14,7 +14,7 @@
         <div class="title">
             <span class="title-text">{{entity.title}}</span>
             <span class="site-url">www.jcsuf.top</span>
-            <span class="site-url"><a href="https://www.jcsuf.top/">返回首页</a></span>
+            <span class="site-url"><a href="https://www.jcsuf.top/m/">返回首页</a></span>
         </div>
         <div class="article-body">
             <div class="article-content">
@@ -24,7 +24,7 @@
                 </div>
                 <div class="content-bar">
                     <p class="author-name">{{entity.author_name}}</p>
-                    <p v-html="entity.html"></p>
+                    <p v-html="entity.html.replaceAll('\n','<br>')"></p>
                 </div>
                 <p></p>
                 <p style="margin-right: 10px; text-align: right;" v-bind:onclick="'vm.callcomment(0)'">评论</p>
