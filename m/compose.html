@@ -24,7 +24,19 @@
                 <div id="preview">Loading Preview...</div>
                 <details>
                     <summary>发布选项</summary>
-                    <div>明天再做</div>
+                    <div>
+                        <p>分区选择</p>
+                        <select id="maincate" onchange="loadbranch(this.value)">
+                            <option value="-1">
+                                --未选择--
+                            </option>
+                        </select> - 
+                        <select id="i3">
+                            <option value="-1">
+                                --未选择--
+                            </option>
+                        </select>
+                    </div>
                 </details>
             </details>
         </div>
