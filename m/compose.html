@@ -25,6 +25,7 @@
                 <details>
                     <summary>发布选项</summary>
                     <div>
+                        <h3>必填字段</h3>
                         <p>分区选择</p>
                         <select id="maincate" onchange="loadbranch(this.value)">
                             <option value="-1">
@@ -36,6 +37,13 @@
                                 --未选择--
                             </option>
                         </select>
+                        <h3>其它选项</h3>
+                        <p>是否NSFW（不适宜工作）<input type="checkbox" id="i5"></p>
+                        <p>是否仅登录可见<input type="checkbox" id="i6" oninput="display_user_option(this.checked)"></p>
+                        <div id="more-option">
+                            <p>等级低于 <span id="lower-level">0</span> 级者不可见</p>
+                            0 <input type="range" min="0" max="12" value="0" id="i10" oninput="document.getElementById('lower-level').innerText=this.value"> 12
+                        </div>
                     </div>
                 </details>
             </details>

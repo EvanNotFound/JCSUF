@@ -37,6 +37,11 @@ function loadbranch(val){
 	}
 }
 
+function display_user_option(checked){
+	if(checked) document.getElementById("more-option").style.display = "block";
+	else document.getElementById("more-option").style.display = "none";
+}
+
 var vm = new Vue({
     el: '.vue-enable',
     data: {
