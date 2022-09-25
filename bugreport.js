@@ -47,3 +47,22 @@ function post_report_checked(pick){
 	if(pick) xhss.send("pick="+pick+"&content="+utf8Str+"&vw="+window.screen.availWidth+"&vh="+window.screen.availHeight);
 	else xhss.send("pick="+pick+"&content="+utf8Str);
 }
+
+xhgw = new XMLHttpRequest();
+xhgw.onreadystatechange = function() {
+	if (this.readyState == 4 && this.status == 200) {
+		switch(JSON.parse(this.responseText).code){
+			case 0:
+				for(var c = 0; c < art.orders.length; c++) {
+					processComment(art.orders[c]);
+				}
+		}
+	}
+};
+xhgw.open("GET", "https://api.jcsuf.top/api/myworkorder", true);
+xhgw.withCredentials = true;
+xhgw.send();
+
+function processOrder(order) {
+	document.getElementById("main-content").innerHTML += '<div class="order-body" highlight="no" id="order-'+order.oid+'"></div>'
+}
