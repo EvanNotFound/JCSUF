@@ -2,3 +2,13 @@
 	display: grid;
 	grid-template-columns: 15% 85%;
 }
+
+.order-body .userinfo {
+	background-color: rgb(218, 52, 52, 0.3);
+	box-shadow: 3px 3px 10px rgba(29, 29, 29, 0.150);
+}
+
+.order-body .content-container {
+	background-color: rgb(218, 52, 52, 0.3);
+	box-shadow: 3px 3px 10px rgba(29, 29, 29, 0.150);
+}
