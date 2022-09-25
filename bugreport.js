@@ -51,6 +51,7 @@ function post_report_checked(pick){
 xhgw = new XMLHttpRequest();
 xhgw.onreadystatechange = function() {
 	if (this.readyState == 4 && this.status == 200) {
+		art = JSON.parse(this.responseText);
 		switch(JSON.parse(this.responseText).code){
 			case 0:
 				for(var c = 0; c < art.orders.length; c++) {
