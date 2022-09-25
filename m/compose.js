@@ -82,6 +82,7 @@ function post(){
 				break;
 				case 1:
 				alert("发布失败，请检查登录状态等内容");
+				location.href = "https://www.jcsuf.top/signin.html?redir=compose.html"
 				break;
 				case 2:
 				alert("您已被封禁");
