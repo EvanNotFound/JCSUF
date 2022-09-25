@@ -55,7 +55,7 @@ xhgw.onreadystatechange = function() {
 		switch(JSON.parse(this.responseText).code){
 			case 0:
 				for(var c = 0; c < art.orders.length; c++) {
-					processComment(art.orders[c]);
+					processOrder(art.orders[c]);
 				}
 		}
 	}
