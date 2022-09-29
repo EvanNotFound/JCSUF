@@ -6,6 +6,9 @@ setInterval(function(){
 		lastVar = document.getElementById("i2").value.replaceAll('\n','<br>')
 		document.getElementsByClassName("preview")[0].innerHTML = lastVar
 		if(reptime%10===0) repaintdef()
+		if(lastVar.search(https?:\/\/music.163.com/song\?id=([0-9]*)[0-9a-zA-Z&=]*){
+
+		}
 	}
 	reptime++
 },200)
