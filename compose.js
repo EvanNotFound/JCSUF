@@ -146,7 +146,12 @@ function display_user_option(checked){
 }
 
 function displaytip(val) {
-	if(val===8){
+	console.log("val => "+val)
+	if(val==8){
 		document.getElementById("usertip-cate").innerText = "如果是来自网易云音乐的音乐，可以复制链接中的id字段，在内容框输入<wyy mid='id'></wyy>，以快捷插入音乐";
+	} else if(val==14) {
+		document.getElementById("usertip-cate").innerText = "如果是来自Pixiv的插画，可以复制链接中artworks/后的数字，在内容框输入<pixiv pid='id'></pixiv>，以快捷插入插画";
+	} else {
+		document.getElementById("usertip-cate").innerText = "";
 	}
 }

@@ -318,5 +318,7 @@ input[type=checkbox]:checked+label::after {
 	width: 300px;
 }
 
-
+.tips {
+	font-size: 12px;
+}
   
