@@ -5,9 +5,9 @@ setInterval(function(){
 	if(lastVar!=document.getElementById("i2").value.replaceAll('\n','<br>')){
 		lastVar = document.getElementById("i2").value.replaceAll('\n','<br>')
 		document.getElementsByClassName("preview")[0].innerHTML = lastVar
-		reptime++
 		if(reptime%10===0) repaintdef()
 	}
+	reptime++
 },200)
 
 var votetitle = undefined;
