@@ -1,12 +1,14 @@
 //每500毫秒检测更新刷新预览
 var lastVar = "";
+var reptime = 0
 setInterval(function(){
 	if(lastVar!=document.getElementById("i2").value.replaceAll('\n','<br>')){
 		lastVar = document.getElementById("i2").value.replaceAll('\n','<br>')
 		document.getElementsByClassName("preview")[0].innerHTML = lastVar
-		repaintdef()
+		reptime++
+		if(reptime%10===0) repaintdef()
 	}
-},500)
+},200)
 
 var votetitle = undefined;
 var voteend = -1;
@@ -141,4 +143,10 @@ function loadbranch(val){
 function display_user_option(checked){
 	if(checked) document.getElementById("more-option").style.display = "block";
 	else document.getElementById("more-option").style.display = "none";
+}
+
+function displaytip(val) {
+	if(val===8){
+		document.getElementById("usertip-cate").innerText = "如果是来自网易云音乐的音乐，可以复制链接中的id字段，在内容框输入<wyy mid='id'></wyy>，以快捷插入音乐";
+	}
 }
