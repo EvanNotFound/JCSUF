@@ -1,4 +1,4 @@
-//每500毫秒检测更新刷新预览
+//每200毫秒检测更新刷新预览
 var lastVar = "";
 var reptime = 0
 setInterval(function(){
