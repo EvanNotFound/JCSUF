@@ -6,8 +6,12 @@ setInterval(function(){
 		lastVar = document.getElementById("i2").value.replaceAll('\n','<br>')
 		document.getElementsByClassName("preview")[0].innerHTML = lastVar
 		if(reptime%10===0) repaintdef()
-		if(lastVar.search(https?:\/\/music.163.com/song\?id=([0-9]*)[0-9a-zA-Z&=]*){
-
+		if(lastVar.search(/https?:\/\/music\.163\.com\/song\?id=[0-9]+(\&userid=[0-9]+)?/g)!=-1){
+			document.getElementById("usertip-content").innerHTML = "检测到网易云音乐链接，可以 <button onclick='wyy_compile()'>一键插入</button> 音乐卡片，显示可能需要一定时间";
+		} else if(lastVar.search(/https?:\/\/www\.pixiv\.net\/artworks\/([0-9]+)/g)!=-1){
+			document.getElementById("usertip-content").innerHTML = "检测到Pixiv插图链接，可以 <button onclick='pixiv_compile()'>一键插入</button> 插图，显示可能需要一定时间";
+		} else {
+			document.getElementById("usertip-content").innerText = "";
 		}
 	}
 	reptime++
@@ -157,4 +161,14 @@ function displaytip(val) {
 	} else {
 		document.getElementById("usertip-cate").innerText = "";
 	}
+}
+
+function wyy_compile() {
+	document.getElementById("i2").value = document.getElementById("i2").value.replace(/https?:\/\/music\.163\.com\/song\?id=([0-9]+)(\&userid=[0-9]+)?/g,"<wyy mid='$1'></wyy>")
+	repaintdef()
+}
+
+function pixiv_compile() {
+	document.getElementById("i2").value = document.getElementById("i2").value.replace(/https?:\/\/www\.pixiv\.net\/artworks\/([0-9]+)/g,"<pixiv pid='$1'></pixiv>")
+	repaintdef()
 }
