@@ -220,6 +220,17 @@ function process_wyy() {
 	}
 }
 
+function process_bilibili() {
+	var blist = document.getElementsByTagName("bili");
+	for (var i = 0; i < blist.length; i++) {
+		if (!(blist[i].getAttribute("after") == "yes") && !(blist[i].getAttribute("bvid") == null)) {
+			var bvid = blist[i].getAttribute("bvid");
+			blist[i].innerHTML = '<iframe src="https://player.bilibili.com/player.html?bvid='+bvid+'" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>';
+			blist[i].setAttribute("after","yes");
+		}
+	}
+}
+
 function formatDateTime(date) {
 	if (date == "" || !date) {
 		return "";
@@ -275,5 +286,6 @@ function repaintdef() {
 		process_user();
 		process_pixiv();
 		process_wyy();
+		process_bilibili();
 	},2000)
 }

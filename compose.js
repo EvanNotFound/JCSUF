@@ -10,6 +10,8 @@ setInterval(function(){
 			document.getElementById("usertip-content").innerHTML = "检测到网易云音乐链接，可以 <button onclick='wyy_compile()'>一键插入</button> 音乐卡片，显示可能需要一定时间";
 		} else if(lastVar.search(/https?:\/\/www\.pixiv\.net\/artworks\/([0-9]+)/g)!=-1){
 			document.getElementById("usertip-content").innerHTML = "检测到Pixiv插图链接，可以 <button onclick='pixiv_compile()'>一键插入</button> 插图，显示可能需要一定时间";
+		} else if(lastVar.search(/https?:\/\/www\.bilibili\.com\/video\/(BV[0-9a-zA-V]{10})\//g)!=-1){
+			document.getElementById("usertip-content").innerHTML = "检测到Bilibili视频链接，可以 <button onclick='bilibili_compile()'>一键插入</button> 视频，显示可能需要一定时间";
 		} else {
 			document.getElementById("usertip-content").innerText = "";
 		}
@@ -170,5 +172,10 @@ function wyy_compile() {
 
 function pixiv_compile() {
 	document.getElementById("i2").value = document.getElementById("i2").value.replace(/https?:\/\/www\.pixiv\.net\/artworks\/([0-9]+)/g,"<pixiv pid='$1'></pixiv>")
+	repaintdef()
+}
+
+function bilibili_compile() {
+	document.getElementById("i2").value = document.getElementById("i2").value.replace(/https?:\/\/www\.bilibili\.com\/video\/(BV[0-9a-zA-V]{10})\//g,"<bili bvid='$1'></bili>")
 	repaintdef()
 }
