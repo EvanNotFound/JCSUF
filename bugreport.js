@@ -71,32 +71,23 @@ function processOrder(order) {
 	var xhttpcom = new XMLHttpRequest();
 	xhttpcom.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			if(currentid==comment.author){
-				//本人发布且非匿名
-				document.getElementById("author-avatar-"+comment.floor).src = JSON.parse(this.responseText).avatar;
-				document.getElementById("author-name-"+comment.floor).innerHTML = JSON.parse(this.responseText).name+"<font color='#a0a0a0'>（你）</font>";
-				process_author_level(JSON.parse(this.responseText).exp, comment.floor);
+			if(currentid==order.author){
+				document.getElementById("author-avatar-"+order.oid).src = JSON.parse(this.responseText).avatar;
+				document.getElementById("author-name-"+order.oid).innerHTML = JSON.parse(this.responseText).name+"<font color='#a0a0a0'>（你）</font>";
+				process_author_level(JSON.parse(this.responseText).exp, order.oid);
 			} else {
-				document.getElementById("author-avatar-"+comment.floor).src = JSON.parse(this.responseText).avatar;
-				document.getElementById("author-name-"+comment.floor).innerHTML = JSON.parse(this.responseText).name;
-				process_author_level(JSON.parse(this.responseText).exp, comment.floor);
+				document.getElementById("author-avatar-"+order.oid).src = JSON.parse(this.responseText).avatar;
+				document.getElementById("author-name-"+order.oid).innerHTML = JSON.parse(this.responseText).name;
+				process_author_level(JSON.parse(this.responseText).exp, order.oid);
 			}
-			finishcount ++;
-			if(finishcount==targetcount && location.href.indexOf("&skiptofloor")!=-1){
-				setTimeout(function(){
-					var skipcont = location.href.substring(location.href.indexOf("&skiptofloor=")+13)
-					if(skipcont.indexOf("&")!=-1) skipcont = skipcont.substring(0,skipcont.indexOf("&"))
-					skipflr(skipcont)
-				}, 500)
-			}
-			Array.from(document.getElementsByClassName("flauthor-"+comment.floor)).forEach(elem => {
-				elem.innerHTML = JSON.parse(this.responseText).name+':<font color="gray">'+comment.html+'</font>'
-				elem.style.backgroundColor = "white"
-			});
+			//Array.from(document.getElementsByClassName("flauthor-"+comment.floor)).forEach(elem => {
+			//	elem.innerHTML = JSON.parse(this.responseText).name+':<font color="gray">'+comment.html+'</font>'
+			//	elem.style.backgroundColor = "white"
+			//});
 		}
 	};
-	xhttpcom.open("GET", "https://api.jcsuf.top/api/userinfo?uid="+comment.author, true);
-	xhttpcom.fuckargument = comment.author;
+	xhttpcom.open("GET", "https://api.jcsuf.top/api/userinfo?uid="+order.author, true);
+	xhttpcom.fuckargument = order.author;
 	xhttpcom.withCredentials = true;
 	xhttpcom.send();
 	for(const tr of order.trace_flow){
