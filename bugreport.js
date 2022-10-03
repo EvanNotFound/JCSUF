@@ -96,3 +96,7 @@ function processOrder(order) {
 		document.getElementById("order-trace-"+order.oid).style.backgroundColor = "white"
 	}
 }
+
+function search() {
+	alert("Error: Unsupported Function Called.")
+}
