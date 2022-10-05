@@ -1,17 +1,17 @@
 var xhttp2 = new XMLHttpRequest();
 xhttp2.onreadystatechange = function() {
-	if (this.readyState == 4 && this.status == 200) {
+	if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 		document.getElementById("notice-content").innerHTML = JSON.parse(this.responseText).text;
 		document.getElementById("notice-modify-time").innerHTML = "JCSUF Team, "+JSON.parse(this.responseText).modify;
 	}
 };
 xhttp2.open("GET", "https://api.jcsuf.top/api/notice", true);
 xhttp2.withCredentials = true;
-xhttp2.send();
+xhttp2.send(); nettaskcreate();
 
 var xhttp4 = new XMLHttpRequest();
 xhttp4.onreadystatechange = function() {
-	if (this.readyState == 4 && this.status == 200) {
+	if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 		var rarts = JSON.parse(this.responseText).articles;
 		for(let i=0;i<rarts.length;i++){
 			document.getElementById("articles").innerHTML += '<div class="subforum-row" id="article-'+rarts[i].id+'"></div>'
@@ -29,7 +29,7 @@ xhttp4.onreadystatechange = function() {
 };
 xhttp4.open("GET", "https://api.jcsuf.top/api/fetchnewarticle", true);
 xhttp4.withCredentials = true;
-xhttp4.send();
+xhttp4.send(); nettaskcreate();
 
 if(window.screen.availWidth<=1080){
 	document.getElementsByClassName("notice-container")[0].style.display = "none";
@@ -38,7 +38,7 @@ if(window.screen.availWidth<=1080){
 function transname(art) { //解析Id为用户名
 	var xhttptrans = new XMLHttpRequest();
 	xhttptrans.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
+		if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 			if(currentid==art.author){
 				if(art.fromAnonymous){
 					document.getElementById("article-info-"+art.id).innerHTML = '<a href="user.html?uid='+art.author+'" class="post_author"><font color="#6699aa">'+JSON.parse(this.responseText).name+' (you, 匿名)</font></a> 发布于 '+formatDateTime(art.ctime)+'<br><span style="margin-left:18px">'+art.ccount+' 评论</span><br><span style="margin-left:18px">'+art.view+' 阅读</span><br><font onclick="del('+art.id+')" color="red" style="margin-left: 18px"><small>删除</small></font>'
@@ -58,13 +58,13 @@ function transname(art) { //解析Id为用户名
 		}
 	};
 	xhttptrans.open("GET", "https://api.jcsuf.top/api/userinfo?uid="+art.author, true);
-	xhttptrans.send();
+	xhttptrans.send(); nettaskcreate();
 }
 
 function reloadnew() {
 	var xhttpreload = new XMLHttpRequest();
 	xhttpreload.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
+		if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 			var rarts = JSON.parse(this.responseText).articles;
 			document.getElementById("articles").innerHTML = ''
 			for(let i=0;i<rarts.length;i++){
@@ -83,7 +83,7 @@ function reloadnew() {
 	};
 	xhttpreload.open("GET", "https://api.jcsuf.top/api/fetchnewarticle?pc="+document.getElementById("input-row-count").value, true);
 	xhttpreload.withCredentials = true;
-	xhttpreload.send();
+	xhttpreload.send(); nettaskcreate();
 }
 
 function minimize_pane(){

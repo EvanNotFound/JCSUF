@@ -3,6 +3,8 @@ var votetitle = undefined;
 var voteend = -1;
 var votetype = 0;
 var voteanon = false;
+var tasks = 0;
+var finishes = 0;
 setInterval(function(){
 	if(lastVar!=document.getElementById("i2").value.replaceAll('\n','<br>')){
 		lastVar = document.getElementById("i2").value.replaceAll('\n','<br>')
@@ -12,7 +14,7 @@ setInterval(function(){
 
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
-	if (this.readyState == 4 && this.status == 200) {
+	if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 		var rbody = JSON.parse(this.responseText)
 		for(let i = 0; i < rbody.length; i++){
 			if(rbody[i].id>=1000) document.getElementById("maincate").innerHTML += '<option value="'+rbody[i].id+'">'+rbody[i].name+'</option>';
@@ -21,13 +23,13 @@ xhttp.onreadystatechange = function() {
 };
 xhttp.open("GET", "https://api.jcsuf.top/api/categorylist", true);
 xhttp.withCredentials = true;
-xhttp.send();
+xhttp.send(); nettaskcreate();
 
 function loadbranch(val){
 	if(val!=-1){
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
+			if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 				var rbody = JSON.parse(this.responseText)
 				document.getElementById("i3").innerHTML = '<option value="-1">--未选择--</option>';
 				for(let i = 0; i < rbody.length; i++){
@@ -37,7 +39,7 @@ function loadbranch(val){
 		};
 		xhttp.open("GET", "https://api.jcsuf.top/api/categorylist?parent="+val, true);
 		xhttp.withCredentials = true;
-		xhttp.send();
+		xhttp.send(); nettaskcreate();
 	}
 }
 
@@ -76,7 +78,7 @@ function post(){
         utf8Str2 += text
      }
 	xhttp2.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
+		if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 			switch(JSON.parse(this.responseText).code){
 				case 0:
 				location.href = "https://www.jcsuf.top/sendSuccess.html"
@@ -137,3 +139,18 @@ var vm = new Vue({
         
     }
 })
+
+function nettaskcreate() {
+	tasks++;
+	output_task();
+}
+
+function nettaskfinish() {
+	finishes++;
+	output_task();
+	if (tasks = finishes) setTimeout(function () { if (tasks = finishes) { tasks = 0; finishes = 0; output_task() } }, 1000)
+}
+
+function output_task() {
+	console.log("Network Tasks: " + tasks + " created, " + finishes + " finished.")
+}

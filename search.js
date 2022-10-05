@@ -1,7 +1,7 @@
 function search() {
     var xhttp4 = new XMLHttpRequest();
     xhttp4.onreadystatechange = function() {
-    	if (this.readyState == 4 && this.status == 200) {
+    	if (this.readyState == 4 && this.status == 200) { nettaskfinish()
     		var rarts = JSON.parse(this.responseText).results;
             document.getElementById("articles").innerHTML = '搜索到 '+JSON.parse(this.responseText).matches+' 条结果';
 	    	for(let i=0;i<rarts.length;i++){
@@ -33,13 +33,13 @@ function search() {
     }
     xhttp4.open("GET", "https://api.jcsuf.top/api/searcharticle?qs="+utf8Str+"&vw=0&cw=0", true);
     xhttp4.withCredentials = true;
-    xhttp4.send();
+    xhttp4.send(); nettaskcreate();
 }
 
 function transname(art,rel) { //解析Id为用户名
 	var xhttptrans = new XMLHttpRequest();
 	xhttptrans.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
+		if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 			if(currentid==art.author){
 				if(art.fromAnonymous){
 					document.getElementById("article-info-"+art.id).innerHTML = '<a href="user.html?uid='+art.author+'" class="post_author"><font color="#6699aa">'+JSON.parse(this.responseText).name+' (you, 匿名)</font></a> 发布于 '+formatDateTime(art.ctime)+'<br><span style="margin-left:18px">'+art.ccount+' 评论</span><br><span style="margin-left:18px">'+art.view+' 阅读</span><br><font onclick="del('+art.id+')" color="red" style="margin-left: 18px"><small>删除</small></font><br><span style="margin-left:18px">相关性 '+rel+'</span>'
@@ -59,5 +59,5 @@ function transname(art,rel) { //解析Id为用户名
 		}
 	};
 	xhttptrans.open("GET", "https://api.jcsuf.top/api/userinfo?uid="+art.author, true);
-	xhttptrans.send();
+	xhttptrans.send(); nettaskcreate();
 }

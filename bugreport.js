@@ -31,7 +31,7 @@ function post_report_checked(pick) {
 	}
 	xhss = new XMLHttpRequest();
 	xhss.onreadystatechange = function () {
-		if (this.readyState == 4 && this.status == 200) {
+		if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 			switch (JSON.parse(this.responseText).code) {
 				case 0:
 					alert("发布成功（工单号：" + JSON.parse(this.responseText).oid + "）");
@@ -52,7 +52,7 @@ function post_report_checked(pick) {
 
 xhgw = new XMLHttpRequest();
 xhgw.onreadystatechange = function () {
-	if (this.readyState == 4 && this.status == 200) {
+	if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 		art = JSON.parse(this.responseText);
 		switch (JSON.parse(this.responseText).code) {
 			case 0:
@@ -64,7 +64,7 @@ xhgw.onreadystatechange = function () {
 };
 xhgw.open("GET", "https://api.jcsuf.top/api/myworkorder", true);
 xhgw.withCredentials = true;
-xhgw.send();
+xhgw.send(); nettaskcreate();
 
 function processOrder(order) {
 	document.getElementById("main-content").innerHTML += '<div class="order-body" highlight="no" id="order-' + order.oid + '"></div>'
@@ -72,7 +72,7 @@ function processOrder(order) {
 	document.getElementById("order-" + order.oid).innerHTML += '<div class="content-container"><div class="content" id="content-' + order.oid + '"><font style="color:rgb(68,68,100);font-size:10px">Work Order ID ' + order.oid + '</font><br>' + order.content + '</div><div class="subreply" id="order-trace-' + order.oid + '"></div><span onclick="comment(' + order.oid + ')"><i class="fa-regular fa-comment"></i></span></div>'
 	var xhttpcom = new XMLHttpRequest();
 	xhttpcom.onreadystatechange = function () {
-		if (this.readyState == 4 && this.status == 200) {
+		if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 			if (currentid == order.author) {
 				document.getElementById("author-avatar-" + order.oid).src = JSON.parse(this.responseText).avatar;
 				document.getElementById("author-name-" + order.oid).innerHTML = JSON.parse(this.responseText).name + "<font color='#a0a0a0'>（你）</font>";
@@ -91,7 +91,7 @@ function processOrder(order) {
 	xhttpcom.open("GET", "https://api.jcsuf.top/api/userinfo?uid=" + order.author, true);
 	xhttpcom.fuckargument = order.author;
 	xhttpcom.withCredentials = true;
-	xhttpcom.send();
+	xhttpcom.send(); nettaskcreate();
 	for (const tr of order.trace_flow) {
 		document.getElementById("order-trace-" + order.oid).innerHTML += '<span><font color="gray">' + comment.html + '</font></span>'
 		document.getElementById("order-trace-" + order.oid).style.backgroundColor = "white"
@@ -101,7 +101,7 @@ function processOrder(order) {
 function search() {
 	xhs = new XMLHttpRequest();
 	xhs.onreadystatechange = function () {
-		if (this.readyState == 4 && this.status == 200) {
+		if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 			art = JSON.parse(this.responseText);
 			switch (JSON.parse(this.responseText).code) {
 				case 0:
@@ -111,5 +111,5 @@ function search() {
 	};
 	xhs.open("GET", "https://api.jcsuf.top/api/workorderinfo?oid="+prompt("请输入工单号"), true);
 	xhs.withCredentials = true;
-	xhs.send();
+	xhs.send(); nettaskcreate();
 }

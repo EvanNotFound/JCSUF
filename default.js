@@ -2,6 +2,8 @@ var animateLock = 0;
 var registerLock = 0;
 var currentid = -1;
 var admin = 0;
+var tasks = 0;
+var finishes = 0;
 
 function change_to_dark() {
 	document.documentElement.setAttribute("theme", "dark")
@@ -19,7 +21,7 @@ if (window.screen.availWidth > 1080) {
 
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function () {
-	if (this.readyState == 4 && this.status == 200) {
+	if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 		document.getElementById("namefield").innerHTML = "<b><big>" + JSON.parse(this.responseText).name + "</big></b>";
 		document.getElementById("more-namefield").innerHTML = "<b>" + JSON.parse(this.responseText).name + "</b>";
 		document.getElementById("ava-img").src = JSON.parse(this.responseText).avatar;
@@ -41,18 +43,18 @@ xhttp.onreadystatechange = function () {
 };
 xhttp.open("GET", "https://api.jcsuf.top/api/loginstatus", true);
 xhttp.withCredentials = true;
-xhttp.send();
+xhttp.send(); nettaskcreate();
 
 var xhttp3 = new XMLHttpRequest();
 xhttp3.onreadystatechange = function () {
-	if (this.readyState == 4 && this.status == 200) {
+	if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 		document.getElementById("server-os").innerHTML = JSON.parse(this.responseText).os_type;
 		document.getElementById("run-time").innerHTML = Math.round(JSON.parse(this.responseText).ontime / 60) / 1000;
 	}
 };
 xhttp3.open("GET", "https://api.jcsuf.top/api/osinfo", true);
 xhttp3.withCredentials = true;
-xhttp3.send();
+xhttp3.send(); nettaskcreate();
 
 function process_level(exp) {
 	if (exp == 0) {
@@ -185,7 +187,7 @@ function process_user() {
 			var uid = userlist[i].getAttribute("uid");
 			var xhttptrans = new XMLHttpRequest();
 			xhttptrans.onreadystatechange = function () {
-				if (this.readyState == 4 && this.status == 200 && JSON.parse(this.responseText).uid!=-1) {
+				if (this.readyState == 4 && this.status == 200 && JSON.parse(this.responseText).uid != -1) {
 					document.getElementsByClassName("username-content")[this.fuckargument].innerHTML = JSON.parse(this.responseText).name;
 					document.getElementsByClassName("username-content")[this.fuckargument].setAttribute("after", "yes");
 				}
@@ -193,7 +195,7 @@ function process_user() {
 			xhttptrans.fuckargument = i;
 			xhttptrans.open("GET", "https://api.jcsuf.top/api/userinfo?uid=" + uid, true);
 			xhttptrans.withCredentials = true;
-			xhttptrans.send();
+			xhttptrans.send(); nettaskcreate();
 		}
 	}
 }
@@ -204,7 +206,7 @@ function process_pixiv() {
 		if (!(pixivlist[i].getAttribute("after") == "yes") && !(pixivlist[i].getAttribute("pid") == null)) {
 			var pid = pixivlist[i].getAttribute("pid");
 			pixivlist[i].innerHTML = "<a href='https://www.pixiv.net/artworks/" + pid + "' target='_blank'><img src='https://pximg.rainchan.win/img?img_id=" + pid + "' width='90%' alt='PID" + pid + "'/></a>";
-			pixivlist[i].setAttribute("after","yes");
+			pixivlist[i].setAttribute("after", "yes");
 		}
 	}
 }
@@ -214,8 +216,8 @@ function process_wyy() {
 	for (var i = 0; i < wyylist.length; i++) {
 		if (!(wyylist[i].getAttribute("after") == "yes") && !(wyylist[i].getAttribute("mid") == null)) {
 			var mid = wyylist[i].getAttribute("mid");
-			wyylist[i].innerHTML = '<iframe frameborder="0" border="1" marginwidth="0" marginheight="0" width="90%" src="https://music.163.com/outchain/player?type=2&id='+mid+'&auto=1&height=60"></iframe>';
-			wyylist[i].setAttribute("after","yes");
+			wyylist[i].innerHTML = '<iframe frameborder="0" border="1" marginwidth="0" marginheight="0" width="90%" src="https://music.163.com/outchain/player?type=2&id=' + mid + '&auto=1&height=60"></iframe>';
+			wyylist[i].setAttribute("after", "yes");
 		}
 	}
 }
@@ -225,8 +227,8 @@ function process_bilibili() {
 	for (var i = 0; i < blist.length; i++) {
 		if (!(blist[i].getAttribute("after") == "yes") && !(blist[i].getAttribute("bvid") == null)) {
 			var bvid = blist[i].getAttribute("bvid");
-			blist[i].innerHTML = '<iframe src="https://player.bilibili.com/player.html?bvid='+bvid+'" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>';
-			blist[i].setAttribute("after","yes");
+			blist[i].innerHTML = '<iframe src="https://player.bilibili.com/player.html?bvid=' + bvid + '" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>';
+			blist[i].setAttribute("after", "yes");
 		}
 	}
 }
@@ -253,7 +255,7 @@ function formatDateTime(date) {
 function del(aid) {
 	var xhttpdel = new XMLHttpRequest();
 	xhttpdel.onreadystatechange = function () {
-		if (this.readyState == 4 && this.status == 200) {
+		if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 			switch (JSON.parse(this.responseText).code) {
 				case 0:
 					alert("成功删除。")
@@ -270,22 +272,42 @@ function del(aid) {
 	};
 	xhttpdel.open("GET", "https://api.jcsuf.top/api/deletearticle?aid=" + aid, true);
 	xhttpdel.withCredentials = true;
-	xhttpdel.send();
+	xhttpdel.send(); nettaskcreate();
 }
 
 function repaintdef() {
-	setInterval(function(){
-		if(document.readyState == 'complete'){
-			for(var imgelemid = 0; imgelemid < document.getElementsByTagName("img").length; imgelemid++) {
-			var procimg = document.getElementsByTagName("img")[imgelemid];
-			if(procimg.style.width > 480){
-				procimg.style.width = "90%";
+	setInterval(function () {
+		if (document.readyState == 'complete') {
+			for (var imgelemid = 0; imgelemid < document.getElementsByTagName("img").length; imgelemid++) {
+				var procimg = document.getElementsByTagName("img")[imgelemid];
+				if (procimg.style.width > 480) {
+					procimg.style.width = "90%";
+				}
 			}
-		}
 		}
 		process_user();
 		process_pixiv();
 		process_wyy();
 		process_bilibili();
-	},2000)
+	}, 2000)
+}
+
+function nettaskcreate() {
+	tasks++;
+	output_task();
+}
+
+function nettaskfinish() {
+	finishes++;
+	output_task();
+	if (tasks == finishes) setTimeout(function () { if (tasks == finishes) { tasks = 0; finishes = 0; output_task() } }, 1000)
+}
+
+function output_task() {
+	console.log("Network Tasks: " + tasks + " created, " + finishes + " finished.")
+	if(tasks!=0||finishes!=0){
+		document.getElementById("resource-load").innerHTML = "加载资源: "+finishes+"/"+tasks;
+	} else {
+		document.getElementById("resource-load").innerHTML = "";
+	}
 }

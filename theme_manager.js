@@ -8,7 +8,7 @@ function switch_theme(){
 	}
 	var xhttp2 = new XMLHttpRequest();
 	xhttp2.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
+		if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 			if(JSON.parse(this.responseText).code==0){
 				alert("成功将主题进行全局变换（现在是"+document.documentElement.getAttribute("theme")+"）")
 			} else if(JSON.parse(this.responseText).code==-1){
@@ -20,15 +20,15 @@ function switch_theme(){
 	};
 	xhttp2.open("GET", "https://api.jcsuf.top/api/themechange?theme="+document.documentElement.getAttribute("theme"), true);
 	xhttp2.withCredentials = true;
-	xhttp2.send();
+	xhttp2.send(); nettaskcreate();
 }
 
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
-	if (this.readyState == 4 && this.status == 200) {
+	if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 		document.documentElement.setAttribute("theme",JSON.parse(this.responseText).theme_preferrence)
 	}
 };
 xhttp.open("GET", "https://api.jcsuf.top/api/loginstatus", true);
 xhttp.withCredentials = true;
-xhttp.send();
+xhttp.send(); nettaskcreate();

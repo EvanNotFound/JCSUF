@@ -7,7 +7,7 @@ var targetcount = 0;
 
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function () {
-	if (this.readyState == 4 && this.status == 200) {
+	if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 		art = JSON.parse(this.responseText);
 		document.getElementById("artcontent").innerHTML = art.html.replaceAll("\n", "<br>")
 		document.getElementById("title-container").innerHTML = '<b>' + art.title + '</b>'
@@ -20,7 +20,7 @@ xhttp.onreadystatechange = function () {
 			document.getElementById("verify-container").style.display = "block";
 			var xhttpve = new XMLHttpRequest();
 			xhttpve.onreadystatechange = function () {
-				if (this.readyState == 4 && this.status == 200) {
+				if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 					document.getElementById("verify-title").innerHTML = JSON.parse(this.responseText).desc;
 					for (var i in JSON.parse(this.responseText).choices) {
 						document.getElementById("verify-answer-container").innerHTML += '<button onclick="access(' + JSON.parse(this.responseText).accid + ',' + JSON.parse(this.responseText).choices[i] + ')" class="verify-answer">选这个</button>&emsp;' + i + "<br>";
@@ -29,7 +29,7 @@ xhttp.onreadystatechange = function () {
 			};
 			xhttpve.open("GET", "https://api.jcsuf.top/api/getproblem?diff=" + art.nsfw_lvl, true);
 			xhttpve.withCredentials = true;
-			xhttpve.send();
+			xhttpve.send(); nettaskcreate();
 		}
 		if (art.political) {
 			document.getElementById("bgmask").style.display = "block";
@@ -56,7 +56,7 @@ xhttp.onreadystatechange = function () {
 		document.getElementById("rating-0").innerHTML = (art.likedbyyou ? '<font color="#3cf">↑ ' : '↑ ') + art.like + (art.likedbyyou ? '</font> ' : ' ') + (art.dislikedbyyou ? '<font color="#f31">↓ ' : '↓ ') + art.dislike + (art.dislike + art.dislikedbyyou ? '</font>' : '');
 		var xhttptrans = new XMLHttpRequest();
 		xhttptrans.onreadystatechange = function () {
-			if (this.readyState == 4 && this.status == 200) {
+			if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 				if (currentid == art.author) {
 					if (art.fromAnonymous) {
 						//匿名作者是本人
@@ -87,12 +87,12 @@ xhttp.onreadystatechange = function () {
 		xhttptrans.open("GET", "https://api.jcsuf.top/api/userinfo?uid=" + art.author, true);
 		xhttptrans.withCredentials = true;
 		xhttptrans.fuckargument = art.author;
-		xhttptrans.send();
+		xhttptrans.send(); nettaskcreate();
 	}
 };
 xhttp.open("GET", "https://api.jcsuf.top/api/articleinfo" + location.href.substring(location.href.indexOf(".html") + 5), true);
 xhttp.withCredentials = true;
-xhttp.send();
+xhttp.send(); nettaskcreate();
 
 function comment(wfid) {
 	fid = wfid;
@@ -140,7 +140,7 @@ function post_comment() {
 		utf8Str += text
 	}
 	xhttp2.onreadystatechange = function () {
-		if (this.readyState == 4 && this.status == 200) {
+		if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 			switch (JSON.parse(this.responseText).code) {
 				case 0:
 					alert("发布成功");
@@ -174,7 +174,7 @@ function processComment(comment) {
 	document.getElementById("content-" + comment.floor).innerHTML += '<div class="subreply subreply-thread-' + comment.floor + '"></div>'
 	var xhttpcom = new XMLHttpRequest();
 	xhttpcom.onreadystatechange = function () {
-		if (this.readyState == 4 && this.status == 200) {
+		if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 			if (currentid == comment.author) {
 				if (comment.fromAnonymous) {
 					//匿名作者是本人
@@ -217,7 +217,7 @@ function processComment(comment) {
 	xhttpcom.open("GET", "https://api.jcsuf.top/api/userinfo?uid=" + comment.author, true);
 	xhttpcom.fuckargument = comment.author;
 	xhttpcom.withCredentials = true;
-	xhttpcom.send();
+	xhttpcom.send(); nettaskcreate();
 	if (comment.quote != 0) {
 		Array.from(document.getElementsByClassName("subreply-thread-" + comment.quote)).forEach(elem => {
 			elem.innerHTML += '<span class="flauthor-' + comment.floor + '" onclick="skipflr(' + comment.floor + ')"><font color="gray">' + comment.html + '</font></span><div class="subreply subreply-thread-' + comment.floor + '"></div>'
@@ -229,7 +229,7 @@ function processComment(comment) {
 function like(floor) {
 	var xhttplike = new XMLHttpRequest();
 	xhttplike.onreadystatechange = function () {
-		if (this.readyState == 4 && this.status == 200) {
+		if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 			switch (JSON.parse(this.responseText).code) {
 				case 0:
 					alert("表态成功");
@@ -260,13 +260,13 @@ function like(floor) {
 	xhttplike.open("GET", "https://api.jcsuf.top/api/rating?type=like&" + location.href.substring(location.href.indexOf(".html") + 6) + "&floor=" + floor, true);
 	xhttplike.withCredentials = true;
 	xhttplike.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
-	xhttplike.send();
+	xhttplike.send(); nettaskcreate();
 }
 
 function dislike(floor) {
 	var xhttpdislike = new XMLHttpRequest();
 	xhttpdislike.onreadystatechange = function () {
-		if (this.readyState == 4 && this.status == 200) {
+		if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 			switch (JSON.parse(this.responseText).code) {
 				case 0:
 					alert("表态成功");
@@ -294,7 +294,7 @@ function dislike(floor) {
 	xhttpdislike.open("GET", "https://api.jcsuf.top/api/rating?type=dislike&" + location.href.substring(location.href.indexOf(".html") + 6) + "&floor=" + floor, true);
 	xhttpdislike.withCredentials = true;
 	xhttpdislike.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
-	xhttpdislike.send();
+	xhttpdislike.send(); nettaskcreate();
 }
 
 function checked(oid) {
@@ -313,7 +313,7 @@ function checked(oid) {
 function submitvote() {
 	xhsv = new XMLHttpRequest();
 	xhsv.onreadystatechange = function () {
-		if (this.readyState == 4 && this.status == 200) {
+		if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 			switch (JSON.parse(this.responseText).code) {
 				case 0:
 					alert("投票成功");

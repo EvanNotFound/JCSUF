@@ -16,7 +16,7 @@ function rename() {
      }
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-    	if (this.readyState == 4 && this.status == 200) {
+    	if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 	    	switch(JSON.parse(this.responseText).code){
         case 0:
         alert("改名成功");
@@ -39,5 +39,5 @@ function rename() {
     };
     xhttp.open("GET", "https://api.jcsuf.top/api/rename?newname="+utf8Str, true);
     xhttp.withCredentials = true;
-    xhttp.send();
+    xhttp.send(); nettaskcreate();
 }

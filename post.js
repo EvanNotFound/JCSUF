@@ -1,13 +1,13 @@
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
-	if (this.readyState == 4 && this.status == 200) {
+	if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 		var rbody = JSON.parse(this.responseText)
 		for(let i = 0; i < rbody.length; i++){
 			document.getElementsByClassName("right-container")[0].innerHTML += '<div id="parent-section-'+rbody[i].id+'"><div class="subforum-sort"><h1>'+rbody[i].name+'专区</h1></div></div>';
 		}
 		var xhttp2 = new XMLHttpRequest();
 		xhttp2.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
+			if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 				var rbody = JSON.parse(this.responseText)
 				for(let i = 0; i < rbody.length; i++){
 					document.getElementById("parent-section-"+rbody[i].parent).innerHTML += '<div class="subforum-row" id="category-'+rbody[i].id+'"></div>'
@@ -27,17 +27,17 @@ xhttp.onreadystatechange = function() {
 		};
 		xhttp2.open("GET", "https://api.jcsuf.top/api/categorylist?parent=-2", true);
 		xhttp2.withCredentials = true;
-		xhttp2.send();
+		xhttp2.send(); nettaskcreate();
 	}
 };
 xhttp.open("GET", "https://api.jcsuf.top/api/categorylist", true);
 xhttp.withCredentials = true;
-xhttp.send();
+xhttp.send(); nettaskcreate();
 
 function transname2(cate){
 	var xhttptrans = new XMLHttpRequest();
 	xhttptrans.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
+		if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 			if(currentid==cate.last_article.author){
 				if(cate.last_article.anonymous){
 					document.getElementById("last-author-"+cate.id).innerHTML = '<font color="#6699aa">'+JSON.parse(this.responseText).name+' (you, 匿名)</font>'
@@ -54,5 +54,5 @@ function transname2(cate){
 		}
 	};
 	xhttptrans.open("GET", "https://api.jcsuf.top/api/userinfo?uid="+cate.last_article.author, true);
-	xhttptrans.send();
+	xhttptrans.send(); nettaskcreate();
 }
