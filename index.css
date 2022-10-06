@@ -152,6 +152,9 @@ h4{
 .post_title {
 	font-size: 18px;
 	color: #000000;
+	animation-name: content-fade;
+	animation-duration: 1.25s;
+	animation-timing-function: ease-out;
 }
 
 .post_author {
@@ -164,6 +167,9 @@ h4{
 .post_description {
 	font-size: 14px;
 	color: #3b3b3b;
+	animation-name: content-fade;
+	animation-duration: 1.45s;
+	animation-timing-function: ease-out;
 }
 
 .subforum-sort{

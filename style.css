@@ -220,3 +220,21 @@ a {
 		left: 0%;
 	}
 }
+
+@keyframes content-fade {
+	0% {
+		opacity: 0;
+		position: relative;
+		bottom: 15px;
+	}
+	80% {
+		opacity: 0;
+		position: relative;
+		bottom: 15px;
+	}
+	100% {
+		opacity: 1;
+		position: relative;
+		bottom: 0px;
+	}
+}
