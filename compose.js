@@ -113,7 +113,7 @@ function post(){
 			reqparam += "&voteanonymous="+voteanon;
 		}
 	}
-	xhttp2.send(reqparam);
+	xhttp2.send(reqparam); nettaskcreate();
 }
 
 function invokevote(){

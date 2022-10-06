@@ -15,7 +15,7 @@ function reg(){
      }
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
-	if (this.readyState == 4 && this.status == 200) { nettaskfinish()
+	if (this.readyState == 4 && this.status == 200) {
 		switch(JSON.parse(this.responseText).code){
 			case 0:
 			location.href = location.href.replace("register.html","regSuccess.html");
@@ -37,7 +37,7 @@ function reg(){
 function signin(){
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
-	if (this.readyState == 4 && this.status == 200) { nettaskfinish()
+	if (this.readyState == 4 && this.status == 200) {
 		switch(JSON.parse(this.responseText).code){
 			case 0:
 			location.href = location.href.replace("signin.html","signinSuccess.html")

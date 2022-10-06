@@ -163,7 +163,7 @@ function post_comment() {
 	xhttp2.open("POST", "https://api.jcsuf.top/api/postcomment", true);
 	xhttp2.withCredentials = true;
 	xhttp2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
-	xhttp2.send(location.href.substring(location.href.indexOf(".html") + 6) + "&anonymous=" + document.getElementById("i1").checked + "&content=" + utf8Str + "&replyto=" + fid);
+	xhttp2.send(location.href.substring(location.href.indexOf(".html") + 6) + "&anonymous=" + document.getElementById("i1").checked + "&content=" + utf8Str + "&replyto=" + fid); nettaskcreate();
 }
 
 function processComment(comment) {
