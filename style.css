@@ -1,3 +1,7 @@
+:root {
+	overflow-y: scroll;
+}
+
 img {
 	margin: 20px 0px;
 }
