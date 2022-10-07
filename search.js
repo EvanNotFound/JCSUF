@@ -13,7 +13,7 @@ function search() {
 	    		document.getElementById("article-stat-"+rarts[i].entity.id).innerHTML += '<p>+'+rarts[i].entity.like+'</p>'
 	    		document.getElementById("article-stat-"+rarts[i].entity.id).innerHTML += '<p>-'+rarts[i].entity.dislike+'</p>'
 		    	document.getElementById("article-"+rarts[i].entity.id).innerHTML += '<div class="subforum-info subforum-column"><p id="article-info-'+rarts[i].entity.id+'"></p></div>'
-		    	document.getElementById("article-info-"+rarts[i].entity.id).innerHTML = '<a href="user.html?uid='+rarts[i].entity.author+'" class="post_author"><font color="#333333" style="background-color:#aaa;">&emsp;&emsp;&emsp;&emsp;&emsp;</font></a> 发布于 '+formatDateTime(rarts[i].entity.ctime)+'<br><span style="margin-left:18px">'+rarts[i].entity.ccount+' 评论</span><br><span style="margin-left:18px">'+rarts[i].entity.view+' 阅读</span><br><span style="margin-left:18px">相关性 '+rarts[i].relativity+'</span>'
+		    	document.getElementById("article-info-"+rarts[i].entity.id).innerHTML = '<p class="fade-group-1"><a href="user.html?uid='+rarts[i].author+'" class="post_author">'+rarts[i].author_name+'</a> 发布于 '+formatDateTime(rarts[i].ctime)+'</p><span style="margin-left:18px" class="fade-group-2">'+rarts[i].ccount+' 评论</span><br><span style="margin-left:18px" class="fade-group-2">'+rarts[i].view+' 阅读</span><br><span style="margin-left:18px">相关性 '+rarts[i].relativity+'</span>'
 	    		transname(rarts[i].entity,rarts[i].relativity)
 	    	}
 	    }
@@ -42,15 +42,15 @@ function transname(art,rel) { //解析Id为用户名
 		if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 			if(currentid==art.author){
 				if(art.fromAnonymous){
-					document.getElementById("article-info-"+art.id).innerHTML = '<a href="user.html?uid='+art.author+'" class="post_author"><font color="#6699aa">'+JSON.parse(this.responseText).name+' (you, 匿名)</font></a> 发布于 '+formatDateTime(art.ctime)+'<br><span style="margin-left:18px">'+art.ccount+' 评论</span><br><span style="margin-left:18px">'+art.view+' 阅读</span><br><font onclick="del('+art.id+')" color="red" style="margin-left: 18px"><small>删除</small></font><br><span style="margin-left:18px">相关性 '+rel+'</span>'
+					document.getElementById("article-info-"+art.id).innerHTML = '<p class="fade-group-1"><a href="user.html?uid='+art.author+'" class="post_author"><font color="#6699aa">'+JSON.parse(this.responseText).name+' (you, 匿名)</font></a> 发布于 '+formatDateTime(art.ctime)+'</p><span style="margin-left:18px">'+art.ccount+' 评论</span><br><span style="margin-left:18px">'+art.view+' 阅读</span><br><font onclick="del('+art.id+')" color="red" style="margin-left: 18px"><small>删除</small></font><br><span style="margin-left:18px">相关性 '+rel+'</span>'
 				} else {
-					document.getElementById("article-info-"+art.id).innerHTML = '<a href="user.html?uid='+art.author+'" class="post_author"><font color="#3399aa">'+JSON.parse(this.responseText).name+' (you)</font></a> 发布于 '+formatDateTime(art.ctime)+'<br><span style="margin-left:18px">'+art.ccount+' 评论</span><br><span style="margin-left:18px">'+art.view+' 阅读</span><br><font onclick="del('+art.id+')" color="red" style="margin-left: 18px"><small>删除</small></font><br><span style="margin-left:18px">相关性 '+rel+'</span>'
+					document.getElementById("article-info-"+art.id).innerHTML = '<p class="fade-group-1"><a href="user.html?uid='+art.author+'" class="post_author"><font color="#3399aa">'+JSON.parse(this.responseText).name+' (you)</font></a> 发布于 '+formatDateTime(art.ctime)+'</p><span style="margin-left:18px">'+art.ccount+' 评论</span><br><span style="margin-left:18px">'+art.view+' 阅读</span><br><font onclick="del('+art.id+')" color="red" style="margin-left: 18px"><small>删除</small></font><br><span style="margin-left:18px">相关性 '+rel+'</span>'
 				}
 			} else {
 				if(art.fromAnonymous){
-					document.getElementById("article-info-"+art.id).innerHTML = '<a class="post_author"><font color="#AAAA00">匿名</font></a> 发布于 '+formatDateTime(art.ctime)+'<br><span style="margin-left:18px">'+art.ccount+' 评论</span><br><span style="margin-left:18px">'+art.view+' 阅读</span><br><span style="margin-left:18px">相关性 '+rel+'</span>'
+					document.getElementById("article-info-"+art.id).innerHTML = '<p class="fade-group-1"><a class="post_author"><font color="#AAAA00">匿名</font></a> 发布于 '+formatDateTime(art.ctime)+'</p><span style="margin-left:18px">'+art.ccount+' 评论</span><br><span style="margin-left:18px">'+art.view+' 阅读</span><br><span style="margin-left:18px">相关性 '+rel+'</span>'
 				} else {
-					document.getElementById("article-info-"+art.id).innerHTML = '<a href="user.html?uid='+art.author+'" class="post_author">'+JSON.parse(this.responseText).name+'</a> 发布于 '+formatDateTime(art.ctime)+'<br><span style="margin-left:18px">'+art.ccount+' 评论</span><br><span style="margin-left:18px">'+art.view+' 阅读</span><br><span style="margin-left:18px">相关性 '+rel+'</span>'
+					document.getElementById("article-info-"+art.id).innerHTML = '<p class="fade-group-1"><a href="user.html?uid='+art.author+'" class="post_author">'+JSON.parse(this.responseText).name+'</a> 发布于 '+formatDateTime(art.ctime)+'</p><span style="margin-left:18px">'+art.ccount+' 评论</span><br><span style="margin-left:18px">'+art.view+' 阅读</span><br><span style="margin-left:18px">相关性 '+rel+'</span>'
 				}
 				if(admin>0){
 					document.getElementById("article-info-"+art.id).innerHTML += '<br><font onclick="del('+art.id+')" color="red" style="margin-left: 18px"><small>删除</small></font>'
