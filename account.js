@@ -4,13 +4,7 @@ function reg(){
     for (let i=0; i<str.length;i++){
         let t = str[i]
         let text = ''
-        if(t.charCodeAt(0)>=4096){
-          text = "uN1c0dE"+t.charCodeAt(0).toString(16).toLowerCase();}else if(t.charCodeAt(0)>=256){
-          text = "uN1c0dE0"+t.charCodeAt(0).toString(16).toLowerCase();
-        }else{
-          text = encodeURIComponent(t)
-          text = text.replaceAll('%','')
-        }
+        text = encodeURIComponent(t)
         utf8Str += text
      }
 	var xhttp = new XMLHttpRequest();
