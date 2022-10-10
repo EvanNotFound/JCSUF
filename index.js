@@ -41,9 +41,9 @@ function transname(art) { //解析Id为用户名
 		if (this.readyState == 4 && this.status == 200) { nettaskfinish()
 			if(currentid==art.author){
 				if(art.fromAnonymous){
-					document.getElementById("article-info-"+art.id).innerHTML = '<p class="fade-group-1"><a href="user.html?uid='+art.author+'" class="post_author"><font color="#6699aa">'+JSON.parse(this.responseText).name+' (you, 匿名)</font></a> 发布于 '+formatDateTime(art.ctime)+'</p><span style="margin-left:18px">'+art.ccount+' 评论</span><br><span style="margin-left:18px">'+art.view+' 阅读</span><br><font onclick="del('+art.id+')" color="red" style="margin-left: 18px"><small>删除</small></font>'
+					document.getElementById("article-info-"+art.id).innerHTML = '<p class="fade-group-1"><a href="user.html?uid='+art.author+'" class="post_author"><font color="#6699aa">'+JSON.parse(this.responseText).name+' (you, 匿名)</font></a> 发布于 '+formatDateTime(art.ctime)+'</p><span style="margin-left:18px" class="fade-group-2">'+art.ccount+' 评论</span><br><span style="margin-left:18px" class="fade-group-2">'+art.view+' 阅读</span><br><font onclick="del('+art.id+')" color="red" style="margin-left: 18px"><small>删除</small></font>'
 				} else {
-					document.getElementById("article-info-"+art.id).innerHTML = '<p class="fade-group-1"><a href="user.html?uid='+art.author+'" class="post_author"><font color="#3399aa">'+JSON.parse(this.responseText).name+' (you)</font></a> 发布于 '+formatDateTime(art.ctime)+'</p><span style="margin-left:18px">'+art.ccount+' 评论</span><br><span style="margin-left:18px">'+art.view+' 阅读</span><br><font onclick="del('+art.id+')" color="red" style="margin-left: 18px"><small>删除</small></font>'
+					document.getElementById("article-info-"+art.id).innerHTML = '<p class="fade-group-1"><a href="user.html?uid='+art.author+'" class="post_author"><font color="#3399aa">'+JSON.parse(this.responseText).name+' (you)</font></a> 发布于 '+formatDateTime(art.ctime)+'</p><span style="margin-left:18px" class="fade-group-2">'+art.ccount+' 评论</span><br><span style="margin-left:18px" class="fade-group-2">'+art.view+' 阅读</span><br><font onclick="del('+art.id+')" color="red" style="margin-left: 18px"><small>删除</small></font>'
 				}
 			} else {
 				if(art.fromAnonymous){
