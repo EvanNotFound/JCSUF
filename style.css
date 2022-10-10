@@ -11,7 +11,8 @@ img {
 	--brightness-pop: 255;
 	--input-color: #ffffff70;
 	--containers-border-opacity: 0.8;
-	--maintitle-bg: rgba(218, 52, 52, 0.6);
+	--maintitle-bg: rgba(236, 146, 149, 1);
+	--navbar-text-color: rgb(0,0,0);
 }
 
 :root[theme="dark"] {
@@ -20,6 +21,7 @@ img {
 	--input-color: #0000003c;
 	--containers-border-opacity: 0.8;
 	--maintitle-bg: rgba(65, 54, 47, 1);
+	--navbar-text-color: rgb(255,255,255);
 }
 
 :root[theme="bing"] {
@@ -27,7 +29,8 @@ img {
 	--brightness-pop: 255;
 	--input-color: #ffffff70;
 	--containers-border-opacity: 0.98;
-	--maintitle-bg: rgba(236, 146, 149, 1);
+	--maintitle-bg: rgba(218, 52, 52, 0.6);
+	--navbar-text-color: rgb(0,0,0);
 }
 
 :root[beta="no"] {
@@ -137,7 +140,7 @@ a {
 	position: fixed;
 	left: 0px;
 	top: 0px;
-	background-color: rgba(236,146,149);
+	background-color: var(--maintitle-bg);
 	transition-duration: 0.3s;
 	transition-timing-function: ease-out;
 	width: 100%;
@@ -151,7 +154,7 @@ a {
 
 .navul li a {
     display: block;
-    color: rgb(0, 0, 0);
+    color: var(--navbar-text-color);
     text-align: center;
 	background-color: rgba(255, 255, 255, 0);
 	border-radius: 11px;
