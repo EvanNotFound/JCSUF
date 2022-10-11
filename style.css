@@ -20,7 +20,7 @@ img {
 	--brightness-pop: 144;
 	--input-color: #0000003c;
 	--containers-border-opacity: 0.8;
-	--maintitle-bg: rgba(65, 54, 47, 1);
+	--maintitle-bg: rgba(10, 10, 10, 1);
 	--navbar-text-color: rgb(255,255,255);
 }
 
@@ -33,14 +33,6 @@ img {
 	--navbar-text-color: rgb(0,0,0);
 }
 
-:root[beta="no"] {
-	--beta: none;
-}
-
-:root[beta="yes"] {
-	--beta: initial;
-}
-
 body {
 	font-family: 'Josefin Sans', 'Noto Sans', sans-serif;
 }
@@ -49,6 +41,14 @@ body {
 	background-image: url("https://api.oneneko.com/v1/bing_today");
 	background-attachment: fixed;
 	background-size: 100%;
+}
+
+:root[theme="white"] body {
+	background-color: white;
+}
+
+:root[theme="dark"] body {
+	background-color: rgba(32, 27, 22, 1);
 }
  
 
