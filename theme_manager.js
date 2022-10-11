@@ -1,10 +1,13 @@
 function switch_theme(){
 	if(document.documentElement.getAttribute("theme")=="white") {
 		document.documentElement.setAttribute("theme","dark")
+		document.cookie = "theme=dark"
 	} else if(document.documentElement.getAttribute("theme")=="dark") {
 		document.documentElement.setAttribute("theme","bing")
+		document.cookie = "theme=bing"
 	} else {
 		document.documentElement.setAttribute("theme","white")
+		document.cookie = "theme=white"
 	}
 	var xhttp2 = new XMLHttpRequest();
 	xhttp2.onreadystatechange = function() {
@@ -23,6 +26,7 @@ function switch_theme(){
 	xhttp2.send();
 }
 
+document.documentElement.setAttribute("theme",document.cookie.replace(/(?:(?:^|.*;\s*)theme\s*\=\s*([^;]*).*$)|^.*$/, "$1"))
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
 	if (this.readyState == 4 && this.status == 200) {
