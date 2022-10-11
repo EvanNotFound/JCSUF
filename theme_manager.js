@@ -13,9 +13,9 @@ function switch_theme(){
 	xhttp2.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			if(JSON.parse(this.responseText).code==0){
-				alert("成功将主题进行全局变换（现在是"+document.documentElement.getAttribute("theme")+"）")
+				console.log("theme server storage =>"+document.documentElement.getAttribute("theme")+"")
 			} else if(JSON.parse(this.responseText).code==-1){
-				alert("成功将主题进行本页面变换，登录后再尝试可以全局生效（现在是"+document.documentElement.getAttribute("theme")+"）")
+				console.log("theme cookie storage =>"+document.documentElement.getAttribute("theme")+"")
 			} else {
 				alert("你是怎么触发这个的？")
 			}
