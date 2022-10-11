@@ -7,6 +7,7 @@
 }
 
 .maintitle{
+    color: var(--navbar-text-color);
 	background-color: rgba(218, 52, 52, 0.6);
 	border-radius: 18px;
 	font-size: 36px;

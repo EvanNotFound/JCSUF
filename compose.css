@@ -22,6 +22,7 @@ h4{
 }
 
 .maintitle{
+    color: var(--navbar-text-color);
 	background-color: var(--maintitle-bg);
 	border-radius: 18px;
 	font-size: 36px;
