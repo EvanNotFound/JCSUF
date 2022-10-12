@@ -7,6 +7,7 @@ img {
 }
 
 :root[theme="white"] {
+	--container-brightness: 255;
 	--brightness: 255;
 	--brightness-pop: 255;
 	--input-color: #ffffff70;
@@ -16,6 +17,7 @@ img {
 }
 
 :root[theme="dark"] {
+	--container-brightness: 20;
 	--brightness: 30;
 	--brightness-pop: 144;
 	--input-color: #0000003c;
@@ -25,6 +27,7 @@ img {
 }
 
 :root[theme="bing"] {
+	--container-brightness: 20;
 	--brightness: 255;
 	--brightness-pop: 255;
 	--input-color: #ffffff70;
