@@ -99,20 +99,18 @@ a {
 	transition-duration: 0.3s;
 }
 
-.foot {
+
+
+.foot-container {
+
 	position: fixed;
 	left: 35%;
 	right: 35%;
 	bottom: 8px;
-	height: 56px;
 	text-align: center;
 	background-color: rgba(255, 167, 167, 0.32);
 	border-radius: 28px;
 	backdrop-filter:blur(20px) contrast(80%);
-}
-
-.foot-container {
-	margin: 7px;
 }
 
 /*用户头像*/
@@ -135,14 +133,11 @@ a {
 
 /*顶部菜单*/
 .navbar {
-	list-style-type: none;
-	border: 1px solid rgba(255, 255, 255, 0.081);
-    padding: 10px;
 	box-shadow: 5px 5px 20px rgba(29, 29, 29, 0.150);
 	position: fixed;
+	top: 0;
 	background-color: var(--maintitle-bg);
-	transition-duration: 0.3s;
-	transition-timing-function: ease-out;
+	transition-duration: 0.1s;
 	width: 100%;
 }
 
@@ -150,14 +145,14 @@ a {
     display: block;
     color: var(--navbar-text-color);
     text-align: center;
-	background-color: rgba(255, 255, 255, 0);
-	border-radius: 11px;
-	padding: 10px;
-	transition-duration: 50ms;
-	transition-timing-function: ease-out;
+	padding: 14px 16px;
     font-size: 24px;
-	margin-left: 18px;
+	text-decoration: none;
 	float: left;
+}
+
+.navbar a:first-child {
+	margin-left: 15px;
 }
 
 .navbar a:hover {
@@ -167,7 +162,6 @@ a {
 .navbar a.nav-icon{
 	display: none;
 	float: right;
-	margin-right: 15px;
 }
 
 
@@ -288,6 +282,11 @@ a {
 @media screen and (max-width: 1000px) {
 	.navbar a {
 		font-size: 18px;
+		margin-left: 15px;
+	}
+
+	.navbar a:first-child {
+		margin-right: -10px;
 	}
 
 	.subforum-row{
@@ -306,19 +305,16 @@ a {
 
 	.navbar a:not(:first-child) {
 		display: none;
-		margin-right: 150px;
 	}
 
 	.navbar a.nav-icon {
 		display: block;
 		margin-right: 15px;
-		margin-top: 1px;
+		font-size: 22px;
 	}
 
 	.navbar.responsive a.nav-icon {
 		display: block;
-		margin-right: 30px;
-		margin-top: 10px;
 	}
 
 	.navbar.responsive {
@@ -335,6 +331,10 @@ a {
 		float: none;
 		display: block;
 		text-align: left;
+	}
+
+	.foot-container {
+		display: none;
 	}
 
 }

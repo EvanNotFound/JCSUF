@@ -76,11 +76,8 @@
 }
 
 .main-container {
-	position: absolute;
-	left: 20px;
-    top: 90px;
-	right: 20px;
-	padding: 20px;
+	margin-top: 90px;
+	padding: 0 10px;
 	border-radius: 22px;
 	z-index: -1;
 }
@@ -214,4 +211,20 @@ p {
 	margin: 10px 0px;
 	padding: 8px;
 	border-radius: 6px;
+}
+
+@media screen and (max-width: 1000px) {
+	.main-container {
+		margin-top: 60px;
+		padding: 0;
+	}
+
+	.level{
+		display: none;
+	}
+
+	.floor-body {
+		display: grid;
+		grid-template-columns: 30% 70%;
+	}
 }
