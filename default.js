@@ -311,3 +311,14 @@ function output_task() {
 		document.getElementById("resource-load").innerHTML = "";
 	}
 }
+
+document.getElementById("nav-icon").addEventListener("click", changeNav);
+function changeNav(){
+	var topnav = document.getElementById("nav-bar");
+	if (topnav.className === "navbar") {
+		topnav.className += " responsive";
+	} else {
+		topnav.className = "navbar";
+	}
+
+}

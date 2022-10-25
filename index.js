@@ -31,10 +31,6 @@ xhttp4.open("GET", "https://api.jcsuf.top/api/fetchnewarticle", true);
 xhttp4.withCredentials = true;
 xhttp4.send(); nettaskcreate();
 
-if(window.screen.availWidth<=1080){
-	document.getElementsByClassName("notice-container")[0].style.display = "none";
-}
-
 function transname(art) { //解析Id为用户名
 	var xhttptrans = new XMLHttpRequest();
 	xhttptrans.onreadystatechange = function() {
@@ -95,3 +91,4 @@ function display_notice(){
 	document.getElementById("bgmask").style.display = "block";
 	document.getElementById("important-notice-container").style.display = "block";
 }
+

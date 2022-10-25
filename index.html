@@ -13,6 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng">
 	<link rel="shortcut icon" href="https://jcsuf.evanluo.top/assets/favicon-djkuvjux.png">
 	<script src="https://kit.fontawesome.com/cad71fe1f6.js" crossorigin="anonymous"></script>
+	<script src="/index.js"></script>
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1743182420249575"
 		crossorigin="anonymous"></script>
 </head>
@@ -23,12 +24,26 @@
 	<!-- 某位开发者说，Dark模式真丑-->
 	<!-- 某位开发者说，差不多得了，Dark模式不就是你在做吗，要改自己改啊 -->
 	<!-- 已经有一位开发者寄了，RIP-->
+	<div class="navbar" id="nav-bar">
+		<a href="index.html" title="首页" class="jcss_space">JCSS非官方自由论坛</a>
+		<a href="signin.html" title="登录" id="signin-compose">登录</a>
+		<a href="post.html" title="帖子专区">帖子专区</a>
+		<a href="search.html" title="搜索帖子">搜索帖子</a>
+		<a href="contact.html" title="联系管理员">联系管理员</a>
+		<a target="_self" title="切换主题" onclick="switch_theme()">切换主题</a>
+		<a href="javascript:void(0);" class="nav-icon" onclick="changeNav()" id="nav-icon">
+			<i class="fa-solid fa-bars"></i>
+		</a>
+	</div>
+	
+	<!----
 	<div class="nav-right">
 		<span id="namefield"><b><big>少女祈祷中...</big></b></span><br>
 		<span id="levelfield">Now Loading</span>
-		<!-- 可以通过在Console中输入display_more()展开视图-->
+		 可以通过在Console中输入display_more()展开视图-->
 		<!-- 可以通过在Console中输入animateLock=-1锁定视图-->
 		<!-- 可以通过在Console中输入animateLock= 0解锁视图-->
+	<!----
 		<div id="avatar" onmouseleave="display_less()">
 			<img onmouseover="display_more()"
 				src="https://upload.thwiki.cc/thumb/0/0a/%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png/100px-%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png"
@@ -37,16 +52,9 @@
 			<div id="level-bg"></div>
 		</div>
 	</div>
+	---->
 
-	<div class="navul">
-		<li><i class="fa-solid fa-square-caret-down"></i></li>
-		<li><a href="index.html" title="首页" class="jcss_space">JCSS非官方自由论坛</a></li>
-		<li><a href="signin.html" title="登录" id="signin-compose">登录</a></li>
-		<li><a href="post.html" title="帖子专区">帖子专区</a></li>
-		<li><a href="search.html" title="搜索帖子">搜索帖子</a></li>
-		<li><a href="contact.html" title="联系管理员">联系管理员</a></li>
-		<li><a target="_self" title="切换主题" onclick="switch_theme()">切换主题</a></li>
-	</div>
+
 
 
 	<div class="notice-container">
@@ -57,9 +65,7 @@
 	</div>
 
 	<div class="post-container">
-		<div class="subforum-message-count">
-			您的信箱有 <span id="message-count">0</span> 条消息（查看功能没在写）<br>
-		</div>
+
 		<div class="subforum-sort">
 			<h1>置顶内容</h1>
 		</div>

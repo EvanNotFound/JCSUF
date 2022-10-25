@@ -35,32 +35,31 @@
 /*左侧公告栏*/
 .notice-container {
 	border: 3px solid var(--containers-border-opacity);
-	position: fixed;
-    top: 90px;
-	left: 20px;
 	padding: 20px;
+	margin-top: 90px;
+	margin-left: 15px;
 	border-radius: 22px;
-	width: 280px;
+	width: 250px;
 	background-color: rgba(218, 52, 52, 0.23);
 	float: left;
 	z-index: -1;
-	display: var(--notice-display);
+	display: block;
 }
 
 /*右側文章栏*/
 .post-container {
 	border: 3px solid var(--containers-border-opacity);
-	position: absolute;
-	width: var(--right-width);
-    top: 90px;
-	right: 20px;
+	width: calc(100% - 375px);
+	margin-top: 90px;
 	padding: 20px;
 	border-radius: 22px;
+	margin-left: 15px;
+	float: left;
 	background-color: rgba(218, 52, 52, 0.23);
 	z-index: -1;
-	margin-left: var(--right-margin);
-	left: var(--left);
+	display: block;
 }
+
 
 .foot-container {
 	margin: 7px;
@@ -153,16 +152,15 @@ h4{
 	background-color: rgb(218, 52, 52, 0.3);
     padding: 5px;
     border-radius: 12px;
-    margin: 10px;
+    margin: 10px 30px;
 	text-align: center;
 }
 
 .subforum-column{
     padding: 10px 5px 5px 5px;
-    margin:5px;
+    margin:10px;
     border-radius: 12px;
 	background-color: rgba(255, 255, 255, 0.4);
-
 }
 
 .subforum-description *{
@@ -176,9 +174,6 @@ h4{
     align-items: center;
 }
 
-.subforum-icon i{
-    font-size: 45px;
-}
 
 .subforum-devider{
     display: none;   
@@ -249,4 +244,20 @@ p {
 
 #close:hover::after {
 	background: rgb(114, 3, 3);
+}
+
+
+
+@media screen and (max-width: 900px) {
+	.notice-container {
+		display: none;
+	}
+
+	.post-container {
+		padding: 50px 0px;
+		margin-left: 0;
+		width: 100%;
+		margin-top: 30px;
+	}
+
 }
