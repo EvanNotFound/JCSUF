@@ -303,12 +303,10 @@ a {
 		display: none;
 	}
 
-	.navbar a{
-		margin-right: 150px;
-	}
 
 	.navbar a:not(:first-child) {
 		display: none;
+		margin-right: 150px;
 	}
 
 	.navbar a.nav-icon {
