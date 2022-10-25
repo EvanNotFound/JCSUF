@@ -62,8 +62,8 @@ a {
 #avatar {
 	background-color: rgb(var(--brightness-pop),var(--brightness-pop),var(--brightness-pop));
 	position: fixed;
-	right: 18px;
-	top: 18px;
+	right: 15px;
+	top: 8px;
 	width: 48px;
 	height: 48px;
 	border-radius: 16px;
@@ -115,15 +115,12 @@ a {
 
 /*用户头像*/
 .nav-right {
-	position: fixed;
-	right: 72px;
-	top: 16px;
+	display: block;
 	height: auto;
 	z-index: 100;
 	text-align: right;
-	border-radius: 16px;
-	padding: 4px 10px 5px 8px;
-	background-color: rgba(255,255,255,0.98);
+	padding: 0;
+	background-color: rgba(255, 255, 255, 0);
 	width: auto;
 }
 
@@ -336,5 +333,14 @@ a {
 	.foot-container {
 		display: none;
 	}
+
+	.nav-right {
+		font-size: 12px;
+	}
+
+	#avatar {
+		display: none;
+	}
+
 
 }
