@@ -12,3 +12,16 @@
 	background-color: rgb(218, 52, 52, 0.3);
 	box-shadow: 3px 3px 10px rgba(29, 29, 29, 0.150);
 }
+
+@media screen and (max-width: 1000px) {
+	.main-container {
+		margin-top: 60px;
+		padding: 0;
+	}
+
+
+	.order-body {
+		display: grid;
+		grid-template-columns: 30% 70%;
+	}
+}
