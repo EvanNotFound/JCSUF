@@ -135,6 +135,7 @@
 	/*use methods like comment(), reward().etc to display*/
 	display: none;
 	backdrop-filter: blur(20px);
+	top: 0;
 }
 
 #comment-text {
