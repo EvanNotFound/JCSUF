@@ -34,13 +34,16 @@ img {
 	--navbar-text-color: rgb(0,0,0);
 }
 
-body {
-	margin: 0;
-	font-family: 'Josefin Sans', 'Noto Sans', sans-serif;
+:root {
 	animation-name: body-gray;
 	animation-duration: 3s;
 	animation-timing-function: ease;
 	filter: grayscale(1);
+}
+
+body {
+	margin: 0;
+	font-family: 'Josefin Sans', 'Noto Sans', sans-serif;
 }
 
 :root[theme="bing"] body {
