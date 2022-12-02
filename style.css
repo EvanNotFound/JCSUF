@@ -34,6 +34,13 @@ img {
 	--navbar-text-color: rgb(0,0,0);
 }
 
+:root {
+	animation-name: body-gray;
+	animation-duration: 3s;
+	animation-timing-function: ease;
+	filter: grayscale(1);
+}
+
 body {
 	margin: 0;
 	font-family: 'Josefin Sans', 'Noto Sans', sans-serif;
@@ -242,6 +249,18 @@ a {
 	animation-name: content-fade;
 	animation-duration: 1.45s;
 	animation-timing-function: ease-out;
+}
+
+@keyframes body-gray {
+	0% {
+		filter: grayscale(0);
+	}
+	25% {
+		filter: grayscale(0);
+	}
+	100% {
+		filter: grayscale(100);
+	}
 }
 
 @keyframes article-fade {
