@@ -34,13 +34,6 @@ img {
 	--navbar-text-color: rgb(0,0,0);
 }
 
-:root {
-	animation-name: body-gray;
-	animation-duration: 3s;
-	animation-timing-function: ease;
-	filter: grayscale(1);
-}
-
 body {
 	margin: 0;
 	font-family: 'Josefin Sans', 'Noto Sans', sans-serif;
@@ -124,11 +117,23 @@ a {
 .nav-right {
 	display: block;
 	height: auto;
-	z-index: 100;
+	z-index: 120;
 	text-align: right;
 	padding: 0;
 	background-color: rgba(255, 255, 255, 0);
 	width: auto;
+}
+
+.nav-expand {
+	display: block;
+	top: 0;
+	right: 0;
+	height: 100%;
+	z-index: 110;
+	text-align: right;
+	padding: 0;
+	background-color: rgba(255, 255, 255, 1);
+	position: absolute;
 }
 
 .nav-right span{
@@ -362,5 +367,15 @@ a {
 		display: none;
 	}
 
+	.nav-expand {
+		width: 400px;
+	}
 
+
+}
+
+@media screen and (max-width: 700px) {
+	.nav-expand {
+		width: 100%;
+	}
 }
