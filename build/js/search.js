@@ -1,3 +1,4 @@
+/*
 function search() {
     var xhttp4 = new XMLHttpRequest();
     xhttp4.onreadystatechange = function() {
@@ -128,6 +129,7 @@ function transname(art, rel) {
 	xhttptrans.open("GET", "https://api.jcsuf.top/api/userinfo?uid="+art.author, true);
 	xhttptrans.send(); nettaskcreate();
 }
+*/
 
 var searchInput = document.getElementById("search-content");
 var searchBg = document.getElementById("search-bg");
