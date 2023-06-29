@@ -10,7 +10,6 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="preconnect" href="https://evan.beee.top" />
 	<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-	<script type="text/javascript" src="js/search.js"></script>
 	<title>JCSS 非官方自由论坛 - JCSUF</title>
 
 	<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
@@ -33,7 +32,7 @@
 
 <body class="text-gh-gray-9 dark:text-gh-gray-1 transition">
 	<script type="text/javascript" src="js/mode-switch.js"></script>
-	<header class="fixed left-0 top-0 w-full bg-gh-bg dark:bg-gh-darkbg flex justify-between p-4 items-center backdrop-blur-xl border-b-[1.5px] border-gh-border dark:border-gh-darkborder z-50" id="nav-bar">
+	<header class="fixed left-0 top-0 w-full bg-gh-bg dark:bg-gh-darkbg flex justify-between p-4 items-center backdrop-blur-xl border-b-[1.5px] border-gh-border dark:border-gh-darkborder z-40" id="nav-bar">
 		<section id="site_title" class="ml-5">
 			<h1 class="text-xl font-bold ">
 				<a href="index.html" title="首页" >JCSS 非官方自由论坛</a>
@@ -42,9 +41,8 @@
 		<section id="right" class="flex justify-self-end">
 			<nav class="flex gap-5 mr-6 items-center text-md">
 				<div class="border border-solid border-gh-border dark:border-gh-darkborder px-2 rounded-lg py-1 focus-within:border-gh-gray-3 dark:focus-within:border-gh-gray-6" id="category-displayer">
-					<i class="fa-solid fa-magnifying-glass" onclick="search()"></i>
+					<i class="fa-solid fa-magnifying-glass" onclick="search()" id="search-btn"></i>
 					<input class="bg-transparent placeholder-gh-gray-7 dark:placeholder-gh-gray-3 ml-2 focus:outline-none text-md" type="text" id="search-content" placeholder='搜索帖子'>
-					<p id="search-demo" class="hidden">搜索示例：关键词1 关键词2 "必须包含的关键词3" （单个关键词大于等于八个字符好像有问题）</p>
 				</div>
 				<a href="signin.html" title="登录" id="signin-compose">登录</a>
 				<a href="post.html" title="帖子专区">帖子专区</a>
@@ -78,20 +76,23 @@
 			</div>
 		</section>
 	</header>
-	<!---
-	<div class="post-container">
-		<div class="subforum-sort">
-			<h1>搜索结果</h1>
-		</div> 
-		<div id="articles">
-			还没有搜索哦~写点什么吧~
+	
+	<div class="fixed w-screen h-screen left-0 top-[81px] z-45 backdrop-brightness-75" id="search-bg">
+		<div class="fixed top-20 left-1/2 -translate-x-1/2 z-50 bg-gh-bg dark:bg-gh-subtledarkbg border-[1.5px] border-solid dark:border-gh-darkborder p-10 rounded-2xl w-3/5" id="search-results">
+			<div class="text-xl font-bold mb-2">
+				<h1>搜索结果</h1>
+			</div> 
+			<div id="searched-articles">
+				还没有搜索哦~写点什么吧~
+			</div>
 		</div>
-	</div>-->
+	</div>
+
 
 
 
 	<main class="flex flex-row justify-center mt-20">
-		<section class="border-r-[1.5px] border-solid border-gh-border dark:border-gh-darkborder p-5 w-3/12 z-40 bg-white dark:bg-gh-subtledarkbg">
+		<section class="border-r-[1.5px] border-solid border-gh-border dark:border-gh-darkborder p-5 w-3/12 z-30 bg-white dark:bg-gh-subtledarkbg">
 			<div id="notice" class="sticky top-[100px]">
 				<h1 class="mb-0 text-lg font-bold text-center">入站须知</h1>
 				<div id="notice-content" class="text-sm">
@@ -227,7 +228,7 @@
 	<footer class="w-full border-t-[1.5px] border-solid border-gh-border p-3 flex justify-center dark:border-gh-darkborder bg-gh-bg dark:bg-gh-subtledarkbg">
 		<div class="text-center">
 			<div>本服务器由 Linux + <a href="https://vercel.com">Vercel</a> 强力驱动</div>
-			<div><span class="ml-3">Build v2.0.0 alpha 2</span></div>
+			<div><span class="ml-3">Build v2.0.0 alpha 3</span></div>
 			<span id="resource-load" class="hidden"></span>
 		</div>
 		
@@ -235,6 +236,7 @@
 		<script type="text/javascript" src="theme_manager.js"></script>
 		<script type="text/javascript" src="index.js"></script>
 		<script type="text/javascript" src="js/mode-switch.js"></script>
+		<script type="text/javascript" src="js/search.js"></script>
 	</footer>
 
 </body>
