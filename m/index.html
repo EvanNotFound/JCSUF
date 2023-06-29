@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
     <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
     <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="title">
-        <span class="title-text">JCSS非官方自由论坛 - JCSUF</span>
-        <span class="site-url">www.jcsuf.top</span>
+      <span class="title-text">JCSS非官方自由论坛 - JCSUF</span>
+      <span class="site-url">www.jcsuf.top</span>
     </div>
     <div class="article-container">
-        <div class="newest-banner">最新帖子</div>
-        <div class="articles" id="articles">
-            <div class="article-block" v-for="article in articles">
-                <a class="article-title" v-bind:href="'article.html?aid='+article.id">{{article.title}}</a>
-                <div class="article-desc">
-                    <div class="snapshot">
-                        {{article.snapshot}}
-                    </div>
-                    <div class="stat">
-                        {{article.author_name.replace(/<.*?>/g,"")}}<br/>{{article.view}} 阅读<br/>{{article.ccount}} 评论
-                    </div>
-                </div>
+      <div class="newest-banner">最新帖子</div>
+      <div class="articles" id="articles">
+        <div class="article-block" v-for="article in articles">
+          <a class="article-title" v-bind:href="'article.html?aid='+article.id"
+            >{{article.title}}</a
+          >
+          <div class="article-desc">
+            <div class="snapshot">{{article.snapshot}}</div>
+            <div class="stat">
+              {{article.author_name.replace(/<.*?>/g,"")}}<br />{{article.view}}
+              阅读<br />{{article.ccount}} 评论
             </div>
+          </div>
         </div>
+      </div>
     </div>
     <script src="index.js"></script>
-</body>
-
+  </body>
 </html>

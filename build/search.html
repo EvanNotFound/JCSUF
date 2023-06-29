@@ -1,78 +1,114 @@
 <!DOCTYPE html>
 <html lang="en" beta="yes">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<link rel="stylesheet" type="text/css" href="search.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="search.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <title>JCSS非官方自由论坛 - JCSUF</title>
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Noto+Sans">
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Josefin+Sans">
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng">
-	<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
-	<link rel="shortcut icon" href="https://jcsuf.evanluo.top/assets/favicon-djkuvjux.png">
-	<script src="https://kit.fontawesome.com/cad71fe1f6.js" crossorigin="anonymous"></script>
-</head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://jcsuf.evanluo.top/assets/favicon-djkuvjux.png"
+    />
+    <script
+      src="https://kit.fontawesome.com/cad71fe1f6.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body>
-	<!-- 某位开发者说，某位开发者写的什么屎山代码 -->
-	<!-- 某位开发者说，你们俩真是够了 -->
-	<!-- 某位开发者说，Dark模式真丑-->
-	<!-- 某位开发者说，差不多得了，Dark模式不就是你在做吗，要改自己改啊 -->
-	<!-- 已经有一位开发者寄了，RIP-->
-	<div class="nav-right">
-		<span id="namefield"><b><big>少女祈祷中...</big></b></span><br>
-		<span id="levelfield">Now Loading</span>
-		<!---可以通过在Console中输入display_more()展开视图-->
-		<!-- 可以通过在Console中输入animateLock=-1锁定视图-->
-		<!-- 可以通过在Console中输入animateLock= 0解锁视图-->
-		<div id="avatar" onmouseleave="display_less()">
-			<img onmouseover="display_more()"
-				src="https://upload.thwiki.cc/thumb/0/0a/%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png/100px-%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png"
-				height="48px" id="ava-img">
-			<div id="nfield-bg"><span id="more-namefield"><b>Next Dream...</b></span></div>
-			<div id="level-bg"></div>
-		</div>
-	</div>
+  <body>
+    <!-- 某位开发者说，某位开发者写的什么屎山代码 -->
+    <!-- 某位开发者说，你们俩真是够了 -->
+    <!-- 某位开发者说，Dark模式真丑-->
+    <!-- 某位开发者说，差不多得了，Dark模式不就是你在做吗，要改自己改啊 -->
+    <!-- 已经有一位开发者寄了，RIP-->
+    <div class="nav-right">
+      <span id="namefield"
+        ><b><big>少女祈祷中...</big></b></span
+      ><br />
+      <span id="levelfield">Now Loading</span>
+      <!---可以通过在Console中输入display_more()展开视图-->
+      <!-- 可以通过在Console中输入animateLock=-1锁定视图-->
+      <!-- 可以通过在Console中输入animateLock= 0解锁视图-->
+      <div id="avatar" onmouseleave="display_less()">
+        <img
+          onmouseover="display_more()"
+          src="https://upload.thwiki.cc/thumb/0/0a/%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png/100px-%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+          height="48px"
+          id="ava-img"
+        />
+        <div id="nfield-bg">
+          <span id="more-namefield"><b>Next Dream...</b></span>
+        </div>
+        <div id="level-bg"></div>
+      </div>
+    </div>
 
-	<div class="navbar" id="nav-bar">
-		<a href="index.html" title="首页" >JCSS非官方自由论坛</a>
-		<a href="signin.html" title="登录" id="signin-compose">登录</a>
-		<a href="post.html" title="帖子专区">帖子专区</a>
-		<a href="search.html" title="搜索帖子">搜索帖子</a>
-		<a href="contact.html" title="联系管理员">联系管理员</a>
-		<a target="_self" title="切换主题" onclick="switch_theme()">切换主题</a>
-		<a href="javascript:void(0);" class="nav-icon" onclick="changeNav()"  id="nav-icon">
-			<i class="fa-solid fa-bars"></i>
-		</a>
-	</div>
+    <div class="navbar" id="nav-bar">
+      <a href="index.html" title="首页">JCSS非官方自由论坛</a>
+      <a href="signin.html" title="登录" id="signin-compose">登录</a>
+      <a href="post.html" title="帖子专区">帖子专区</a>
+      <a href="search.html" title="搜索帖子">搜索帖子</a>
+      <a href="contact.html" title="联系管理员">联系管理员</a>
+      <a target="_self" title="切换主题" onclick="switch_theme()">切换主题</a>
+      <a
+        href="javascript:void(0);"
+        class="nav-icon"
+        onclick="changeNav()"
+        id="nav-icon"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </a>
+    </div>
 
+    <div class="maintitle" id="category-displayer">
+      <input type="text" id="search-content" value='三国 "if线"' /><i
+        class="fa-solid fa-magnifying-glass search-button"
+        onclick="search()"
+      ></i>
+      <p id="search-demo">
+        搜索示例：关键词1 关键词2 "必须包含的关键词3"
+        （单个关键词大于等于八个字符好像有问题）
+      </p>
+    </div>
 
-	<div class="maintitle" id="category-displayer">
-		<input type="text" id="search-content" value='三国 "if线"'><i class="fa-solid fa-magnifying-glass search-button" onclick="search()"></i>
-		<p id="search-demo">搜索示例：关键词1 关键词2 "必须包含的关键词3" （单个关键词大于等于八个字符好像有问题）</p>
-	</div>
-
-	<div class="post-container">
-		<div class="subforum-sort">
-			<h1>搜索结果</h1>
-		</div> 
-		<div id="articles">
-			还没有搜索哦~写点什么吧~
-		</div>
-	</div>
-	<div class="foot">
-		<div class="foot-container">
-		本服务器由 <span id="server-os">念力</span> 强力驱动<br>
-		已连续<del>稳定</del>运行 <span id="run-time">不知道多少</span> 分钟。<br> <span id="resource-load"></span>
-		
-		</div>
-	</div>
-	<script type="text/javascript" src="default.js"></script>
-	<script type="text/javascript" src="theme_manager.js"></script>
-	<script type="text/javascript" src="search.js"></script>
-</body>
+    <div class="post-container">
+      <div class="subforum-sort">
+        <h1>搜索结果</h1>
+      </div>
+      <div id="articles">还没有搜索哦~写点什么吧~</div>
+    </div>
+    <div class="foot">
+      <div class="foot-container">
+        本服务器由 <span id="server-os">念力</span> 强力驱动<br />
+        已连续<del>稳定</del>运行
+        <span id="run-time">不知道多少</span> 分钟。<br />
+        <span id="resource-load"></span>
+      </div>
+    </div>
+    <script type="text/javascript" src="default.js"></script>
+    <script type="text/javascript" src="theme_manager.js"></script>
+    <script type="text/javascript" src="search.js"></script>
+  </body>
 </html>

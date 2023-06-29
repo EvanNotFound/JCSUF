@@ -1,54 +1,90 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="article.css">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="article.css" />
     <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
     <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="vue-enable">
-        <div class="title">
-            <span class="title-text">{{entity.title}}</span>
-            <span class="site-url">www.jcsuf.top</span>
-            <span class="site-url"><a href="https://www.jcsuf.top/m/">返回首页</a></span>
+      <div class="title">
+        <span class="title-text">{{entity.title}}</span>
+        <span class="site-url">www.jcsuf.top</span>
+        <span class="site-url"
+          ><a href="https://www.jcsuf.top/m/">返回首页</a></span
+        >
+      </div>
+      <div class="article-body">
+        <div class="article-content">
+          <div class="avatar-bar">
+            <img
+              v-bind:src="entity.author_avatar"
+              v-bind:style="entity.author_style"
+              class="avatar"
+            />
+            <p>{{entity.author_level}}</p>
+          </div>
+          <div class="content-bar">
+            <p class="author-name">{{entity.author_name}}</p>
+            <p v-html="entity.html.replaceAll('\n','<br>')"></p>
+          </div>
+          <p></p>
+          <p
+            style="margin-right: 10px; text-align: right"
+            v-bind:onclick="'vm.callcomment(0)'"
+          >
+            评论
+          </p>
         </div>
-        <div class="article-body">
-            <div class="article-content">
-                <div class="avatar-bar">
-                    <img v-bind:src="entity.author_avatar" v-bind:style="entity.author_style" class="avatar">
-                    <p>{{entity.author_level}}</p>
-                </div>
-                <div class="content-bar">
-                    <p class="author-name">{{entity.author_name}}</p>
-                    <p v-html="entity.html.replaceAll('\n','<br>')"></p>
-                </div>
-                <p></p>
-                <p style="margin-right: 10px; text-align: right;" v-bind:onclick="'vm.callcomment(0)'">评论</p>
-            </div>
-            <div class="article-comment" v-for="(comm, index) in entity.comments">
-                <div class="avatar-bar">
-                    <img v-bind:src="comm.author_avatar" v-bind:style="comm.author_style" class="avatar">
-                    <span>{{comm.author_level}}</span><br>
-                    <span>#{{comm.floor}}</span>
-                </div>
-                <div class="content-bar">
-                    <p class="author-name">{{comm.author_name}}<span v-if="comm.quote!=0" style="color:gray">&nbsp;回复 {{entity.comments[comm.quote-1].author_name}} (#{{comm.quote}})</span></p>
-                    <p v-html="comm.html"></p>
-                </div>
-                <p></p>
-                <p style="margin-right: 10px; text-align: right;" v-bind:onclick="'vm.callcomment('+(index+1)+')'">评论</p>
-            </div>
-            <div v-if="comment_start" class="comment-pane">
-                <div class="hide-comment" onclick="vm.comment_start=false">隐藏</div>
-                <div class="comment-body"><textarea class="comment-text" placeholder="支持 Markdown 不支持 HTML" id="comment"></textarea><div style="float: right;">正在评论 #{{target_floor}}&emsp;&emsp;匿名<input id="anon" type="checkbox"></div>&emsp;&emsp;<button onclick="vm.comment()">发送</button></div>
-            </div>
+        <div class="article-comment" v-for="(comm, index) in entity.comments">
+          <div class="avatar-bar">
+            <img
+              v-bind:src="comm.author_avatar"
+              v-bind:style="comm.author_style"
+              class="avatar"
+            />
+            <span>{{comm.author_level}}</span><br />
+            <span>#{{comm.floor}}</span>
+          </div>
+          <div class="content-bar">
+            <p class="author-name">
+              {{comm.author_name}}<span v-if="comm.quote!=0" style="color: gray"
+                >&nbsp;回复 {{entity.comments[comm.quote-1].author_name}}
+                (#{{comm.quote}})</span
+              >
+            </p>
+            <p v-html="comm.html"></p>
+          </div>
+          <p></p>
+          <p
+            style="margin-right: 10px; text-align: right"
+            v-bind:onclick="'vm.callcomment('+(index+1)+')'"
+          >
+            评论
+          </p>
         </div>
+        <div v-if="comment_start" class="comment-pane">
+          <div class="hide-comment" onclick="vm.comment_start=false">隐藏</div>
+          <div class="comment-body">
+            <textarea
+              class="comment-text"
+              placeholder="支持 Markdown 不支持 HTML"
+              id="comment"
+            ></textarea>
+            <div style="float: right">
+              正在评论 #{{target_floor}}&emsp;&emsp;匿名<input
+                id="anon"
+                type="checkbox"
+              />
+            </div>
+            &emsp;&emsp;<button onclick="vm.comment()">发送</button>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="article.js"></script>
-</body>
-
+  </body>
 </html>

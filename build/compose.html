@@ -1,170 +1,196 @@
-
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<link rel="stylesheet" type="text/css" href="compose.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="compose.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <title>发帖 - JCSUF</title>
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Noto+Sans">
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Josefin+Sans">
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng">
-	<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
-	<!--link rel="shortcut icon" href="https://jcsuf.evanluo.top/assets/favicon-djkuvjux.png"-->
-	<script src="https://kit.fontawesome.com/cad71fe1f6.js" crossorigin="anonymous"></script>
-</head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap"
+      rel="stylesheet"
+    />
+    <!--link rel="shortcut icon" href="https://jcsuf.evanluo.top/assets/favicon-djkuvjux.png"-->
+    <script
+      src="https://kit.fontawesome.com/cad71fe1f6.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body>
-	<!-- 某位开发者说，鳖载着理发店 -->
-	<div class="nav-right">
-		<span id="namefield"><b><big>少女祈祷中...</big></b></span><br>
-		<span id="levelfield">Now Loading</span>
-		<!---可以通过在Console中输入display_more()展开视图-->
-		<!-- 可以通过在Console中输入animateLock=-1锁定视图-->
-		<!-- 可以通过在Console中输入animateLock= 0解锁视图-->
-		<div id="avatar" onmouseleave="display_less()">
-			<img onmouseover="display_more()"
-				src="https://upload.thwiki.cc/thumb/0/0a/%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png/100px-%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png"
-				height="48px" id="ava-img">
-			<div id="nfield-bg"><span id="more-namefield"><b>Next Dream...</b></span></div>
-			<div id="level-bg"></div>
-		</div>
-	</div>
-	
-	<div class="navbar" id="nav-bar">
-		<a href="index.html" title="首页" >JCSS非官方自由论坛</a>
-		<a href="signin.html" title="登录" id="signin-compose">登录</a>
-		<a href="post.html" title="帖子专区">帖子专区</a>
-		<a href="search.html" title="搜索帖子">搜索帖子</a>
-		<a href="contact.html" title="联系管理员">联系管理员</a>
-		<a target="_self" title="切换主题" onclick="switch_theme()">切换主题</a>
-		<a href="javascript:void(0);" class="nav-icon" onclick="changeNav()"  id="nav-icon">
-			<i class="fa-solid fa-bars"></i>
-		</a>
-	</div>
+  <body>
+    <!-- 某位开发者说，鳖载着理发店 -->
+    <div class="nav-right">
+      <span id="namefield"
+        ><b><big>少女祈祷中...</big></b></span
+      ><br />
+      <span id="levelfield">Now Loading</span>
+      <!---可以通过在Console中输入display_more()展开视图-->
+      <!-- 可以通过在Console中输入animateLock=-1锁定视图-->
+      <!-- 可以通过在Console中输入animateLock= 0解锁视图-->
+      <div id="avatar" onmouseleave="display_less()">
+        <img
+          onmouseover="display_more()"
+          src="https://upload.thwiki.cc/thumb/0/0a/%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png/100px-%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+          height="48px"
+          id="ava-img"
+        />
+        <div id="nfield-bg">
+          <span id="more-namefield"><b>Next Dream...</b></span>
+        </div>
+        <div id="level-bg"></div>
+      </div>
+    </div>
 
+    <div class="navbar" id="nav-bar">
+      <a href="index.html" title="首页">JCSS非官方自由论坛</a>
+      <a href="signin.html" title="登录" id="signin-compose">登录</a>
+      <a href="post.html" title="帖子专区">帖子专区</a>
+      <a href="search.html" title="搜索帖子">搜索帖子</a>
+      <a href="contact.html" title="联系管理员">联系管理员</a>
+      <a target="_self" title="切换主题" onclick="switch_theme()">切换主题</a>
+      <a
+        href="javascript:void(0);"
+        class="nav-icon"
+        onclick="changeNav()"
+        id="nav-icon"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </a>
+    </div>
 
-	<div class="maintitle">
-		发帖
-	</div>
-	
-	<div class="left-container">	
-		<h4>标题</h4><input type="text" id="i1">
-		<h4>正文</h4><textarea type="text" id="i2"></textarea>
-	</div>
-	
-	<div class="right-container">
-		<div class="preview">
-			loading preview...
-		</div>
-		<div class="send">
-			<select id="maincate" onchange="loadbranch(this.value)">
-				<option value="-1">
-					--未选择--
-				</option>
-			</select>
-			<select id="i3" onchange="displaytip(this.value)">
-				<option value="-1">
-					--未选择--
-				</option>
-			</select>
-			<div id="usertip-cate" class="tips">
+    <div class="maintitle">发帖</div>
 
-			</div>
-			<div id="usertip-content" class="tips">
-				
-			</div>
-			<div class="anon">
-				<div class="anonwords">
-					是否匿名
-				</div>
-				<div class="anonornot">
-					<input type="checkbox" id="i4">
-					<label for='i4'></label>
-				</div>
-			</div>
-			<div class="anon">
-				<div class="anonwords">
-					是否NSFW（不适宜工作）
-				</div>
-				<div class="anonornot">
-					<input type="checkbox" id="i5">
-					<label for='i5'></label>
-				</div>
-			</div>
-			<div class="anon">
-				<div class="anonwords">
-					是否仅登录可见
-				</div>
-				<div class="anonornot">
-					<input type="checkbox" id="i6" oninput="display_user_option(this.checked)">
-					<label for='i6'></label>
-				</div>
-			</div>
-			<div id="more-option">
-				<div class="anon">
-					<div class="anonwords">
-						此帖发布后注册者不可见
-					</div>
-					<div class="anonornot">
-						<input type="checkbox" id="i9">
-						<label for='i9'></label>
-					</div>
-				</div>
-				<div class="anon">
-					<div class="anonwords">
-						等级低于 <span id="lower-level">0</span> 级者不可见
-					</div>
-				</div>
-				<div style="display: block; margin-top: 3px;">					
-					0 <input type="range" min="0" max="12" value="0" id="i10" oninput="document.getElementById('lower-level').innerText=this.value"> 12
-				</div>
-			</div>
-			<div class="anon">
-				<div class="anonwords">
-					是否涉及政治
-				</div>
-				<div class="anonornot">
-					<input type="checkbox" id="i7">
-					<label for='i7'></label>
-				</div>
-			</div>
-			<div class="anon">
-				<div class="anonwords">
-					是否不可被搜索
-				</div>
-				<div class="anonornot">
-					<input type="checkbox" id="i8">
-					<label for='i8'></label>
-				</div>
-			</div>
-			<button id="button" onclick="invokevote()" class="button">β新建投票</button>
-			<button id="button" onclick="post()" class="button">发送</button>
-		</div>
-		<div id="bgmask">
-		</div>
-	</div>
-	
-	<div class="popout" id="create-vote-container">
-		<h2>投票&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span onclick="minimize_pane()" id="close"></span></h2>
-		<textarea id="v1" placeholder="请输入投票标题"></textarea>
-		不记名投票&nbsp;<input type="checkbox" id="v2"><label for="v2"></label><br>
-		<button onclick="enablevote()" class="button">创建</button>
-	</div>
+    <div class="left-container">
+      <h4>标题</h4>
+      <input type="text" id="i1" />
+      <h4>正文</h4>
+      <textarea type="text" id="i2"></textarea>
+    </div>
 
-	<div class="foot">
-		<div class="foot-container">
-		本服务器由 <span id="server-os">念力</span> 强力驱动。<br>
-		已连续<del>稳定</del>运行 <span id="run-time">不知道多少</span> 分钟。<br> <span id="resource-load"></span>
-		
-		</div>
-	</div>
-	<script type="text/javascript" src="default.js"></script>
-	<script type="text/javascript" src="compose.js"></script>
-	<script type="text/javascript" src="theme_manager.js"></script>
-</body>
+    <div class="right-container">
+      <div class="preview">loading preview...</div>
+      <div class="send">
+        <select id="maincate" onchange="loadbranch(this.value)">
+          <option value="-1">--未选择--</option>
+        </select>
+        <select id="i3" onchange="displaytip(this.value)">
+          <option value="-1">--未选择--</option>
+        </select>
+        <div id="usertip-cate" class="tips"></div>
+        <div id="usertip-content" class="tips"></div>
+        <div class="anon">
+          <div class="anonwords">是否匿名</div>
+          <div class="anonornot">
+            <input type="checkbox" id="i4" />
+            <label for="i4"></label>
+          </div>
+        </div>
+        <div class="anon">
+          <div class="anonwords">是否NSFW（不适宜工作）</div>
+          <div class="anonornot">
+            <input type="checkbox" id="i5" />
+            <label for="i5"></label>
+          </div>
+        </div>
+        <div class="anon">
+          <div class="anonwords">是否仅登录可见</div>
+          <div class="anonornot">
+            <input
+              type="checkbox"
+              id="i6"
+              oninput="display_user_option(this.checked)"
+            />
+            <label for="i6"></label>
+          </div>
+        </div>
+        <div id="more-option">
+          <div class="anon">
+            <div class="anonwords">此帖发布后注册者不可见</div>
+            <div class="anonornot">
+              <input type="checkbox" id="i9" />
+              <label for="i9"></label>
+            </div>
+          </div>
+          <div class="anon">
+            <div class="anonwords">
+              等级低于 <span id="lower-level">0</span> 级者不可见
+            </div>
+          </div>
+          <div style="display: block; margin-top: 3px">
+            0
+            <input
+              type="range"
+              min="0"
+              max="12"
+              value="0"
+              id="i10"
+              oninput="document.getElementById('lower-level').innerText=this.value"
+            />
+            12
+          </div>
+        </div>
+        <div class="anon">
+          <div class="anonwords">是否涉及政治</div>
+          <div class="anonornot">
+            <input type="checkbox" id="i7" />
+            <label for="i7"></label>
+          </div>
+        </div>
+        <div class="anon">
+          <div class="anonwords">是否不可被搜索</div>
+          <div class="anonornot">
+            <input type="checkbox" id="i8" />
+            <label for="i8"></label>
+          </div>
+        </div>
+        <button id="button" onclick="invokevote()" class="button">
+          β新建投票
+        </button>
+        <button id="button" onclick="post()" class="button">发送</button>
+      </div>
+      <div id="bgmask"></div>
+    </div>
+
+    <div class="popout" id="create-vote-container">
+      <h2>
+        投票&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span
+          onclick="minimize_pane()"
+          id="close"
+        ></span>
+      </h2>
+      <textarea id="v1" placeholder="请输入投票标题"></textarea>
+      不记名投票&nbsp;<input type="checkbox" id="v2" /><label for="v2"></label
+      ><br />
+      <button onclick="enablevote()" class="button">创建</button>
+    </div>
+
+    <div class="foot">
+      <div class="foot-container">
+        本服务器由 <span id="server-os">念力</span> 强力驱动。<br />
+        已连续<del>稳定</del>运行
+        <span id="run-time">不知道多少</span> 分钟。<br />
+        <span id="resource-load"></span>
+      </div>
+    </div>
+    <script type="text/javascript" src="default.js"></script>
+    <script type="text/javascript" src="compose.js"></script>
+    <script type="text/javascript" src="theme_manager.js"></script>
+  </body>
 </html>

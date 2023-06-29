@@ -1,62 +1,78 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="compose.css">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="compose.css" />
     <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
     <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="vue-enable">
-        <div class="title">
-            <span class="title-text">发帖</span>
-            <span class="site-url">www.jcsuf.top</span>
-            <span class="site-url"><a href="https://www.jcsuf.top/m/">返回首页</a></span>
-        </div>
-        <div class="content-body">
-            <input class="arttitle" value="标题" id="i1">
-            <textarea class="artcontent" id="i2">内容（发布的时候不登录可能会被吞，记得发布前复制到剪贴板）</textarea>
-            <details>
-                <summary>查看预览</summary>
-                <div id="preview">Loading Preview...</div>
-                <details>
-                    <summary>发布选项</summary>
-                    <div>
-                        <h3>必填字段</h3>
-                        <p>分区选择</p>
-                        <select id="maincate" onchange="loadbranch(this.value)">
-                            <option value="-1">
-                                --未选择--
-                            </option>
-                        </select> -
-                        <select id="i3" onchange="vm.but_visible = document.getElementById('i3').value!=-1">
-                            <option value="-1">
-                                --未选择--
-                            </option>
-                        </select>
-                        <h3>其它选项</h3>
-                        <p>是否匿名<input type="checkbox" id="i4"></p>
-                        <p>是否NSFW（不适宜工作）<input type="checkbox" id="i5"></p>
-                        <p>是否仅登录可见<input type="checkbox" id="i6" oninput="display_user_option(this.checked)"></p>
-                        <div id="more-option">
-                            <p>此帖发布后注册者不可见<input type="checkbox" id="i9"></p>
-                            <p>等级低于 <span id="lower-level">0</span> 级者不可见</p>
-                            0 <input type="range" min="0" max="12" value="0" id="i10"
-                                oninput="document.getElementById('lower-level').innerText=this.value"> 12
-                        </div>
-                        <p>是否涉及政治<input type="checkbox" id="i7"></p>
-                        <p>是否不可被搜索<input type="checkbox" id="i8"></p>
-                        <p>移动端暂不支持投票</p>
-                        <button v-if="but_visible" onclick="post()">发送</button>
-                    </div>
-                </details>
-            </details>
-        </div>
+      <div class="title">
+        <span class="title-text">发帖</span>
+        <span class="site-url">www.jcsuf.top</span>
+        <span class="site-url"
+          ><a href="https://www.jcsuf.top/m/">返回首页</a></span
+        >
+      </div>
+      <div class="content-body">
+        <input class="arttitle" value="标题" id="i1" />
+        <textarea class="artcontent" id="i2">
+内容（发布的时候不登录可能会被吞，记得发布前复制到剪贴板）</textarea
+        >
+        <details>
+          <summary>查看预览</summary>
+          <div id="preview">Loading Preview...</div>
+          <details>
+            <summary>发布选项</summary>
+            <div>
+              <h3>必填字段</h3>
+              <p>分区选择</p>
+              <select id="maincate" onchange="loadbranch(this.value)">
+                <option value="-1">--未选择--</option>
+              </select>
+              -
+              <select
+                id="i3"
+                onchange="vm.but_visible = document.getElementById('i3').value!=-1"
+              >
+                <option value="-1">--未选择--</option>
+              </select>
+              <h3>其它选项</h3>
+              <p>是否匿名<input type="checkbox" id="i4" /></p>
+              <p>是否NSFW（不适宜工作）<input type="checkbox" id="i5" /></p>
+              <p>
+                是否仅登录可见<input
+                  type="checkbox"
+                  id="i6"
+                  oninput="display_user_option(this.checked)"
+                />
+              </p>
+              <div id="more-option">
+                <p>此帖发布后注册者不可见<input type="checkbox" id="i9" /></p>
+                <p>等级低于 <span id="lower-level">0</span> 级者不可见</p>
+                0
+                <input
+                  type="range"
+                  min="0"
+                  max="12"
+                  value="0"
+                  id="i10"
+                  oninput="document.getElementById('lower-level').innerText=this.value"
+                />
+                12
+              </div>
+              <p>是否涉及政治<input type="checkbox" id="i7" /></p>
+              <p>是否不可被搜索<input type="checkbox" id="i8" /></p>
+              <p>移动端暂不支持投票</p>
+              <button v-if="but_visible" onclick="post()">发送</button>
+            </div>
+          </details>
+        </details>
+      </div>
     </div>
     <script src="compose.js"></script>
-</body>
-
+  </body>
 </html>

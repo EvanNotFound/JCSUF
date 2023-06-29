@@ -1,63 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" type="text/css" href="contact.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="contact.css" />
     <title>联系方式 - JCSUF</title>
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Noto+Sans">
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Josefin+Sans">
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng">
-	<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
-	<link rel="shortcut icon" href="https://jcsuf.evanluo.top/assets/favicon-djkuvjux.png">
-	<script src="https://kit.fontawesome.com/cad71fe1f6.js" crossorigin="anonymous"></script>
-</head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://jcsuf.evanluo.top/assets/favicon-djkuvjux.png"
+    />
+    <script
+      src="https://kit.fontawesome.com/cad71fe1f6.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body>
-	<div class="nav-right">
-		<span id="namefield"><b><big>少女祈祷中...</big></b></span><br>
-		<span id="levelfield">Now Loading</span>
-		<!---可以通过在Console中输入display_more()展开视图-->
-		<!-- 可以通过在Console中输入animateLock=-1锁定视图-->
-		<!-- 可以通过在Console中输入animateLock= 0解锁视图-->
-		<div id="avatar" onmouseleave="display_less()">
-			<img onmouseover="display_more()"
-				src="https://upload.thwiki.cc/thumb/0/0a/%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png/100px-%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png"
-				height="48px" id="ava-img">
-			<div id="nfield-bg"><span id="more-namefield"><b>Next Dream...</b></span></div>
-			<div id="level-bg"></div>
-		</div>
-	</div>
-	
-	<div class="navbar" id="nav-bar">
-		<a href="index.html" title="首页" >JCSS非官方自由论坛</a>
-		<a href="signin.html" title="登录" id="signin-compose">登录</a>
-		<a href="post.html" title="帖子专区">帖子专区</a>
-		<a href="search.html" title="搜索帖子">搜索帖子</a>
-		<a href="contact.html" title="联系管理员">联系管理员</a>
-		<a target="_self" title="切换主题" onclick="switch_theme()">切换主题</a>
-		<a href="javascript:void(0);" class="nav-icon" onclick="changeNav()"  id="nav-icon">
-			<i class="fa-solid fa-bars"></i>
-		</a>
-	</div>
-	
-	<div class="contact-method">
-		Email: Not Avalible<br>
-		Telegram: <a href="https://t.me/jcsufnotice" target="_blank" title="联系管理员">https://t.me/jcsufnotice</a>
-	</div>
+  <body>
+    <div class="nav-right">
+      <span id="namefield"
+        ><b><big>少女祈祷中...</big></b></span
+      ><br />
+      <span id="levelfield">Now Loading</span>
+      <!---可以通过在Console中输入display_more()展开视图-->
+      <!-- 可以通过在Console中输入animateLock=-1锁定视图-->
+      <!-- 可以通过在Console中输入animateLock= 0解锁视图-->
+      <div id="avatar" onmouseleave="display_less()">
+        <img
+          onmouseover="display_more()"
+          src="https://upload.thwiki.cc/thumb/0/0a/%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png/100px-%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+          height="48px"
+          id="ava-img"
+        />
+        <div id="nfield-bg">
+          <span id="more-namefield"><b>Next Dream...</b></span>
+        </div>
+        <div id="level-bg"></div>
+      </div>
+    </div>
 
-		<div class="foot">
-		<div class="foot-container">
-		本服务器由 <span id="server-os">念力</span> 强力驱动。<br>
-		已连续<del>稳定</del>运行 <span id="run-time">不知道多少</span> 分钟。<br> <span id="resource-load"></span>
-		
-		</div>
-	</div>
-	<script type="text/javascript" src="default.js"></script>
-	<script type="text/javascript" src="theme_manager.js"></script>
-</body>
+    <div class="navbar" id="nav-bar">
+      <a href="index.html" title="首页">JCSS非官方自由论坛</a>
+      <a href="signin.html" title="登录" id="signin-compose">登录</a>
+      <a href="post.html" title="帖子专区">帖子专区</a>
+      <a href="search.html" title="搜索帖子">搜索帖子</a>
+      <a href="contact.html" title="联系管理员">联系管理员</a>
+      <a target="_self" title="切换主题" onclick="switch_theme()">切换主题</a>
+      <a
+        href="javascript:void(0);"
+        class="nav-icon"
+        onclick="changeNav()"
+        id="nav-icon"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </a>
+    </div>
+
+    <div class="contact-method">
+      Email: Not Avalible<br />
+      Telegram:
+      <a href="https://t.me/jcsufnotice" target="_blank" title="联系管理员"
+        >https://t.me/jcsufnotice</a
+      >
+    </div>
+
+    <div class="foot">
+      <div class="foot-container">
+        本服务器由 <span id="server-os">念力</span> 强力驱动。<br />
+        已连续<del>稳定</del>运行
+        <span id="run-time">不知道多少</span> 分钟。<br />
+        <span id="resource-load"></span>
+      </div>
+    </div>
+    <script type="text/javascript" src="default.js"></script>
+    <script type="text/javascript" src="theme_manager.js"></script>
+  </body>
 </html>
