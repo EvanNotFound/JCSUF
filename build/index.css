@@ -24,14 +24,6 @@
 	font-size: 12px;
 }
 
-#notice-content {
-	font-size: 15px;
-}
-
-#notice-modify-time {
-	text-align: right;
-	font-family: 'Courier Prime', monospace;
-}
 
 /*左侧公告栏*/
 .notice-container {
@@ -66,19 +58,7 @@
 	margin: 7px;
 }
 
-/*用户头像*/
-.nav-right {
-	position: fixed;
-	right: 72px;
-	top: 16px;
-	height: auto;
-	z-index: 100;
-	text-align: right;
-	border-radius: 16px;
-	padding: 4px 10px 5px 8px;
-	background-color: rgba(255,255,255,0.98);
-	width: auto;
-}
+
 
 .nav-right span{
 	z-index: 100;
@@ -178,11 +158,6 @@ h4{
 
 .subforum-devider{
     display: none;   
-}
-
-#input-row-count{
-	margin: 0 10px;
-	width: 40px;
 }
 
 p {

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="preconnect" href="https://evan.beee.top" />
+	<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+	<script type="text/javascript" src="js/search.js"></script>
+	<title>JCSS非官方自由论坛 - JCSUF</title>
+
+	<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" href="https://jcsuf.evanluo.top/assets/favicon-djkuvjux.png">
+	<link rel="stylesheet" type="text/css" href="https://evan.beee.top/css/fontawesome-pro-6.2.1/css/solid.min.css">
+	<link rel="stylesheet" type="text/css" href="https://evan.beee.top/css/fontawesome-pro-6.2.1/css/regular.min.css">
+	<link rel="stylesheet" type="text/css" href="https://evan.beee.top/css/fontawesome-pro-6.2.1/css/fontawesome.min.css">
+	
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1743182420249575"
+		crossorigin="anonymous"></script>
+</head>
+
+<body class="text-gh-gray-9 dark:text-gh-gray-1">
+	<header class="fixed left-0 top-0 w-full bg-gh-bg dark:bg-gh-darkbg flex justify-between p-4 items-center backdrop-blur-xl border-b-[1.5px] border-gh-border dark:border-gh-darkborder z-50" id="nav-bar">
+		<section id="site_title" class="ml-5">
+			<h1 class="text-xl font-bold ">
+				<a href="index.html" title="首页" >JCSS非官方自由论坛</a>
+			</h1>
+		</section>
+		<section id="right" class="flex justify-self-end">
+			<nav class="flex gap-5 mr-6 items-center text-md">
+				<div class="border border-solid border-gh-border dark:border-gh-darkborder px-2 rounded-lg py-1 focus-within:border-gh-gray-3 dark:focus-within:border-gh-gray-6 transition focus-within:transition" id="category-displayer">
+					<i class="fa-solid fa-magnifying-glass" onclick="search()"></i>
+					<input class="bg-transparent placeholder-gh-gray-7 dark:placeholder-gh-gray-3 ml-2 focus:outline-none text-md" type="text" id="search-content" placeholder='搜索帖子'>
+					<p id="search-demo" class="hidden">搜索示例：关键词1 关键词2 "必须包含的关键词3" （单个关键词大于等于八个字符好像有问题）</p>
+				</div>
+				<a href="signin.html" title="登录" id="signin-compose">登录</a>
+				<a href="post.html" title="帖子专区">帖子专区</a>
+				<a href="contact.html" title="联系管理员">联系管理员</a>
+				<a target="_self" title="切换主题" onclick="switch_theme()" class="gh-border py-1 px-2 rounded-lg hover:bg-gh-gray-1 cursor-pointer dark:border-gh-gray-7"><i class="fa-solid fa-brightness text-gh-gray-8 dark:text-gh-gray-2"></i></a>
+			</nav>
+
+			<div class="flex items-center mr-4">
+				<div class="flex flex-col">
+					<span id="namefield" class="font-bold">
+						少女祈祷中...
+					</span>
+					<span id="levelfield" class="text-right text-sm text-gh-gray-7 dark:text-gh-gray-3">
+						Now Loading
+					</span>
+				</div>
+				<div id="avatar" class="cursor-pointer h-12 w-12" onmouseleave="">
+					<img onclick=""
+						src="https://upload.thwiki.cc/thumb/0/0a/%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png/100px-%E9%AC%BC%E4%BA%BA%E6%AD%A3%E9%82%AA%EF%BC%88Q%E7%89%88%E7%AB%8B%E7%BB%98%EF%BC%89.png"
+						id="ava-img" class="h-12 w-12 m-0 bg-gh-gray-2 dark:bg-gh-gray-7 ml-2 p-1 rounded-lg gh-border dark:border-gh-gray-7">
+					<div id="nfield-bg" class="block">
+						<span id="more-namefield">
+							<b>Next Dream...</b>
+						</span>
+					</div>
+					<div id="level-bg"></div>
+				</div>
+			</div>
+		</section>
+	</header>
+	<!---
+	<div class="post-container">
+		<div class="subforum-sort">
+			<h1>搜索结果</h1>
+		</div> 
+		<div id="articles">
+			还没有搜索哦~写点什么吧~
+		</div>
+	</div>-->
+
+
+
+	<main class="flex flex-row justify-center mt-20">
+		<section class="border-r-[1.5px] border-solid border-gh-border dark:border-gh-darkborder p-5 w-3/12 z-40 bg-white dark:bg-gh-subtledarkbg">
+			<div id="notice" class="sticky top-[100px]">
+				<h1 class="mb-0 text-lg font-bold text-center">入站须知</h1>
+				<div id="notice-content" class="text-sm">
+					<script id="notice-template" type="text/x-handlebars-template">
+						{{content}}
+					</script>
+				</div>
+				<div id="notice-modify-time" class="text-gh-gray-5 font-mono text-right text-sm"></div>
+			</div>
+		</section>
+
+		<section class="p-5 bg-gh-bg w-9/12 dark:bg-gh-darkbg">
+			<div class="mx-6 p-3 border-b-2 border-solid border-gh-gray-1 dark:border-gh-gray-8 mb-2">
+				<h1 class="text-xl font-bold">置顶内容</h1>
+			</div>
+			
+			<div class="flex flex-row justify-between mx-6">
+				<div class="post-column w-7/12 dark:bg-gh-subtledarkbg dark:border-gh-gray-7">
+					<h4 class="text-center text-lg font-bold mb-1">
+						<a href="bugreport.html">
+							漏洞上报页
+						</a>
+					</h4>
+					<p class="text-sm text-center">
+						如果您在使用JCSUF论坛的过程中遇到了任何问题（如出现漏洞、无法进行登录等操作，或是对论坛运作机制有疑问），都可以在这里反馈
+					</p>
+				</div>
+				<div class="m-2.5 px-3 py-2.5 bg-white dark:bg-gh-subtledarkbg rounded-xl border border-solid border-gh-border flex flex-col justify-center w-2/12 max-w-[135px] dark:border-gh-gray-7">
+					<div class="flex justify-center flex-wrap" >
+						<div class="flex flex-row items-center w-1/2">
+							<i class="fa-regular fa-up fa-lg"></i>
+							<p class="text-md text-gh-gray-8 dark:text-gh-gray-2 ml-1">0</p>
+						</div>
+	
+						<div class="flex flex-row items-center w-1/2">
+							<i class="fa-regular fa-comments fa-md"></i>
+							<p class="text-md text-gh-gray-8 dark:text-gh-gray-2 ml-1">0</p>
+						</div>
+						<div class="flex flex-row items-center w-1/2">
+							<i class="fa-regular fa-down fa-lg"></i>
+							<p class="text-md text-gh-gray-8 dark:text-gh-gray-2 ml-1">0</p>
+						</div>
+						<div class="flex flex-row items-center w-1/2">
+							<i class="fa-regular fa-eye fa-md"></i>
+							<p class="text-md text-gh-gray-8 dark:text-gh-gray-2 ml-1">0</p>
+						</div>
+					</div>
+				</div>
+				<div class="post-column w-3/12 dark:bg-gh-subtledarkbg dark:border-gh-gray-7">
+					<div><i class="fa-regular fa-paper-plane"></i><a href="user.html?uid=806604291" class="font-bold text-sm ml-1">Admin</a></div>
+					<div><i class="fa-regular fa-calendar-days"></i><p class="ml-1 inline">2022-07-10</p></div>
+				</div>
+			</div>
+
+
+
+			<div class="mx-6 p-3 border-b-2 border-solid border-gh-gray-1 dark:border-gh-gray-8 mb-2 flex justify-between items-center">
+				<h1 class="text-xl font-bold">最新帖子</h1>
+				<div class="text-sm text-gh-gray-8 dark:text-gh-gray-2">
+					在页面上显示
+					<input type="number" value="10" id="input-row-count" min="5" max="200" class="bg-transparent gh-border dark:border-gh-gray-7 px-2 mr-1 w-10 rounded-lg" />篇文章&emsp;
+					<button onclick="reloadnew()" class="inline border border-solid border-gh-green-5 bg-gh-green-5 text-white text-sm py-1 px-2 rounded-lg hover:bg-gh-green-6">
+						重新加载
+					</button>
+				</div>
+			</div>
+			<div id="articles"></div>
+			
+			<script id="articles-template" type="text/x-handlebars-template">
+				{{#each articles}}
+				  <div class="flex flex-row justify-between mx-6" id="article-{{id}}">
+					<div class="post-column w-7/12 dark:bg-gh-subtledarkbg dark:border-gh-gray-7" id="article-desc-{{id}}">
+						<h4 class="text-center text-lg font-bold mb-1">
+							<a href="article.html?aid={{id}}">{{title}}</a>
+						</h4>
+					  <p class="text-sm text-center">{{snapshot}}</p>
+					</div>
+					<div class="m-2.5 px-3 py-2.5 bg-white dark:bg-gh-subtledarkbg rounded-xl gh-border flex flex-col justify-center w-2/12 max-w-[135px] dark:border-gh-gray-7" id="article-stat-{{id}}">
+					  <div class="flex justify-center flex-wrap" >
+						<div class="flex flex-row items-center w-1/2">
+							<i class="fa-regular fa-up fa-lg"></i>
+							<p class="text-md text-gh-gray-8 dark:text-gh-gray-2 ml-1">{{like}}</p>
+						</div>
+	
+						<div class="flex flex-row items-center w-1/2">
+							<i class="fa-regular fa-comments fa-md"></i>
+							<p class="text-md text-gh-gray-8 dark:text-gh-gray-2 ml-1">{{ccount}}</p>
+						</div>
+						<div class="flex flex-row items-center w-1/2">
+							<i class="fa-regular fa-down fa-lg"></i>
+							<p class="text-md text-gh-gray-8 dark:text-gh-gray-2 ml-1">{{dislike}}</p>
+						</div>
+						<div class="flex flex-row items-center w-1/2">
+							<i class="fa-regular fa-eye fa-md"></i>
+							<p class="text-md text-gh-gray-8 dark:text-gh-gray-2 ml-1">{{view}}</p>
+						</div>
+					</div>
+					</div>
+					<div class="post-column w-3/12 dark:bg-gh-subtledarkbg dark:border-gh-gray-7">
+					  <p id="article-info-{{id}}"></p>
+					</div>
+				  </div>
+				{{/each}}
+			  </script>
+			  <script id="article-info-template" type="text/x-handlebars-template">
+				<p class="fade-group-1">
+				  {{#if isCurrentUser}}
+					<a href="user.html?uid={{author}}" class="">
+					  {{#if isAnonymous}}
+					  <div><i class="fa-regular fa-paper-plane"></i><p color="#6699aa" class="ml-1 font-bold">{{author}} (you, 匿名)</p></div>
+					  {{else}}
+					  <div><i class="fa-regular fa-paper-plane"></i><p color="#3399aa" class="ml-1 font-bold">{{author}} (you)</p></div>
+					  {{/if}}
+					</a>
+				  {{else}}
+					{{#if isAnonymous}}
+					<div><i class="fa-regular fa-paper-plane"></i><p color="#AAAA00" class="inline font-bold ml-1">匿名</p></div>
+					{{else}}
+					<div><i class="fa-regular fa-paper-plane"></i><a href="user.html?uid={{author}}" class="font-bold ml-1">{{author}}</a></div>
+					{{/if}}
+				  {{/if}}
+				  
+				  <div><i class="fa-regular fa-calendar-days"></i><p class="ml-1 inline">{{ctime}}</p></div>
+				</p>
+				{{#if canDelete}}
+				  <br>
+				  <p onclick="del({id})" color="red" style="margin-left: 18px"><small>删除</small></p>
+				{{/if}}
+			  </script>
+		</section>
+	</main>
+
+	<footer class="w-full border-t-[1.5px] border-solid border-gh-border p-3 flex justify-center">
+		<div class="text-center">
+			<div>本服务器由 Linux + <a href="https://vercel.com">Vercel</a> 强力驱动</div>
+			<div><span class="ml-3">Build v2.0.0 alpha 1</span></div>
+			<span id="resource-load"></span>
+		</div>
+		
+		<script type="text/javascript" src="default.js"></script>
+		<script type="text/javascript" src="theme_manager.js"></script>
+		<script type="text/javascript" src="index.js"></script>
+	</footer>
+
+</body>
+
+</html>

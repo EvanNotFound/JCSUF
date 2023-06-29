@@ -1,0 +1,24 @@
+{
+  "name": "jcsuf",
+  "version": "1.0.0",
+  "description": "手敲网站，进南人的自由社区",
+  "main": "index.js",
+  "scripts": {
+    "tailwind": "npx tailwindcss -i ./src/input.css -o ./build/css/style.css --watch",
+    "prettier": "npx prettier --write '**/*.html'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvanNotFound/JCSUF.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EvanNotFound/JCSUF/issues"
+  },
+  "homepage": "https://github.com/EvanNotFound/JCSUF#readme",
+  "devDependencies": {
+    "prettier-plugin-tailwindcss": "^0.3.0",
+    "tailwindcss": "^3.3.2"
+  }
+}

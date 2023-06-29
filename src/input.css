@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.post-column {
+    @apply m-2.5 px-6 py-2.5 bg-white rounded-xl border border-solid border-gh-border flex flex-col justify-center
+}
+
+.gh-border {
+    @apply border border-solid border-gh-gray-2
+}
+
+
+@layer base {
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+}
