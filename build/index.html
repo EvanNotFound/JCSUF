@@ -375,6 +375,7 @@
 					type="text/x-handlebars-template"
 				>
 					<div class="flex flex-row justify-between items-center gap-1">
+						{{#if canDelete}}
 						<div class="w-2/3">
 							{{#if isCurrentUser}}
 								<a href="user.html?uid={{author}}">
@@ -424,12 +425,62 @@
 								<p class="ml-1 inline">{{view}}</p>
 							</div>
 						</div>
-						{{#if canDelete}}
+
 							<button
 								id="delete-btn-{{id}}"
 								class="float-right bg-gh-gray-1 gh-border dark:border-gh-darkborder dark:bg-gh-red-8 dark:hover:bg-gh-gray-8 px-2 py-1 rounded-xl text-gh-gray-9 hover:bg-gh-red-6 hover:text-white w-1/3"
 								data-id="{{id}}"
 							>删除</button>
+						{{else}}
+						<div>
+							{{#if isCurrentUser}}
+								<a href="user.html?uid={{author}}">
+									{{#if isAnonymous}}
+										<div class="article-info-list-item"><i
+												class="fa-regular fa-paper-plane"
+											></i><p
+												color="#6699aa"
+												class="ml-1 font-bold"
+											>{{author}} (you, 匿名)</p></div>
+									{{else}}
+										<div class="article-info-list-item"><i
+												class="fa-regular fa-paper-plane"
+											></i><p
+												color="#3399aa"
+												class="ml-1 font-bold"
+											>{{author}} (you)</p></div>
+									{{/if}}
+								</a>
+							{{else}}
+								{{#if isAnonymous}}
+									<div class="article-info-list-item"><i
+											class="fa-regular fa-paper-plane"
+										></i><p
+											color="#AAAA00"
+											class="ml-1 inline font-bold"
+										>匿名</p></div>
+								{{else}}
+									<div class="article-info-list-item"><i
+											class="fa-regular fa-paper-plane"
+										></i><a
+											href="user.html?uid={{author}}"
+											class="ml-1 font-bold"
+										>{{author}}</a></div>
+								{{/if}}
+							{{/if}}
+
+							<div class="article-info-list-item md:mb-0"><i
+									class="fa-regular fa-calendar-days"
+								></i><p class="ml-1 inline">{{ctime}}</p></div>
+							<div class="mb-1 text-sm md:hidden md:text-base">
+								<i class="fa-regular fa-comments"></i>
+								<p class="ml-1 inline">{{ccount}}</p>
+							</div>
+							<div class="text-sm md:hidden md:text-base">
+								<i class="fa-regular fa-eye"></i>
+								<p class="ml-1 inline">{{view}}</p>
+							</div>
+						</div>
 						{{/if}}
 					</div>
 				</script>
