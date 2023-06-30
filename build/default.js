@@ -48,20 +48,6 @@ xhttp.withCredentials = true;
 xhttp.send();
 nettaskcreate();
 
-var xhttp3 = new XMLHttpRequest();
-xhttp3.onreadystatechange = function() {
-	if (this.readyState == 4 && this.status == 200) {
-		nettaskfinish();
-		var response = JSON.parse(this.responseText);
-		document.getElementById("server-os").innerHTML = response.os_type;
-		document.getElementById("run-time").innerHTML = Math.round(response.ontime / 60) / 1000;
-	}
-};
-xhttp3.open("GET", "https://api.jcsuf.top/api/osinfo", true);
-xhttp3.withCredentials = true;
-xhttp3.send();
-nettaskcreate();
-
 function process_level(exp) {
 	const levelMapping = [
 		{ expLimit: 0, levelText: "Lv0" },
@@ -223,42 +209,17 @@ function formatDateTime(date) {
 	if (date == "" || !date) {
 		return "";
 	}
-	var date = new Date(date);
-	var y = date.getFullYear();
-	var m = date.getMonth() + 1;
-	m = m < 10 ? ('0' + m) : m;
-	var d = date.getDate();
-	d = d < 10 ? ('0' + d) : d;
-	var h = date.getHours();
-	h = h < 10 ? ('0' + h) : h;
-	var minute = date.getMinutes();
-	minute = minute < 10 ? ('0' + minute) : minute;
-	var second = date.getSeconds();
-	second = second < 10 ? ('0' + second) : second;
-	return y + '-' + m + '-' + d + ' ' + h + ':' + minute + ':' + second;
-}
-
-function del(aid) {
-	var xhttpdel = new XMLHttpRequest();
-	xhttpdel.onreadystatechange = function () {
-		if (this.readyState == 4 && this.status == 200) { nettaskfinish()
-			switch (JSON.parse(this.responseText).code) {
-				case 0:
-					alert("成功删除。")
-					document.getElementById("article-" + aid).style.opacity = "0%";
-					setTimeout(function () { document.getElementById("article-" + aid).remove() }, 1000)
-					break
-				case 1:
-					alert("指向的帖子不存在！")
-					break
-				case 2:
-					alert("权限不足！")
-			}
-		}
-	};
-	xhttpdel.open("GET", "https://api.jcsuf.top/api/deletearticle?aid=" + aid, true);
-	xhttpdel.withCredentials = true;
-	xhttpdel.send(); nettaskcreate();
+	var dateObj = new Date(date);
+	var currentYear = new Date().getFullYear();
+	var year = dateObj.getFullYear();
+	var month = dateObj.toLocaleString('default', { month: 'short' });
+	var day = String(dateObj.getDate()).padStart(2, '0');
+	
+	if (year === currentYear) {
+		return month + ' ' + day;
+	} else {
+		return year + ' ' + month + ' ' + day;
+	}
 }
 
 function repaintdef() {
@@ -298,7 +259,7 @@ function output_task() {
 	}
 }
 
-document.getElementById("nav-icon").addEventListener("click", changeNav);
+//document.getElementById("nav-icon").addEventListener("click", changeNav);
 function changeNav(){
 	var topnav = document.getElementById("nav-bar");
 	if (topnav.className === "navbar") {

@@ -3,11 +3,19 @@
 @tailwind utilities;
 
 .post-column {
-    @apply m-2.5 px-6 py-2.5 bg-white rounded-xl border border-solid border-gh-border flex flex-col justify-center
+    @apply m-2.5 px-4 md:px-6 py-2.5 bg-white rounded-xl border border-solid border-gh-border flex flex-col justify-center 
 }
 
 .gh-border {
     @apply border border-solid border-gh-gray-2
+}
+
+.article-info-list-item {
+    @apply text-sm md:text-base mb-1
+}
+
+.article-info-stats-item {
+    @apply flex w-5/12 flex-row items-center justify-center gh-border dark:border-gh-darkborder rounded-full hover:border-gh-gray-4 dark:hover:border-gh-gray-4 hover:text-gh-gray-4 dark:hover:text-gh-gray-6 cursor-pointer text-gh-border dark:text-gh-gray-5
 }
 
 
