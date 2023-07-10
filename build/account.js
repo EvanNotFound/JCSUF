@@ -57,3 +57,4 @@ if(document.getElementById("clickreg")!=undefined){
 if(document.getElementById("clicksi")!=undefined){
 	document.getElementById("clicksi").href = location.href.replace("register.html","signin.html")
 }
+
